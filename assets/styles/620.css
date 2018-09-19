@@ -1,0 +1,99 @@
+@media (max-width: 620px) {
+  .main-header {
+    height: auto; }
+    .main-header .header-center-wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .main-header .header-center-text {
+      position: inherit;
+      padding: 100px 20px 60px 20px;
+      height: 100%;
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; }
+  .moddings .moddings-slider .modding-block img {
+    min-height: 325px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .repairs .bg-text {
+    font-size: 65px;
+    letter-spacing: 10px;
+    top: -10px; }
+  .repairs .repairs-slider .rep-wrapper {
+    margin-left: 0;
+    margin-right: 0; }
+  .contacts {
+    padding-left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+    .contacts::after {
+      top: auto;
+      bottom: -90px;
+      right: -18%; }
+    .contacts .map-wrapper {
+      padding-left: 0; }
+    .contacts .contacts-wrapper {
+      max-width: none;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      .contacts .contacts-wrapper .main-title {
+        padding: 0 10px;
+        width: 100%; }
+      .contacts .contacts-wrapper .desc-block {
+        width: 50%;
+        padding: 0 10px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+  .matacs .ma-wrapper img {
+    min-height: 300px; }
+  .main-footer {
+    line-height: 12px;
+    font-size: 8px; }
+    .main-footer .politics {
+      font-size: 8px;
+      line-height: 12px; }
+      .main-footer .politics a {
+        font-size: 8px;
+        line-height: 12px; }
+  .moddings::after {
+    bottom: 80px; }
+  .moddings-slider.slick-slider, .repairs-slider.slick-slider {
+    position: initial; }
+    .moddings-slider.slick-slider .slick-arrow, .repairs-slider.slick-slider .slick-arrow {
+      position: absolute;
+      top: 50%;
+      height: 25px;
+      width: 50px;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      border: none;
+      border: none;
+      padding: 0;
+      color: transparent;
+      outline: 0 !important; }
+    .moddings-slider.slick-slider .slick-prev, .repairs-slider.slick-slider .slick-prev {
+      left: 10px;
+      background: url("../images/--plus--/arrow-left.png") no-repeat left/contain; }
+    .moddings-slider.slick-slider .slick-next, .repairs-slider.slick-slider .slick-next {
+      right: 10px;
+      background: url("../images/--plus--/arrow-right.png") no-repeat right/contain; } }

@@ -1,0 +1,1013 @@
+@import "images.sass"
+// background placer
+@mixin place-background2($bg)
+	background-image: url($bg)
+	background-repeat: no-repeat
+	background-position: 0% 50%
+	background-size: contain
+// background placer
+@mixin place-background($bg)
+	background: url($bg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+// button with animated arrow on right side
+@mixin place-arrow($margin, $padding, $font-size, $arrow_top, $arrow_top_r)
+	& > a
+		text-decoration: none
+		color: inherit
+		font-family: inherit
+		text-transform: uppercase
+		border: 0.071em solid #fff
+		border-radius: 2em
+		margin: $margin
+		display: inline-block
+		padding: $padding
+		font-size: $font-size
+		letter-spacing: 0.21em
+		font-weight: 300
+		position: relative
+		transition: background 0.2s ease
+
+	& > a:hover
+		background: #fff
+		color: #222
+
+	& > a:after
+		content: url($arrow)
+		position: absolute
+		right: -1em
+		width: 2.250em
+		top: $arrow_top
+		transition: all 0.2s ease
+
+	& > a:hover:after
+		content: url($arrow_black)
+		top: $arrow_top_r
+		transform: rotate(180deg)
+
+	@media all and (max-width: 1200px)
+		& > a
+			font-size: 0.7em
+			margin-top: 3em
+
+
+// button with animated arrow on right side
+@mixin place-arrow-button($margin, $padding, $font-size, $arrow_top, $arrow_top_r)
+
+// resets
+.reset-a
+	color: inherit
+	text-decoration: none
+.reset-ul-ol
+	list-style: none
+	margin: 0
+	padding: 0
+*:focus
+	outline: none
+
+
+//header
+.header-wrap
+	position: relative
+	height: 100vh
+	background-color: #181818
+	min-height: 450px
+.light-header
+	z-index: 999 
+	position: fixed
+	top: 0
+	left: 0
+	color: #fff
+	width: 100%
+	padding: 3.7em 0
+	display: flex
+	justify-content: space-between
+
+	& > div
+		margin: 0 5em
+
+	// navigation styles
+	& > div:first-child
+		position: relative
+
+		& > div:first-child
+
+		.popup-navigation
+			width: 0
+			opacity: 0
+			overflow: hidden
+			transition: width 0.5s ease, opacity 0s ease
+
+			& > div
+				display: none
+
+			.slick-carousel-container a
+				@extend .reset-a
+
+		.popup-navigation.active
+			opacity: 1
+			background: #222
+			width: 22em
+			height: 40.8em
+			position: absolute
+			top: -1.4em
+			left: -2.4em
+			z-index: 3
+			padding: 1.3em 2.4em
+			cursor: default
+			display: flex
+			flex-direction: column
+
+			.original-nav-container
+				display: block
+				flex-grow: 1
+
+				& > div:first-child
+					display: flex
+					align-items: center
+					justify-content: space-between
+
+					& > div:first-child
+
+					& > div:last-child
+						display: flex
+						justify-content: flex-end
+						align-items: center
+
+						& > a
+							@extend .reset-a
+							display: block
+							text-transform: uppercase
+							margin: 0 0 0 2em
+							opacity: 0.5
+							transition: all 0.5s
+
+						& > a:hover
+							opacity: 1
+
+						& > a.active
+							opacity: 1
+
+				& > nav
+					margin: 6em 0
+
+					& > ul
+						@extend .reset-ul-ol
+
+						& > li
+							display: flex
+							justify-content: center
+							align-items: center
+
+							& > a
+								@extend .reset-a
+								display: flex
+								height: 3.4em
+								justify-content: center
+								align-items: center
+								text-transform: uppercase
+								width: 65%
+								transition: all 0.5s
+
+							& > ul
+								display: none
+
+								& > li
+
+									& > a
+
+			& > .slick-carousel-container
+				display: none
+				flex-grow: 1
+
+				.slick-disabled
+					opacity: 0.3
+
+				& > div:nth-child(1)
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					& > div:nth-child(1)
+
+					.slick-carousel-back
+						cursor: pointer
+						text-transform: uppercase
+						position: relative
+
+					.slick-carousel-back:after
+						content: url($arrow_small)
+						position: absolute
+						left: -1.6em
+						top: -0.1em
+						width: 0.5em
+						height: 0.5em
+
+				& > div:nth-child(2)
+					margin: 6em 0 0 0
+
+					& > .top-arrow
+						@include place-background($arrow_circle)
+						background-size: 94%
+						cursor: pointer
+						margin: 0 auto
+						width: 1.8em
+						height: 1.8em
+						transform: rotate(180deg)
+
+				& > .slick-carousel
+					margin: 1em 0
+
+					.nav-carousel-element-container
+
+						.nav-carousel-element
+							@extend .reset-a
+							text-transform: uppercase
+							font-weight: 300
+							font-size: 0.9em
+							letter-spacing: 0.05em
+							height: 4em
+							display: flex
+							justify-content: center
+							align-items: center
+
+				& > div:nth-child(4)
+
+					& > .bottom-arrow
+						@include place-background($arrow_circle)
+						background-size: 94%
+						cursor: pointer
+						margin: 0 auto
+						width: 1.8em
+						height: 1.8em
+
+			& > div:last-child
+				display: none
+
+				& > a:first-child
+					@extend .reset-a
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					min-width: 18em
+
+					& > div:nth-child(1)
+						@include place-background($cart)
+						cursor: pointer
+						width: 1.6em
+						height: 1.6em
+						margin: 0 1em 0 0
+
+					& > div:nth-child(2)
+						margin: 0 1em 0 0
+
+					& > div:nth-child(3)
+
+				& > div:last-child
+					margin: 2em 0 0
+
+					& > ul
+						@extend .reset-ul-ol
+						display: flex
+						justify-content: flex-start
+
+						& > li
+							margin: 0 1em 0.5em 0
+
+							& > span
+								@extend .reset-a
+								display: block
+								width: 2.2em
+								height: 2.2em
+								border-radius: 1.5em
+								border: 0.063em solid #fff
+								cursor: pointer
+
+						& > li:nth-child(1)
+
+							& > span
+								@include place-background($facebook_black)
+								background-color: #262626
+
+						& > li:nth-child(2)
+
+							& > span
+								@include place-background($instagram_black)
+								background-color: #262626
+
+						& > li:nth-child(3)
+
+							& > span
+								@include place-background($twitter_black)
+								background-color: #262626
+
+						& > li:nth-child(4)
+
+							& > span
+								@include place-background($vk_black)
+								background-color: #262626
+
+						& > li:nth-child(5)
+
+							& > span
+								@include place-background($youtube_black)
+								background-color: #262626
+
+						& > li:last-child
+							margin: 0 0 0.5em 0
+
+							& > span
+
+						& > li:hover
+
+							& > span
+								background-color: #3C3C3C
+								border: 0.063em solid #3C3C3C
+
+	// share and cart styles
+	& > div:last-child
+		display: flex
+
+		& > div
+			justify-content: flex-end
+
+		// share menu
+		& > div:first-child
+			background: url(../images/--plus--/soc_white.png) no-repeat center
+			cursor: pointer
+			width: 2em
+			height: 2em
+
+			& > .header-socials
+				display: none
+
+		& > div.active:first-child
+			background: none
+
+			& > .header-socials
+				display: block
+
+				& > ul
+					@extend .reset-ul-ol
+					display: flex
+					justify-content: flex-start
+					flex-direction: column
+
+					& > li
+						margin: 0 0 0.35em 0
+
+						& > a
+							@extend .reset-a
+							display: block
+							width: 1.9em
+							height: 1.9em
+							border-radius: 1.5em
+
+					& > li:nth-child(1)
+
+						& > a
+							@include place-background($cross_black)
+							background-color: #262626
+							background-size: 1.1em
+
+					& > li:nth-child(2)
+
+						& > a
+							@include place-background($facebook_black)
+							background-color: #262626
+
+					& > li:nth-child(3)
+
+						& > a
+							@include place-background($instagram_black)
+							background-color: #262626
+
+					& > li:nth-child(4)
+
+						& > a
+							@include place-background($twitter_black)
+							background-color: #262626
+
+					& > li:nth-child(5)
+
+						& > a
+							@include place-background($vk_black)
+							background-color: #262626
+
+					& > li:nth-child(6)
+
+						& > a
+							@include place-background($youtube_black)
+							background-color: #262626
+
+					& > li:hover
+
+						& > a
+							background-color: #3C3C3C
+
+		// cart popup styles
+		& > div:last-child
+			@include place-background($cart)
+			cursor: pointer
+			width: 1.6em
+			height: 1.6em
+			margin: 0.2em 0 0 2.7em
+			position: relative
+
+			& > div:first-child
+				background: #ef4a46
+				border-radius: 1em
+				position: absolute
+				right: -0.7em
+				top: -0.1em
+				font-size: 0.5em
+				padding: 0.2em 0.5em
+
+			& > div:nth-child(2)
+				display: none
+
+			& > .cart-popup-header
+				display: none
+
+		& > div.active:last-child
+
+			& > div:nth-child(2)
+				display: block
+				background: #222
+				width: 1em
+				height: 1em
+				transform: rotate(45deg)
+				position: absolute
+				top: 2em
+				right: 0.2em
+
+			& > .cart-popup-header
+				display: block
+				color: #fff
+				width: 33.1em
+				position: absolute
+				right: -4em
+				top: 2.7em
+				background: #222
+				padding: 1em 0.8em 1.7em
+				font-weight: 300
+				font-size: 0.9em
+				letter-spacing: 0.08em
+				cursor: default
+
+				& > table
+					text-align: left
+					width: 100%
+					border-collapse: collapse
+					border-bottom: 0.063em solid #fff
+
+					& > tbody
+
+						& > tr
+
+							& > td
+								padding: 0 0 1.3em
+
+							& > td:nth-child(1)
+								width: 22%
+
+								& > a
+
+									& > img
+
+							& > td:nth-child(2)
+								text-transform: uppercase
+								font-size: 0.9em
+								letter-spacing: 0.08em
+								text-align: left
+								width: 38%
+
+								& > a
+									@extend .reset-a
+
+							& > td:nth-child(3)
+								width: 20%
+
+							& > td:nth-child(4)
+								width: 20%
+								text-align: right
+
+						& > tr:last-child
+
+							& > td
+								padding: 0 0 0.8em
+
+				& > div:last-child
+					display: flex
+					justify-content: center
+					align-items: center
+					width: 100%
+					margin: 1.6em 0 0
+
+					& > div:first-child
+						flex-grow: 1
+						display: flex
+						justify-content: center
+						align-items: center
+
+						& > div:first-child
+							flex-basis: 5.2em
+							text-align: left
+
+						& > div:last-child
+							flex-grow: 1
+							display: flex
+							justify-content: center
+							align-items: center
+
+							& > div:first-child
+								flex-grow: 1
+
+							& > div:last-child
+								flex-grow: 3
+
+					& > div:last-child
+						flex-basis: 16.625em
+						display: flex
+						justify-content: center
+						align-items: center
+						@include place-arrow-button(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+						& > a
+							@extend .reset-a
+	&.black
+		//box-shadow: 0 6px 20px 9px rgba(77, 75, 75, 0.04)
+	&.black > div:last-child
+		& > div:first-child
+			background-image: url(../images/--plus--/soc_black.png)
+			background-repeat: no-repeat
+		& > div:last-child
+			background-image: url(../images/--plus--/basket_black.png)
+			color: #000000
+			background-size: 22px
+.main-header
+	position: relative
+	background: url('../images/--plus--/front2.jpg') no-repeat center center
+	background-size: cover
+	height: 100vh
+	min-height: 600px
+	z-index: 2
+	.logo-block
+		width: 45px
+		height: 70px
+		a
+			img
+				max-width: 100%
+				height: 100%
+				&.black
+					display: none
+		&.black
+			a
+				img
+					&.white
+						display: none
+					&.black
+						display: block
+	.header-center-text
+		max-width: 990px
+		width: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		-webkit-transform: translate(-50%, -50%)
+		-moz-transform: translate(-50%, -50%)
+		-ms-transform: translate(-50%, -50%)
+		-o-transform: translate(-50%, -50%)
+		transform: translate(-50%, -50%)
+		color: #ffffff
+		text-align: center
+		z-index: 1
+		box-sizing: border-box
+
+		@include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+		.main-hd
+			font-size: 70px
+			line-height: 75px
+			margin-bottom: 55px
+			font-weight: 500
+		.desc
+			font-size: 18px
+			line-height: 30px
+			margin-bottom: 45px
+			letter-spacing: 1px
+		.styled-btn
+			font-size: 12px
+			padding: 19px 46px
+			border-radius: 35px
+			box-sizing: border-box
+			height: 55px
+
+			&::after
+				display: inline-block
+				top: 50%
+				transform: translateY(-60%)
+
+			&:hover
+				&::after
+					top: 50%
+					transform: translateY(-50%) rotate(180deg)
+
+	.lang-menu
+		background: transparent
+		color: #ffffff
+		border: none
+
+//top line
+.top-line
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	-webkit-justify-content: space-around
+	justify-content: space-between
+	align-items: center
+	padding: 30px 100px
+	z-index: 100
+	position: relative
+	box-sizing: border-box
+
+	.user-wrapper
+		justify-content: space-around
+		display: flex
+		z-index: 10
+
+		.inner-basket
+			@include place-background2($cart)
+			width: auto
+			padding-left: 40px
+			color: #ffffff
+			line-height: 20px
+			font-size: 12px
+			margin-top: 3px
+			background-size: 22px
+			margin-left: 0
+
+			.quantity
+				top: -5px
+				left: 16px
+				right: inherit
+				font-size: 8px
+				line-height: normal
+
+		.socials-wrapper
+			background: url("../images/--plus--/soc_white.png") no-repeat center
+
+	&.sticky
+		box-shadow: 0 6px 20px 9px rgba(77, 75, 75, 0.04)
+		position: fixed
+		width: 100%
+		background: #ffffff
+		z-index: 10
+		.main-menu-wrapper
+			.main-menu
+				.arrow
+					&::before, &::after
+						background-color: #000
+				& >li
+					& > a
+						color: #000000
+		.lang-wrapper
+			&.mobile
+				display: none
+
+			.lang-block
+				color: #585757
+				&.active
+					color: #000000
+
+
+
+		.user-wrapper
+			.inner-basket
+				background-image: url(../images/--plus--/basket_black.png)
+				color: #000000
+			.socials-wrapper
+				position: relative
+				background-image: url(../images/--plus--/soc_black.png);
+				background-repeat: no-repeat
+				background-position: center
+				background-size: 30px
+				cursor: pointer
+				width: 32px
+				height: 32px
+				transition: all 0.5s ease-out
+
+				ul
+					position: absolute
+
+	&.sticky-black
+		position: fixed
+		width: 100%
+		background: #1C1C1B
+		z-index: 10
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.1)
+		transition: all 0.5s ease-out
+		.logo-block
+			img.white
+				display: block !important
+			img.black
+				display: none !important
+	.main-menu-wrapper
+		.main-menu
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+
+			li
+				list-style: none
+
+				a
+					color: #ffffff
+					font-size: 16px
+					text-transform: uppercase
+					text-decoration: none
+
+				&:hover > .submenu
+					display: block
+	.lang-wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 12px
+		font-weight: 400
+
+		&.mobile
+			display: none
+
+		.lang-block
+			color: #8f8e8e
+			cursor: pointer
+
+			&.active
+				color: #ffffff
+			& + .lang-block
+			margin-left: 10px
+
+
+// mobile
+
+.top-line-mobile
+	position: fixed
+	top: 0
+	left: 0
+	color: #fff
+	width: 100%
+	padding: 40px 20px
+	display: none
+	justify-content: space-between
+	z-index: 3
+	box-sizing: border-box
+	& > div
+		//margin: 20px
+
+		// navigation styles
+		& > div:first-child
+			position: relative
+
+			& > div:first-child
+
+		.popup-navigation
+			width: 0
+			opacity: 0
+			overflow: hidden
+			transition: width 0.5s ease, opacity 0s ease
+
+			& > div
+				display: none
+
+			.slick-carousel-container a
+				@extend .reset-a
+
+		.popup-navigation.active
+			opacity: 1
+			background: #222
+			width: 22em
+			height: 40.8em
+			position: absolute
+			top: 18px
+			margin-left: 20px
+			left: -2.4em
+			z-index: 3
+			padding: 1.3em 2.4em
+			cursor: default
+			display: flex
+			flex-direction: column
+
+			.original-nav-container
+				display: block
+				flex-grow: 1
+
+				& > div:first-child
+					display: flex
+					align-items: center
+					justify-content: space-between
+
+					& > div:first-child
+
+					& > div:last-child
+						display: flex
+						justify-content: flex-end
+						align-items: center
+
+						& > a
+							@extend .reset-a
+							display: block
+							text-transform: uppercase
+							margin: 0 0 0 2em
+							opacity: 0.5
+							transition: all 0.5s
+
+						& > a:hover
+							opacity: 1
+
+						& > a.active
+							opacity: 1
+
+				& > nav
+					margin: 6em 0
+
+					& > ul
+						@extend .reset-ul-ol
+
+						& > li
+							display: flex
+							justify-content: center
+							align-items: center
+
+							& > a
+								@extend .reset-a
+								display: flex
+								height: 3.4em
+								justify-content: center
+								align-items: center
+								text-transform: uppercase
+								width: 65%
+								transition: all 0.5s
+
+							& > ul
+								display: none
+
+								& > li
+
+									& > a
+
+			& > .slick-carousel-container
+				display: none
+				flex-grow: 1
+
+				.slick-disabled
+					opacity: 0.3
+
+				& > div:nth-child(1)
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					& > div:nth-child(1)
+
+					.slick-carousel-back
+						cursor: pointer
+						text-transform: uppercase
+						position: relative
+
+					.slick-carousel-back:after
+						content: url($arrow_small)
+						position: absolute
+						left: -1.6em
+						top: -0.1em
+						width: 0.5em
+						height: 0.5em
+
+				& > div:nth-child(2)
+					margin: 6em 0 0 0
+
+					& > .top-arrow
+						@include place-background($arrow_circle)
+						background-size: 94%
+						cursor: pointer
+						margin: 0 auto
+						width: 1.8em
+						height: 1.8em
+						transform: rotate(180deg)
+
+				& > .slick-carousel
+					margin: 1em 0
+
+					.nav-carousel-element-container
+
+						.nav-carousel-element
+							@extend .reset-a
+							text-align: center
+							text-transform: uppercase
+							font-weight: 300
+							font-size: 0.9em
+							letter-spacing: 0.05em
+							height: 4em
+							display: flex
+							justify-content: center
+							align-items: center
+
+				& > div:nth-child(4)
+
+					& > .bottom-arrow
+						@include place-background($arrow_circle)
+						background-size: 94%
+						cursor: pointer
+						margin: 0 auto
+						width: 1.8em
+						height: 1.8em
+
+			& > div:last-child
+				display: none
+
+				& > a:first-child
+					@extend .reset-a
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					min-width: 18em
+
+					& > div:nth-child(1)
+						@include place-background($cart)
+						cursor: pointer
+						width: 1.6em
+						height: 1.6em
+						margin: 0 1em 0 0
+
+					& > div:nth-child(2)
+						margin: 0 1em 0 0
+
+					& > div:nth-child(3)
+
+				& > div:last-child
+					margin: 2em 0 0
+
+					& > ul
+						@extend .reset-ul-ol
+						display: flex
+						justify-content: flex-start
+
+						& > li
+							margin: 0 1em 0.5em 0
+
+							& > span
+								@extend .reset-a
+								display: block
+								width: 2.2em
+								height: 2.2em
+								border-radius: 1.5em
+								border: 0.063em solid #fff
+								cursor: pointer
+
+						& > li:nth-child(1)
+
+							& > span
+								@include place-background($facebook_black)
+								background-color: #262626
+
+						& > li:nth-child(2)
+
+							& > span
+								@include place-background($instagram_black)
+								background-color: #262626
+
+						& > li:nth-child(3)
+
+							& > span
+								@include place-background($twitter_black)
+								background-color: #262626
+
+						& > li:nth-child(4)
+
+							& > span
+								@include place-background($vk_black)
+								background-color: #262626
+
+						& > li:nth-child(5)
+
+							& > span
+								@include place-background($youtube_black)
+								background-color: #262626
+
+						& > li:last-child
+							margin: 0 0 0.5em 0
+
+							& > span
+
+						& > li:hover
+
+							& > span
+								background-color: #3C3C3C
+								border: 0.063em solid #3C3C3C
+

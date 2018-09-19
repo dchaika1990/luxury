@@ -1,0 +1,87 @@
+@media (max-width: 620px)
+
+  .main-header
+    height: auto
+    .header-center-wrapper
+      display: flex
+      justify-content: center
+      align-items: center
+    .header-center-text
+      position: inherit
+      padding: 100px 20px 60px 20px
+      height: 100%
+      transform: none
+  .moddings
+    .moddings-slider
+      .modding-block
+        img
+          min-height: 325px
+          object-fit: cover
+  .repairs
+    .bg-text
+      font-size: 65px
+      letter-spacing: 10px
+      top: -10px
+    .repairs-slider
+      .rep-wrapper
+        margin-left: 0
+        margin-right: 0
+  .contacts
+    padding-left: 0
+    flex-direction: column-reverse
+    &::after
+      top: auto
+      bottom: -90px
+      right: -18%
+
+    .map-wrapper
+      padding-left: 0
+    .contacts-wrapper
+      max-width: none
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+
+      .main-title
+        padding: 0 10px
+        width: 100%
+      .desc-block
+        width: 50%
+        padding: 0 10px
+        box-sizing: border-box
+  .matacs
+    .ma-wrapper
+      img
+        min-height: 300px
+  .main-footer
+    line-height: 12px
+    font-size: 8px
+    .politics
+      font-size: 8px
+      line-height: 12px
+      a
+        font-size: 8px
+        line-height: 12px
+
+  .moddings::after
+    bottom: 80px
+
+  .moddings-slider.slick-slider, .repairs-slider.slick-slider
+    position: initial
+    .slick-arrow
+      position: absolute
+      top: 50%
+      height: 25px
+      width: 50px
+      transform: translateY(-50%)
+      border: none
+      border: none
+      padding: 0
+      color: transparent
+      outline: 0!important
+    .slick-prev
+      left: 10px
+      background: url("../images/--plus--/arrow-left.png") no-repeat left / contain
+    .slick-next
+      right: 10px
+      background: url("../images/--plus--/arrow-right.png") no-repeat right / contain

@@ -1,0 +1,430 @@
+//- functions
+//- navigations list
+mixin navList(texts, hrefs)
+	ul
+		each text, key in texts
+			li
+				if hrefs[key]
+					a(href=hrefs[key])= text
+				else
+					a(href="javascript: void(0)" onclick="alert(':(');")= text
+
+//- socials list
+mixin socialsList(hrefs)
+	ul
+		each link in hrefs
+			li
+				span(onclick="window.open( '"+link+"', '_blank');")
+
+//- menu html
+mixin menuToggle()
+	.menu-toggle
+		.hamburger
+			- for (var x = 0; x < 3; x++)
+				span
+		.hamburger-open
+			- for (var x = 0; x < 3; x++)
+				span
+
+//- menu html
+mixin menuToggleOpen()
+	.menu-toggle
+		.hamburger-open
+			- for (var x = 0; x < 3; x++)
+				span
+
+//- socials list
+mixin socialsListHeader(hrefs)
+	ul
+		li(onClick='event.stopPropagation(); $(".popup-header, .menu-toggle").removeClass("active");')
+			a(href="javascript:void(0)" rel="noopener")
+		each link in hrefs
+			li
+				a(href=link target="_blank" rel="noopener")
+
+
+//- arrays
+//- collections
+- var kollektsii = {1:{1:'b1.jpg',2:'b2.jpg',3:'h1.png',4:'h1.png'},2:{1:'b3.jpg',2:'b4.jpg',3:'h2.png',4:'h2.png'},3:{1:'b1.jpg',2:'b2.jpg',3:'h1.png',4:'h1.png'}}
+
+
+
+//- document start
+doctype html
+html(lang="ru")
+	head
+		meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		meta(name="description" content="Несколько Коллекций")
+		meta(name="theme-color" content="#ffffff")
+		link(rel="manifest" href="assets/favicons/manifest.json")
+		link(rel="apple-touch-icon", sizes="180x180", href="assets/favicons/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="assets/favicons/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="assets/favicons/favicon-16x16.png")
+		link(rel="manifest", href="assets/favicons/site.webmanifest")
+		link(rel="mask-icon", href="assets/favicons/safari-pinned-tab.svg", color="#5bbad5")
+		link(rel="shortcut icon", href="assets/favicons/favicon.ico")
+		meta(name="msapplication-TileColor", content="#da532c")
+		meta(name="msapplication-config", content="assets/favicons/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+		title Несколько Коллекций
+		//- link(rel="stylesheet" href="assets/styles/style.css")
+		//- link(rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css")
+		style
+			include assets/styles/style.css
+		style
+			include assets/styles/slick-carousel-1.8.1.css
+		script(src="assets/scripts/script.js" defer)
+
+
+
+	body(style="overflow: hidden; height: 0; opacity: 0;")
+		main
+			#neskolko-kollektsiy-side-controls
+				ul(id="neskolko-kollektsiy-side-controls-list")
+					each koll, key in kollektsii
+						li(class="side-controls" id="side-control-"+key data-block="control-"+key)= key
+							div
+								div
+								div Коллекция #{key}
+
+
+			#neskolko-kollektsiy-front-block(style="background: url('assets/images/temp/front.jpg'); background-size: cover; background-position: center;")
+				header
+					div
+						div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
+							+menuToggle()
+
+						.popup-navigation(class="popup-header")
+							.original-nav-container
+								div
+									div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+										+menuToggleOpen()
+									div
+										a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
+										a(href="javascript: void(0)" onclick="alert(':(');") En
+								nav
+									ul
+										li
+											a.nav-animation(href="/tesst.html") Сервис
+											+navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+										li
+											a.nav-animation(href="javascript:void(0)") Моддинг
+											+navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+										li
+											a.nav-animation(href="javascript:void(0)") О Компании
+											+navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+										li
+											a.nav-animation(href="https://www.youtube.com/" target="_blank" rel="noopener")  Страница
+							.slick-carousel-container
+								div
+									div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+										+menuToggleOpen()
+									.slick-carousel-back
+								div
+									.top-arrow
+								.slick-carousel
+								div
+									.bottom-arrow
+							div
+								a(href="javascript: void(0)" onclick="alert(':(');")
+									div
+									div 3 шт
+									div 10000 руб
+								div
+									+socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+					div
+						.popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
+							.header-socials
+								+socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+						.popup-header(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}")
+							div 2
+							div
+							.cart-popup-header
+								table
+									tbody
+										- for (var x = 0; x < 3; x++)
+											tr
+												td
+													a(href="javascript:void(0)" onclick="alert(':(');")
+														img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
+												td
+													a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
+												td 1 шт
+												td 5000 руб
+								div
+									div
+										div Итого:
+										div
+											div 2 шт
+											div 10000 руб
+									div
+										a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
+
+				div
+					div Коллекция Наушников
+					div Абсолютно беспроводные наушники Ниво - это поразительно компактная и модная упаковка, 10 метровый радиус действия, технология Bluetooth 4.2. Гарнитура без подзарядки может продержаться 3,5 часа.
+
+
+			#neskolko-kollektsiy-kollektsii
+				each img, key in kollektsii
+					div.neskolko-kollektsiy-kollektsia(id="control-"+key)
+						div.neskolko-kollektsiy-kollektsii-block(style="background: url('assets/images/temp/"+img[1]+"'); background-size: cover; background-position: center;")
+							div
+								div Название Коллекции
+								div Абсолютно беспроводные наушники Ниво - это поразительно компактная и модная упаковка, 10 метровый радиус действия, технология Bluetooth 4.2.
+								a(href="javascript: void(0)") Подробнее
+								canvas(class="neskolko-kollektsiy-animated-block" width="896" height="896")
+								canvas(class="neskolko-kollektsiy-animated-block-tablet" width="896" height="896")
+								div
+									canvas(class="neskolko-kollektsiy-animated-block-mobile" width="400" height="400")
+
+								script.
+
+									window.addEventListener('DOMContentLoaded', function() {
+										$(window).on('load', function(){
+
+											// pc animation config
+											var animation = [
+												{
+													'type':'romb',
+													'pos':[1.2,1.1],
+													'width':12.2,
+													'speed': 1,
+													'start': false
+												},
+												{
+													'type':'line',
+													'from': [0,8.7],
+													'to':[29,37.7],
+													'color':'#fff',
+													'width':1,
+													'speed': 10,
+													'start': false
+												},
+												{
+													'type':'image',
+													'link':'assets/images/temp/#{img[3]}',
+													'pos':[29.2,37.9],
+													'width':27.4,
+													'speed': 0.08,
+													'start': false
+												},
+												{
+													'type':'line',
+													'from': [56.7,65.7],
+													'to':[100,108.7],
+													'color':'#fff',
+													'width':1,
+													'speed': 5,
+													'start': false
+												}
+											];
+
+											window.luxury.animatedBlocks[window.luxury.counter] = new canvasConstructor(document.getElementsByClassName('neskolko-kollektsiy-animated-block')[window.luxury.counter], animation);
+
+											$('.neskolko-kollektsiy-animated-block')[window.luxury.counter].order = window.luxury.counter;
+											
+											$(window).on('resize scroll', function() {
+												if (window.innerWidth>window.luxury.resolutionTablet) {
+													$('.neskolko-kollektsiy-animated-block').each(function() {
+														if (($(this)[0].order==0 || window.luxury.animatedBlocks[($(this)[0].order-1)].animation[3].start) && !window.luxury.animatedBlocks[$(this)[0].order].animation[3].start) {
+															// romb and first line
+															if ($(this).isInViewport(200)) {
+																window.luxury.animatedBlocks[$(this)[0].order].animation[0].start = true;
+																window.luxury.animatedBlocks[$(this)[0].order].animation[1].start = true;
+																// logo
+																if ($(this).isInViewport(600)) {
+																	window.luxury.animatedBlocks[$(this)[0].order].animation[2].start = true;
+																	// second line
+																	if ($(this).isInViewport(800)) {
+																		window.luxury.animatedBlocks[$(this)[0].order].animation[3].start = true;
+																	}
+																}
+															}
+														}
+													});
+												}
+											});
+
+											window.luxury.counter++;
+
+											// tablet animation config
+											var animation = [
+												{
+													'type':'romb',
+													'pos':[1.2,1.1],
+													'width':12.2,
+													'speed': 1,
+													'start': false
+												},
+												{
+													'type':'line',
+													'from': [0,8.7],
+													'to':[29,37.7],
+													'color':'#fff',
+													'width':1,
+													'speed': 10,
+													'start': false
+												},
+												{
+													'type':'image',
+													'link':'assets/images/temp/#{img[3]}',
+													'pos':[29.2,37.9],
+													'width':27.4,
+													'speed': 0.08,
+													'start': false
+												},
+												{
+													'type':'line',
+													'from': [56.7,65.7],
+													'to':[100,108.7],
+													'color':'#fff',
+													'width':1,
+													'speed': 5,
+													'start': false
+												}
+											];
+
+											window.luxury.animatedBlocksTablet[window.luxury.counterTablet] = new canvasConstructor(document.getElementsByClassName('neskolko-kollektsiy-animated-block-tablet')[window.luxury.counterTablet], animation);
+
+											$('.neskolko-kollektsiy-animated-block-tablet')[window.luxury.counterTablet].order = window.luxury.counterTablet;
+											
+											$(window).on('resize scroll', function() {
+												if (window.innerWidth<=window.luxury.resolutionTablet && window.innerWidth>window.luxury.resolutionMobile) {
+													$('.neskolko-kollektsiy-animated-block-tablet').each(function() {
+														if (($(this)[0].order==0 || window.luxury.animatedBlocksTablet[($(this)[0].order-1)].animation[3].start) && !window.luxury.animatedBlocksTablet[$(this)[0].order].animation[3].start) {
+															
+															// romb and first line
+															if ($(this).isInViewport(500)) {
+																window.luxury.animatedBlocksTablet[$(this)[0].order].animation[0].start = true;
+																window.luxury.animatedBlocksTablet[$(this)[0].order].animation[1].start = true;
+																// logo
+																if ($(this).isInViewport(700)) {
+																	window.luxury.animatedBlocksTablet[$(this)[0].order].animation[2].start = true;
+																	// second line
+																	if ($(this).isInViewport(700)) {
+																		window.luxury.animatedBlocksTablet[$(this)[0].order].animation[3].start = true;
+																	}
+																}
+															}
+														}
+													});
+												}
+											});
+
+											window.luxury.counterTablet++;
+
+
+											// mobile animation config
+											var animationM = [
+												{
+													'type':'romb',
+													'pos':[42,0],
+													'width':15,
+													'speed': 1,
+													'start': false
+												},
+												{
+													'type':'line',
+													'from': [49.5,14.9],
+													'to':[49.5,49],
+													'color':'#fff',
+													'width':1,
+													'speed': 10,
+													'start': false
+												},
+												{
+													'type':'image',
+													'link':'assets/images/temp/#{img[4]}',
+													'pos':[31,56],
+													'width':38,
+													'speed': 0.1,
+													'start': false
+												}
+											];
+
+											window.luxury.animatedBlocksMobile[window.luxury.counterMobile] = new canvasConstructor(document.getElementsByClassName('neskolko-kollektsiy-animated-block-mobile')[window.luxury.counterMobile], animationM);
+
+											$('.neskolko-kollektsiy-animated-block-mobile')[window.luxury.counterMobile].order = window.luxury.counterMobile;
+											
+											var rombLineTimer = [];
+											$('.neskolko-kollektsiy-animated-block-mobile').each(function(key) {
+												rombLineTimer[key] = false;
+											});
+
+											$(window).on('resize scroll', function() {
+												if (window.innerWidth<=window.luxury.resolutionMobile) {
+													$('.neskolko-kollektsiy-animated-block-mobile').each(function(key) {
+														if (($(this)[0].order==0 || window.luxury.animatedBlocksMobile[($(this)[0].order-1)].animation[2].start) && !window.luxury.animatedBlocksMobile[$(this)[0].order].animation[2].start) {
+															// romb
+															if ($(this).isInViewport(100)) {
+																window.luxury.animatedBlocksMobile[$(this)[0].order].animation[0].start = true;
+																// line
+																var obj = this;
+																if (!rombLineTimer[key]) rombLineTimer[key] = setTimeout(function(){
+																	window.luxury.animatedBlocksMobile[obj.order].animation[1].start = true;
+																}, 1000);
+																// logo
+																if ($(this).isInViewport(400)) {
+																	window.luxury.animatedBlocksMobile[$(this)[0].order].animation[2].start = true;
+																}
+															}
+														}
+													});
+												}
+											});
+
+											window.luxury.counterMobile++;
+										});
+									});
+
+						div.neskolko-kollektsiy-kollektsii-second-block(style="background: url('assets/images/temp/"+img[2]+"'); background-size: cover;" class="neskolko-kollektsiy-kollektsii-block")
+
+
+
+		footer
+			div
+				div
+					.footer-socials
+						+socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+					.footer-contacts
+						.phones
+							a(href="tel:+7(499)130-91-11") +7 (499) 130-91-11
+							br
+							a(href="tel:+7(800)700-82-37") +7 (800) 700-82-37
+						.address
+							a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") Россия 121433, г. Москва,
+							br
+							a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") 3-й Силикатный проезд, д.4 к.1
+						.email
+							a(href="mailto:info@luxurymod.ru") info@luxurymod.ru
+						.work-hours ПН — СБ: c 10:00 до 21:00
+							br
+							| ВС — выходной
+				.div
+					.footer-nav-block
+						span Коллекции
+						+navList(['Все коллекции', 'Россия'], [])
+					.footer-nav-block
+						span Персонализация
+						+navList(['Аксессуары', 'Материалы'], [])
+					.footer-nav-block
+						span Брендирование
+						+navList(['Виды брендирования', 'Заказчики'], [])
+					.footer-nav-block
+						span Сервис
+						+navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+					.footer-nav-block
+						span Моддинг
+						+navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+					.footer-nav-block
+						span О Компании
+						+navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+			div
+				div
+					div 2018, © LUXURY MODE. Все Права Защищены.
+					div
+						a(href="javascript: void(0)" onclick="alert(':(');") Политика конфиденциальности
+						a(href="mailto:info@luxurymod.ru") info@luxurymode.ru
+

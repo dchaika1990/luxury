@@ -1,0 +1,8 @@
+@media (max-width: 1600px) {
+  .top-line {
+    padding-left: 15px;
+    padding-right: 15px; }
+    .top-line .main-menu-wrapper .main-menu .arrow {
+      margin-bottom: 7px; }
+    .top-line .main-menu-wrapper .main-menu li a {
+      font-size: 12px; } }

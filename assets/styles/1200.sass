@@ -1,0 +1,898 @@
+// neskolko kollektsiy media styles
+@media all and (max-width: 1200px)
+
+  // header
+
+  .main-header
+    .logo-block
+      height: 55px
+      width: auto
+    .header-center-text
+      max-width: 600px
+
+      .styled-btn
+        padding: 13px 28px
+        height: 43px
+        margin-top: 0
+      .main-hd
+        font-size: 36px
+        line-height: 45px
+      .desc
+        font-size: 14px
+        line-height: 24px
+
+  .top-line
+    .main-menu-wrapper
+      width: auto
+      margin-left: 10px
+      .main-menu
+
+        & > li + li
+          margin-left: 13px
+
+        .arrow
+          margin-bottom: 7px
+        li
+          a
+            font-size: 10px
+          .submenu
+            li
+              a
+                font-size: 10px
+              .submenu
+              li
+                a
+                  font-size: 10px
+    .lang-wrapper
+      display: none
+      &.mobile
+        display: flex
+        position: relative
+        padding: 17px 0
+        font-size: 10px
+
+        & > .lang-block
+          margin-left: 0
+
+        .arrow
+          margin-left: 9px
+          position: relative
+          width: 5px
+          flex-shrink: 0
+          height: 10px
+          display: inline-block
+          order: 2
+          margin-bottom: 5px
+
+          &::before, &::after
+            position: absolute
+            content: ''
+            width: 1px
+            height: 6px
+            top: 50%
+            background-color: #fff
+          &::before
+            left: 0
+            transform: rotate(-45deg)
+            transition: all .3s ease-in-out
+          &::after
+            right: 0
+            transform: rotate(45deg)
+            transition: all .3s ease-in-out
+        &:hover .arrow
+          &::before
+            transform: rotate(45deg)
+            transition: all .3s ease-in-out
+          &::after
+            transform: rotate(-45deg)
+            transition: all .3s ease-in-out
+
+        &:hover .lang-submenu
+          display: block
+        .lang-submenu
+          margin: 0
+          display: none
+          position: absolute
+          list-style: none
+          top: 100%
+          left: -8px
+          background: #222221
+          color: #000
+          padding-left: 0
+          z-index: 100
+
+          li
+            padding: 10px
+            .lang-block
+              margin-left: 0
+
+            &:hover
+              background-color: #3c3c3c;
+    .user-wrapper
+      .inner-basket
+        font-size: 10px
+        margin-top: 0
+        margin-bottom: 3px
+    &.sticky
+      .lang-wrapper
+        &.mobile
+          display: flex
+
+          .arrow
+            &::before, &::after
+              background-color: #000
+          .lang-submenu
+            .lang-block
+              color: #8f8e8e
+              &.active
+                color: #fff;
+
+  // navbar
+
+  .navbar-menu
+    padding-left: 15px
+
+  // index page block
+
+  .moddings
+    padding: 100px 75px 75px 75px
+    .moddings-slider
+      .modding-block
+        .desc-wrapper
+          .desc-block
+            width: 100%
+
+            .title
+              font-size: 30px
+            .desc
+              font-size: 12px
+              padding: 0 20px
+              line-height: 18px
+              margin-bottom: 0
+
+            & > a
+              padding: 13px 28px
+              height: 43px
+
+  .matacs
+    padding: 100px 130px 75px 130px
+
+    &::after
+      width: 95%
+
+    .ma-wrapper
+      height: 300px
+
+      img
+        max-width: 100%
+        height: 100%
+        width: 100%
+      .desc-wrapper
+        .desc-block
+          width: 100%
+          .title
+            font-size: 30px
+          .desc
+            font-size: 12px
+            padding: 0 60px
+            margin-bottom: 0
+            line-height: 24px
+          & > a.styled-btn
+            padding: 13px 28px
+            height: 43px
+
+  .repairs
+    padding: 150px 75px 0 75px
+    .bg-text
+      font-size: 85px
+      font-weight: 500
+      letter-spacing: 15px
+      top: 40px
+      right: 0
+    .repairs-slider
+      .rep-wrapper
+        img
+          width: 100%
+        .desc-wrapper
+          .desc-block
+            .title
+              font-size: 36px;
+      .slide > a
+        margin-top: 0
+        padding: 13px 28px
+        height: 43px
+  .contacts
+    padding: 100px 0 100px 75px
+    .map-wrapper
+      height: 350px
+    .contacts-wrapper
+      margin-top: 30px
+      .main-title
+        font-size: 24px
+      .desc-block
+        font-size: 12px
+        margin-bottom: 28px
+        .title
+          margin-bottom: 10px
+        a
+          font-size: 12px
+          margin-bottom: 10px
+    &::after
+      height: 47%
+      top: 50%
+
+  // Header-light
+  .light-header
+    padding: 2.7em 0
+
+    & > div
+
+    // navigation styles
+    & > div:first-child
+      margin: 0 2em
+
+      & > div
+
+      .popup-navigation
+
+        .original-nav-container
+
+        & > .slick-carousel-container
+
+      .popup-navigation.active
+
+        .original-nav-container
+
+          & > div:first-child
+
+            & > div:first-child
+
+            & > div:last-child
+
+              & > a
+
+              & > a:hover
+
+              & > a.active
+
+          & > nav
+
+            & > ul
+
+              & > li
+
+                & > a
+
+                & > ul
+
+                  & > li
+
+                    & > a
+
+        & > .slick-carousel-container
+
+          .slick-disabled
+
+          & > div:nth-child(1)
+
+            & > div:nth-child(1)
+
+            .slick-carousel-back
+
+            .slick-carousel-back:after
+
+          & > div:nth-child(2)
+
+            & > .top-arrow
+
+          & > .slick-carousel
+
+            .nav-carousel-element-container
+
+              .nav-carousel-element
+
+          & > div:nth-child(4)
+
+            & > .bottom-arrow
+
+        & > div:last-child
+
+          & > a:first-child
+
+            & > div:nth-child(1)
+
+            & > div:nth-child(2)
+
+            & > div:nth-child(3)
+
+          & > div:last-child
+
+            & > ul
+
+              & > li
+
+                & > a
+
+              & > li:nth-child(1)
+
+                & > a
+
+              & > li:nth-child(2)
+
+                & > a
+
+              & > li:nth-child(3)
+
+                & > a
+
+              & > li:nth-child(4)
+
+                & > a
+
+              & > li:nth-child(5)
+
+                & > a
+
+              & > li:last-child
+
+                & > a
+
+              & > li:hover
+
+                & > a
+
+    // share and cart styles
+    & > div:last-child
+      margin: 0 2em
+
+      & > div
+
+      // share menu
+      & > div:first-child
+
+        & > .header-socials
+
+      & > div.active:first-child
+
+        & > .header-socials
+
+          & > ul
+
+            & > li
+
+              & > a
+
+            & > li:nth-child(1)
+
+              & > a
+
+            & > li:nth-child(2)
+
+              & > a
+
+            & > li:nth-child(3)
+
+              & > a
+
+            & > li:nth-child(4)
+
+              & > a
+
+            & > li:nth-child(5)
+
+              & > a
+
+            & > li:nth-child(6)
+
+              & > a
+
+            & > li:hover
+
+              & > a
+
+      // cart popup styles
+      & > div:last-child
+
+        & > div:first-child
+
+        & > div:nth-child(2)
+
+        & > .cart-popup-header
+          right: -0.5em
+
+      & > div.active:last-child
+
+        & > div:nth-child(2)
+
+        & > .cart-popup-header
+          right: -0.5em
+
+          & > table
+
+            & > tbody
+
+              & > tr
+
+                & > td
+
+                & > td:nth-child(1)
+
+                  & > a
+
+                    & > img
+
+                & > td:nth-child(2)
+
+                  & > a
+
+                & > td:nth-child(3)
+
+                & > td:nth-child(4)
+
+              & > tr:last-child
+
+                & > td
+
+          & > div:last-child
+
+            & > div:first-child
+
+              & > div:first-child
+
+              & > div:last-child
+
+                & > div:first-child
+
+                & > div:last-child
+
+            & > div:last-child
+
+              & > a
+                margin-top: 0
+                font-size: 0.9em
+
+  //modding page
+
+  .block-left
+    width: 360px
+    .desc-block
+      max-width: 285px
+      .title
+        font-size: 24px
+      .price
+        font-size: 24px
+        margin-bottom: 0
+        .currency
+          font-size: 16px
+      & > a
+        margin-bottom: 30px
+        min-width: 165px
+      .desc
+        font-size: 12px
+  .text
+    padding: 40px 100px 70px 100px
+    min-height: 360px
+    .logo-block
+      padding-bottom: 30px
+    .text-block
+      font-size: 12px
+      line-height: 30px
+      margin-bottom: 0
+
+    & > a
+      min-width: 165px
+  .gallery
+    & > a
+      min-width: 165px
+    div:last-child > a
+      margin-top: 0
+
+  // page blocks
+  .neskolko-kollektsiy-continer-block
+
+  .neskolko-kollektsiy-content-block
+
+  .neskolko-kollektsiy-name-block
+    font-size: 1.4em
+    font-weight: 300
+    margin-bottom: 1.4em
+
+  .neskolko-kollektsiy-description-block
+    font-size: 0.8em
+
+  // structure styles
+  // base styles
+  main
+
+    // fixed side controls
+    #neskolko-kollektsiy-side-controls
+
+      & > ul
+
+        & > li
+
+          & > div
+
+        // actions on hovering on control
+        & > li:hover
+
+          & > div:last-child
+
+            & > div:first-child
+
+            & > div:last-child
+
+        // actions on activating control
+        & > li.active
+
+          & > div:last-child
+
+            & > div:first-child
+
+            & > div:last-child
+
+        & > li.arrow:before
+
+        & > li.arrow
+
+        // removing arrow in first item
+        & > li.active:first-child:before
+
+    // front block
+    #neskolko-kollektsiy-front-block
+
+      // header styles
+      & > header
+        padding: 2.7em 0
+
+        & > div
+
+        // navigation styles
+        & > div:first-child
+          margin: 0 2em
+
+          & > div
+
+          .popup-navigation
+
+            .original-nav-container
+
+            & > .slick-carousel-container
+
+          .popup-navigation.active
+
+            .original-nav-container
+
+              & > div:first-child
+
+                & > div:first-child
+
+                & > div:last-child
+
+                  & > a
+
+                  & > a:hover
+
+                  & > a.active
+
+              & > nav
+
+                & > ul
+
+                  & > li
+
+                    & > a
+
+                    & > ul
+
+                      & > li
+
+                        & > a
+
+            & > .slick-carousel-container
+
+              .slick-disabled
+
+              & > div:nth-child(1)
+
+                & > div:nth-child(1)
+
+                .slick-carousel-back
+
+                .slick-carousel-back:after
+
+              & > div:nth-child(2)
+
+                & > .top-arrow
+
+              & > .slick-carousel
+
+                .nav-carousel-element-container
+
+                  .nav-carousel-element
+
+              & > div:nth-child(4)
+
+                & > .bottom-arrow
+
+            & > div:last-child
+
+              & > a:first-child
+
+                & > div:nth-child(1)
+
+                & > div:nth-child(2)
+
+                & > div:nth-child(3)
+
+              & > div:last-child
+
+                & > ul
+
+                  & > li
+
+                    & > a
+
+                  & > li:nth-child(1)
+
+                    & > a
+
+                  & > li:nth-child(2)
+
+                    & > a
+
+                  & > li:nth-child(3)
+
+                    & > a
+
+                  & > li:nth-child(4)
+
+                    & > a
+
+                  & > li:nth-child(5)
+
+                    & > a
+
+                  & > li:last-child
+
+                    & > a
+
+                  & > li:hover
+
+                    & > a
+
+        // share and cart styles
+        & > div:last-child
+          margin: 0 2em
+
+          & > div
+
+          // share menu
+          & > div:first-child
+
+            & > .header-socials
+
+          & > div.active:first-child
+
+            & > .header-socials
+
+              & > ul
+
+                & > li
+
+                  & > a
+
+                & > li:nth-child(1)
+
+                  & > a
+
+                & > li:nth-child(2)
+
+                  & > a
+
+                & > li:nth-child(3)
+
+                  & > a
+
+                & > li:nth-child(4)
+
+                  & > a
+
+                & > li:nth-child(5)
+
+                  & > a
+
+                & > li:nth-child(6)
+
+                  & > a
+
+                & > li:hover
+
+                  & > a
+
+          // cart popup styles
+          & > div:last-child
+
+            & > div:first-child
+
+            & > div:nth-child(2)
+
+            & > .cart-popup-header
+              right: -0.5em
+
+          & > div.active:last-child
+
+            & > div:nth-child(2)
+
+            & > .cart-popup-header
+              right: -0.5em
+
+              & > table
+
+                & > tbody
+
+                  & > tr
+
+                    & > td
+
+                    & > td:nth-child(1)
+
+                      & > a
+
+                        & > img
+
+                    & > td:nth-child(2)
+
+                      & > a
+
+                    & > td:nth-child(3)
+
+                    & > td:nth-child(4)
+
+                  & > tr:last-child
+
+                    & > td
+
+              & > div:last-child
+
+                & > div:first-child
+
+                  & > div:first-child
+
+                  & > div:last-child
+
+                    & > div:first-child
+
+                    & > div:last-child
+
+                & > div:last-child
+
+                  & > a
+                    margin-top: 0
+                    font-size: 0.9em
+      // header styles
+
+
+      // front block
+      & > div:last-child
+        max-width: 54%
+
+        & > div:first-child
+          margin-bottom: 1.1em
+          font-size: 1.8em
+
+        & > div:last-child
+          line-height: 2.3em
+
+    // collections blocks
+    #neskolko-kollektsiy-kollektsii
+
+      & > div
+
+        & > div
+          height: 25em
+
+          & > div
+
+            & > div:first-child
+
+            & > div:nth-child(2)
+
+            & > .neskolko-kollektsiy-animated-block
+              display: none
+
+            & > .neskolko-kollektsiy-animated-block-tablet
+              display: block
+
+            & > div:nth-child(6)
+
+              & > .neskolko-kollektsiy-animated-block-mobile
+
+  // footer styles
+  footer
+
+    & > div:first-child
+      padding: 2.4em 0 0
+
+      & > div:first-child
+        padding: 0 0 0 1em
+        width: 48%
+
+        & > .footer-socials
+
+          & > ul
+
+            & > li
+
+              & > span
+
+            & > li:hover
+
+            & > li:nth-child(1)
+
+              & > span
+
+            & > li:nth-child(2)
+
+              & > span
+
+            & > li:nth-child(3)
+
+              & > span
+
+            & > li:nth-child(4)
+
+              & > span
+
+            & > li:nth-child(5)
+
+              & > span
+
+        & > .footer-contacts
+
+          & > div
+
+            & > a
+
+          & > div:before
+
+          & > .phones:before
+
+          & > .address:before
+
+          & > .email:before
+
+          & > .work-hours:before
+
+      & > div:last-child
+        padding: 0.7em 0
+
+        & > .footer-nav-block
+          padding: 0 2%
+          width: 46%
+
+          & > span
+            font-size: 0.82em
+            margin: 0 0 2.3em
+
+          & > ul
+            font-size: 0.8em
+            line-height: 1.8em
+
+            & > li
+
+              & > a
+
+              & > a:hover
+
+    & > div:last-child
+
+      & > div
+        padding: 2.1em 0 2.5em
+
+        & > div
+          padding: 0 1em
+
+        & > div:first-child
+
+        & > div:last-child

@@ -1,0 +1,732 @@
+//- navigations list
+mixin navList(texts, hrefs)
+	ul
+		each text, key in texts
+			li
+				if hrefs[key]
+					a(href=hrefs[key])= text
+				else
+					a(href="javascript: void(0)" onclick="alert(':(');")= text
+
+//- socials list
+mixin socialsList(hrefs)
+	ul
+		each link in hrefs
+			li
+				span(onclick="window.open( '"+link+"', '_blank');")
+
+//- menu html
+mixin menuToggle()
+	.menu-toggle
+		.hamburger
+			- for (var x = 0; x < 3; x++)
+				span
+		.hamburger-open
+			- for (var x = 0; x < 3; x++)
+				span
+
+//- menu html
+mixin menuToggleOpen()
+	.menu-toggle
+		.hamburger-open
+			- for (var x = 0; x < 3; x++)
+				span
+
+//- socials list
+mixin socialsListHeader(hrefs)
+	ul
+		li(onClick='event.stopPropagation(); $(".popup-header, .menu-toggle").removeClass("active");')
+			a(href="javascript:void(0)" rel="noopener")
+		each link in hrefs
+			li
+				a(href=link target="_blank" rel="noopener")
+
+//- menu mixin
+mixin navItem(url, name, current)
+	li.nav-item(class={active: current})
+		a(href=url)= name
+
+mixin list(data)
+	ul.main-nav
+		each item in data.items
+			li= item.title
+				a(href="#")=title
+					if item.sublevel
+						+list(item)
+
+- var data = {"title": "Title text", "items": [{"title": "Item 1"}, {"title": "Item 2", "sublevel": true, "items": [{"title": "Item 2.1"}, {"title": "Item 2.2"}, {"title": "Item 2.2", "sublevel": true, "items": [{"title": "Item 2.2.1"}, {"title": "Item 2.2.2"}, {"title": "Item 2.2.3"}]}]}, {"title": "Item 3"}]}
+//- arrays
+//- collections
+- var kollektsii = {1:{1:'b1.jpg',2:'b2.jpg',3:'h1.png',4:'h1.png'},2:{1:'b3.jpg',2:'b4.jpg',3:'h2.png',4:'h2.png'},3:{1:'b1.jpg',2:'b2.jpg',3:'h1.png',4:'h1.png'}};
+//- menu collections
+- var nav = [{url: 'collectcii.html', name: 'Колекции'}, {url: 'modding.html', name: 'Моддинг'}, {url: 'personality.html', name: 'Персонализация'}, {url: 'branding.html', name: 'Брендирование'}, {url: 'services.html', name: 'Сервис'}, {url: 'about.html', name: 'О компании'}];
+
+//- document start
+doctype html
+html(lang="ru")
+	head
+		meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		meta(name="description" content="Несколько Коллекций")
+		meta(name="theme-color" content="#ffffff")
+		link(rel="manifest" href="assets/favicons/manifest.json")
+		link(rel="apple-touch-icon", sizes="180x180", href="assets/favicons/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="assets/favicons/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="assets/favicons/favicon-16x16.png")
+		link(rel="manifest", href="assets/favicons/site.webmanifest")
+		link(rel="mask-icon", href="assets/favicons/safari-pinned-tab.svg", color="#5bbad5")
+		link(rel="shortcut icon", href="assets/favicons/favicon.ico")
+		meta(name="msapplication-TileColor", content="#da532c")
+		meta(name="msapplication-config", content="assets/favicons/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+		title Главная
+		link(rel="stylesheet" href="assets/styles/animate.css")
+		link(rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css")
+		link(rel="stylesheet" href="assets/styles/map.css")
+		link(rel="stylesheet" href="assets/styles/style.css")
+
+		//- style
+			include assets/styles/style.css
+		//- style
+			include assets/styles/slick-carousel-1.8.1.css
+
+		// Animation
+		script(src="assets/scripts/wow.min.js")
+		// Yandex map
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+		// Scripts
+		script(src="assets/scripts/script.js" defer)
+		script new WOW().init()
+
+body(style="overflow: hidden; height: 0; opacity: 0;")
+
+		.top-menu.left-navbar.main-left-navbar
+			ul.navbar-menu
+				li.navbar-item
+					span.sl_lt Block 1
+					a(href="#b_1")
+						.hover-object
+							div
+							div 1 - О коллекции
+				li.navbar-item
+					span.sl_lt Block 2
+					a(href="#b_2")
+						.hover-object
+							div
+							div 2 - моддинги
+				li.navbar-item
+					span.sl_lt Block 3
+					a(href="#b_3")
+						.hover-object
+							div
+							div 3 - материалы и аксессуары
+				li.navbar-item
+					span.sl_lt Block 4
+					a(href="#b_4")
+						.hover-object
+							div
+							div 4 - ремонт
+				li.navbar-item
+					span.sl_lt Block 5
+					a(href="#b_5")
+						.hover-object
+							div
+							div 5 - контакты
+
+		//- ХЭДЕР
+		header#b_1.main-header
+
+			.top-line
+				.logo-block
+					a(href="/")
+						img.white(src="assets/images/--plus--/white-logo.png" alt="Логотип")
+						img.black(src="assets/images/--plus--/logo_black.png" alt="Логотип")
+				.main-menu-wrapper
+					.open-menu(style='display: none')
+						span
+					.menu-wrapper
+						ul.main-menu
+							li
+								span.arrow
+								a(href='javascript:void(0)') Колекции
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+									li.hassub
+										a(href='#') Название коллекции может быть в 2 или более строки
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') коллекции чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') коллекции чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+							li.hassub
+								span.arrow
+								a(href='javascript:void(0)') Моддинг
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России1
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Часов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+							li
+								span.arrow
+								a(href='#') Персонализация
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+											li
+												a(href='#') Коллекции россии коллекции Динамо
+									li.hassub
+										a(href='#') Название коллекции может быть в 2 или более строки
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') коллекции чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+									li.hassub
+										a(href='#') коллекции чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+							li
+								span.arrow
+								a(href='#') Брендирование
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России1
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Часов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+							li
+								span.arrow
+								a(href='#') Сервис
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России1
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Часов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+							li
+								span.arrow
+								a(href='#') О компании
+								ul.submenu
+									li.hassub
+										a(href='#') Коллекции наушников
+										ul.submenu
+											li
+												a(href='#') Коллекции России1
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Чехлов
+										ul.submenu
+											li
+												a(href='#') Коллекции России2
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+									li.hassub
+										a(href='#') Коллекции Часов
+										ul.submenu
+											li
+												a(href='#') Коллекции России3
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+											li
+												a(href='#') Коллекции России
+											li
+												a(href='#') Коллекции Динамо
+				.user-wrapper
+
+					.popup-header.socials-wrapper(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
+
+						.header-socials
+
+							+socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+				.user-wrapper
+					div(style='display: none')
+					.popup-header.main-basket.inner-basket(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}") 50000 РУБ
+
+						.quantity 2
+
+						div
+
+						.cart-popup-header
+
+							table
+
+								tbody
+
+									- for (var x = 0; x < 3; x++)
+
+									tr
+
+										td
+
+											a(href="javascript:void(0)" onclick="alert(':(');")
+
+												img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
+
+										td
+
+											a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
+
+										td 1 шт
+
+										td 5000 руб
+
+							div
+
+								div
+
+									div Итого:
+
+									div
+
+										div 2 шт
+
+										div 10000 руб
+
+								div
+
+									a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
+
+				.lang-wrapper
+					.lang-block.active РУС
+					.lang-block EN
+				.lang-wrapper.mobile
+					.lang-block.active РУС
+					span.arrow
+					ul.lang-submenu
+						li
+							.lang-block.active РУС
+						li
+							.lang-block EN
+
+			.top-line-mobile
+				div
+					div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
+						+menuToggle()
+
+					.popup-navigation(class="popup-header")
+						.original-nav-container
+							div
+								div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+									+menuToggleOpen()
+								div
+									a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
+									a(href="javascript: void(0)" onclick="alert(':(');") En
+							nav
+								ul
+									li
+										a.nav-animation(href="/tesst.html") колекции
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников','Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+									li
+										a.nav-animation(href="/tesst.html") моддинг
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+									li
+										a.nav-animation(href="/tesst.html") персонализация
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+									li
+										a.nav-animation(href="/tesst.html") брендирование
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+									li
+										a.nav-animation(href="/tesst.html") сервис
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+									li
+										a.nav-animation(href="/tesst.html") о компании
+										+navList(['Коллекции наушников', 'Название коллекции может быть в 2 или более строки', 'Коллекции наушников', 'коллекции чехлов', 'Коллекции наушников'], [])
+
+
+						.slick-carousel-container
+							div
+								div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+									+menuToggleOpen()
+								.slick-carousel-back
+							div
+								.top-arrow
+							.slick-carousel
+							div
+								.bottom-arrow
+						div
+							a(href="javascript: void(0)" onclick="alert(':(');")
+								div
+								div 3 шт
+								div 10000 руб
+							div
+								+socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+
+				.logo-block
+					a(href="/")
+						img.white(src="assets/images/--plus--/white-logo.png" alt="Логотип")
+						img.black(src="assets/images/--plus--/logo_black.png" alt="Логотип")
+			//- текст по центру шапки
+			.header-center-wrapper
+				.header-center-text
+					.main-hd
+						| Lorem Ipsum
+					.desc
+						| Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.Lorem Ipsum - это текст-"рыба".Lorem Ipsum не только успешно пережил без заметных изменений пять веков
+					a.styled-btn(href='javascript:void(0)') Подробнее
+		//- КОНТЕНТ
+		main
+			section#b_2.moddings
+				.moddings-slider
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="0s")
+							img(src="assets/images/--plus--/modding-img1.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="0.3s")
+							img(src="assets/images/--plus--/modding-img2.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="0.6s")
+							img(src="assets/images/--plus--/modding-img3.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="0.9s")
+							img(src="assets/images/--plus--/modding-img1.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="1.2s")
+							img(src="assets/images/--plus--/modding-img2.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+					.slide
+						.modding-block.wow.slideInUp(data-wow-duration="1s" data-wow-delay="1.5s")
+							img(src="assets/images/--plus--/modding-img3.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Lorem Ipsum
+									.desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+									a(href="javascript: void(0)") Подробнее
+			section#b_3.matacs
+				.materials-wrapper.ma-wrapper.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="0s")
+					img(src="assets/images/--plus--/material-img.jpg" alt="Материалы")
+					.desc-wrapper
+						.desc-block
+							.title Материалы
+							.desc ИСКУССТВО ПРЕЗЕНТАЦИИ ОТ LUXURY MOD
+							a(href="javascript: void(0)").styled-btn Подробнее
+				.accessory-wrapper.ma-wrapper.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="0.6s")
+					img(src="assets/images/--plus--/access-img.jpg" alt="аксессуары")
+					.desc-wrapper
+						.desc-block
+							.title Аксессуары
+							.desc ИСКУССТВО ПРЕЗЕНТАЦИИ ОТ LUXURY MOD
+							a(href="javascript: void(0)").styled-btn Подробнее
+			section#b_4.repairs
+				.bg-text Ремонт
+				.repairs-slider
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="0s")
+							img(src="assets/images/--plus--/rep-img1.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title iPhon
+						a(href="javascript: void(0)") Подробнее
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="0.3s")
+							img(src="assets/images/--plus--/rep-img2.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title iPad
+						a(href="javascript: void(0)") Подробнее
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="0.6s")
+							img(src="assets/images/--plus--/rep-img3.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Vertu
+						a(href="javascript: void(0)") Подробнее
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="0.9s")
+							img(src="assets/images/--plus--/rep-img1.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title iPhon
+						a(href="javascript: void(0)") Подробнее
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="1.2s")
+							img(src="assets/images/--plus--/rep-img2.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title iPad
+						a(href="javascript: void(0)") Подробнее
+					.slide
+						.rep-wrapper.wow.flipInX(data-wow-offset="200" data-wow-duration="1s" data-wow-delay="0.6s")
+							img(src="assets/images/--plus--/rep-img3.jpg" alt="")
+							.desc-wrapper
+								.desc-block
+									.title Vertu
+						a(href="javascript: void(0)") Подробнее
+			section#b_5.contacts
+				.contacts-wrapper
+					.main-title Главный офис
+					.desc-block
+						.title Телефоны:
+						a(href="tel:74991309111") +7 (499) 130-91-11
+						a(href="tel:88007008237") 8 (800) 700-82-37
+					.desc-block
+						.title E-mail:
+						a(href="mail:info@luxurymod.ru") mail:info@luxurymod.ru
+					.desc-block
+						.title Режим работы:
+						p пн—cб: c 10:00 до 21:00,
+						p воскресенье — выходной.
+					.desc-block
+						.title Адрес:
+						p 3-й Силикатный проезд, 4к1
+				.map-wrapper
+					div(id="map" class="map js-ymap graycart" data-conf-id="0" style="width: 100%; height: 100%")
+
+		//- ЗАТЕМНЕНИЕ
+		.overflow
+		//- ФУТЕР
+		footer.main-footer
+			.copyright 2018, © Luxury Mode. Все права защищены.
+			span.politics
+				a(href='#') Политика конфидициальности
+				|
+				|
+				a(href="#") info@luxurymode.ru

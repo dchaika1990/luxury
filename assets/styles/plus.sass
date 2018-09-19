@@ -1,0 +1,587 @@
+@import "images.sass"
+@import 'menu.sass'
+@import 'header.sass'
+
+$font-stack: Muller, Arial, sans-serif
+
+body
+  position: relative
+  font-family: $font-stack
+
+  & .left-side-nav
+    display: block
+    position: fixed
+    width: 40px
+    height: 100vh
+    top: 0
+    left: 0
+    z-index: 10
+
+    & ul
+      display: block
+      position: absolute
+      list-style: none
+      width: 40px
+      top: 50%
+      left: 0
+      padding: 0
+
+      & li
+        width: 20px
+        height: 20px
+        margin: 10px
+        & a
+          display: block
+          width: 20px
+          height: 20px
+          border-radius: 50%
+          border: 1px solid #ffffff
+          &.active
+            background: rgba(255, 255, 255, 1)
+
+.moddings
+  position: relative
+  padding: 160px 150px
+  z-index: 1
+  .moddings-slider
+    .modding-block
+      display: flex
+      justify-content: center
+      position: relative
+
+      img
+        width: 100%
+        height: 100%
+      .desc-wrapper
+        cursor: pointer
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        transition: all 0.5s ease-out
+
+        .desc-block
+          position: absolute
+          width: 400px
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          color: #ffffff
+          text-align: center
+          padding: 0px 25px
+          max-width: 400px
+          width: 100%
+          box-sizing: border-box
+
+          @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+          .title
+            font-size: 40px
+            line-height: 30px
+            margin-bottom: 30px
+            font-weight: 500
+          .desc
+            font-size: 16px
+            line-height: 24px
+            margin-bottom: 35px
+          & > a
+            font-size: 12px
+            padding: 19px 46px
+            border-radius: 35px
+            box-sizing: border-box
+            height: 55px
+
+            &::after
+              display: inline-block
+              top: 50%
+              transform: translateY(-60%)
+
+            &:hover
+              &::after
+                top: 50%
+                transform: translateY(-50%) rotate(180deg)
+        &:hover
+          background: rgba(0, 0, 0, 0.7)
+          transition: all 0.5s ease-out
+  &:after
+    display: block
+    position: absolute
+    content: ''
+    width: 100%
+    height: 50%
+    bottom: 0
+    left: 0
+    background: #F5F5F5
+    z-index: -1
+
+.matacs
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  position: relative
+  -webkit-justify-content: center
+  justify-content: center
+  align-items: center
+  padding: 150px 260px
+  z-index: 1
+  .ma-wrapper
+    position: relative
+    height: 650px
+    overflow: hidden
+    .desc-wrapper
+      cursor: pointer
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      transition: all 0.5s ease-out
+      .desc-block
+        position: absolute
+        width: 340px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        color: #ffffff
+        text-align: center
+        .title
+          font-size: 60px
+          font-weight: 500
+          margin-bottom: 30px
+        .desc
+          font-size: 24px
+          line-height: 36px
+          text-transform: uppercase
+          margin-bottom: 35px
+
+        & > a.styled-btn
+          font-size: 12px
+          padding: 19px 46px
+          border-radius: 35px
+          box-sizing: border-box
+          height: 55px
+
+          &::after
+            display: inline-block
+            top: 50%
+            transform: translateY(-60%)
+
+          &:hover
+            &::after
+              top: 50%
+              transform: translateY(-50%) rotate(180deg)
+
+        @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+      &:hover
+        background: rgba(0, 0, 0, 0.8)
+        transition: all 0.5s ease-out
+  &:after
+    display: block
+    position: absolute
+    content: ''
+    width: 90%
+    height: 60%
+    bottom: 0
+    right: 0
+    background: #F5F5F5
+    z-index: -1
+
+.repairs
+  position: relative
+  padding: 220px 190px 0px
+
+  .bg-text
+    display: block
+    position: absolute
+    color: #f5f5f5
+    font-size: 170px
+    line-height: 170px
+    top: 100px
+    right: 160px
+
+  .repairs-slider
+    @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+    .slide
+      @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+      text-align: center
+
+      & > a
+        border: 1px solid #010101
+        color: #010101
+        font-size: 12px
+        padding: 19px 46px
+        border-radius: 35px
+        box-sizing: border-box
+        height: 55px
+
+
+        &:hover
+          background-color: #010101
+          color: #fff
+        &::after
+          display: inline-block
+          top: 50%
+          transform: translateY(-60%)
+          content: ''
+          background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+          width: 27px
+          height: 9px
+
+        &:hover::after
+          content: ''
+          background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+          top: 50%
+          transform: translateY(-50%) rotate(180deg)
+
+    .rep-wrapper
+      position: relative
+      margin-bottom: 30px
+      margin-left: 15px
+      margin-right: 15px
+      display: flex
+      justify-content: center
+      max-height: 530px
+
+      img
+        max-width: 100%
+      //height: 100%
+
+      .desc-wrapper
+        cursor: pointer
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+
+        .desc-block
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          color: #ffffff
+          text-align: center
+
+          .title
+            font-size: 50px
+
+.contacts
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  -webkit-justify-content: space-around
+  justify-content: space-around
+  align-items: center
+  position: relative
+  padding: 220px 100px 60px 130px
+  z-index: 1
+  .contacts-wrapper
+    margin-top: 128px
+    flex-shrink: 0
+    max-width: 250px
+    .main-title
+      color: #222221
+      font-size: 36px
+      margin-bottom: 15px
+      font-weight: 500
+    .desc-block
+      color: #222221
+      font-size: 16px
+      margin-bottom: 44px
+      .title
+        margin-bottom: 15px
+      p
+        margin-bottom: 15px
+      a
+        display: block
+        color: #222221
+        font-size: 16px
+        width: 100%
+        margin-bottom: 15px
+        text-decoration: none
+  .map-wrapper
+    max-width: 1330px
+    width: 100%
+    height: 700px
+    overflow: hidden
+    padding-left: 30px
+
+  &:after
+    display: block
+    position: absolute
+    content: ''
+    width: 90%
+    height: 52%
+    top: 57%
+    right: 0
+    background: #F5F5F5
+    transform: translateY(-50%)
+    z-index: -1
+
+.main-footer
+  box-sizing: border-box
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  -webkit-justify-content: space-around
+  justify-content: space-between
+  -webkit-flex-direction: row
+  flex-direction: row
+  background: #F5F5F5
+  padding: 0 130px
+  font-size: 12px
+  color: #080808
+  text-transform: uppercase
+  height: 100px
+  & div:first-child
+    max-width: inherit
+    width: inherit
+    padding: 0
+  a
+    color: #080808
+    font-size: 12px
+    line-height: 24px
+    text-decoration: none
+    transition: all 0.3s ease-out
+    &:hover
+      opacity: 0.8
+      transition: all 0.3s ease-out
+
+.overflow
+  height: 100vh
+  width: 100%
+  background-color: #000000
+  box-shadow: 0px 94px 104px 33px rgba(0, 0, 0, 0.9)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 999
+
+  &.hidden
+    transform: translateY(-200%)
+    transition: all 4s ease-in-out
+
+/*Page modding*/
+
+.block-left
+  position: absolute
+  z-index: 20
+  height: 100%
+  width: 500px
+  background-color: rgba(23, 23, 23, .5)
+  color: #fff
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  .desc-block
+    max-width: 300px
+    width: 100%
+    text-align: center
+    @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+    .title
+      font-weight: 500
+      font-size: 30px
+      line-height: 36px
+      text-transform: uppercase
+      margin-bottom: 35px
+    .price
+      font-weight: 500
+      font-size: 30px
+      margin-bottom: 35px
+
+      .currency
+        font-size: 18px
+        text-transform: uppercase
+    & > a
+      @extend .reset-a
+      margin-bottom: 35px
+      min-width: 193px
+      font-size: 12px
+      padding: 19px 46px
+      border-radius: 35px
+      box-sizing: border-box
+      height: 55px
+
+      &::after
+        display: inline-block
+        top: 50%
+        transform: translateY(-60%)
+
+      &:hover
+        &::after
+          top: 50%
+          transform: translateY(-50%) rotate(180deg)
+    .desc
+      font-size: 14px
+      line-height: 24px
+.text
+  min-height: 545px
+  padding: 90px 200px 75px 200px
+  text-align: center
+  color: #010101
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+  .logo-block
+    padding-bottom: 50px
+  .text-block
+    font-size: 17px
+    line-height: 36px
+    margin-bottom: 35px
+
+    p.hide
+      display: none
+
+  & > a
+    @extend .reset-a
+    border: 1px solid #010101
+    color: #010101
+    font-size: 12px
+    padding: 19px 46px
+    border-radius: 35px
+    box-sizing: border-box
+    height: 55px
+    &:hover
+      background-color: #010101
+      color: #fff
+    &::after
+      display: inline-block
+      top: 50%
+      transform: translateY(-60%)
+      content: ''
+      background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+      width: 27px
+      height: 9px
+
+    &:hover::after
+      content: ''
+      background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+.gallery
+  padding: 0 35px 100px 35px
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+  .img-wrap
+    width: 33.3%
+    padding: 25px
+    box-sizing: border-box
+    transition: background 0.5s ease-out
+    cursor: pointer
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      top: 25px
+      bottom: 28px
+      left: 25px
+      right: 25px
+      z-index: 10
+      background: rgba(0, 0, 0, 0)
+
+    &:hover
+      &::before
+        background: rgba(0, 0, 0, 0.7)
+        transition: background 0.5s ease-out
+
+  .all-img
+    margin-top: 20px
+    text-align: center
+    font-size: 18px
+    letter-spacing: 3px
+    color: #888888
+    width: 100%
+
+  div:last-child
+    margin: 35px auto 0 auto
+    text-align: center
+    @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+
+    & > a
+      @extend .reset-a
+      border: 1px solid #010101
+      color: #010101
+      font-size: 12px
+      padding: 19px 46px
+      border-radius: 35px
+      box-sizing: border-box
+      height: 55px
+      &:hover
+        background-color: #010101
+        color: #fff
+      &::after
+        display: inline-block
+        top: 50%
+        transform: translateY(-60%)
+        content: ''
+        background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+        width: 27px
+        height: 9px
+
+      &:hover::after
+        content: ''
+        background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+        top: 50%
+        transform: translateY(-50%) rotate(180deg)
+
+  img
+    object-fit: cover
+    width: 100%
+    max-height: 100%
+
+// Carousel
+
+#wrapper_bu
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.holder_bu_center
+  z-index: 2
+  position: absolute
+  top: 3%
+  left: 2%
+  width: 70%
+  height: 94%
+  background-color: transparent
+  transition: width 1s, height 1s, top 1s, left 1s
+
+
+.holder_bu_awayR1
+  z-index: 1
+  position: absolute
+  top: 11%
+  left: 59%
+  width: 23%
+  bottom: 11%
+  background-color: transparent
+  transition: width 1s, height 1s, top 1s, left 1s
+
+
+.holder_bu_awayR2
+  z-index: 0
+  position: absolute
+  top: 23%
+  left: 75%
+  width: 16%
+  height: 58%
+  background-color: transparent
+  transition: width 1s, height 1s, top 1s, left 1s
+

@@ -1,0 +1,189 @@
+@media all and (max-width: 650px) {
+  .main-header {
+    height: 600px; }
+  .top-line-mobile {
+    padding-top: 20px;
+    padding-bottom: 0; }
+    .top-line-mobile > div:first-child .popup-navigation.active {
+      width: 18em;
+      height: 35.5em;
+      padding: 1.3em 1.2em;
+      left: -1.4em;
+      top: 0; }
+  .light-header {
+    padding: 0.8em 0;
+    position: static;
+    z-index: 30;
+    position: relative; }
+    .light-header > div:first-child {
+      margin: 0 1em; }
+      .light-header > div:first-child .popup-navigation.active {
+        width: 18em;
+        height: 35.5em;
+        padding: 1.3em 1.2em;
+        left: -1.4em; }
+        .light-header > div:first-child .popup-navigation.active .original-nav-container > div:first-child > div:last-child {
+          font-size: 0.8em; }
+        .light-header > div:first-child .popup-navigation.active .original-nav-container > nav {
+          margin: 4.1em 0; }
+          .light-header > div:first-child .popup-navigation.active .original-nav-container > nav > ul > li > a {
+            height: 3em; }
+        .light-header > div:first-child .popup-navigation.active > .slick-carousel-container > div:nth-child(2) {
+          margin: 2.8em 0 0 0; }
+        .light-header > div:first-child .popup-navigation.active > .slick-carousel-container > .slick-carousel .nav-carousel-element-container .nav-carousel-element {
+          height: 3em; }
+        .light-header > div:first-child .popup-navigation.active > div:last-child {
+          display: block;
+          padding: 0 1.8em;
+          font-size: 0.8em;
+          letter-spacing: 0.03em; }
+          .light-header > div:first-child .popup-navigation.active > div:last-child > a:first-child > div:nth-child(1) {
+            width: 1.7em;
+            height: 1.7em;
+            margin: 0 1.7em 0 0; }
+          .light-header > div:first-child .popup-navigation.active > div:last-child > a:first-child > div:nth-child(2) {
+            margin: 0 1.5em 0 0; }
+          .light-header > div:first-child .popup-navigation.active > div:last-child > div:last-child {
+            margin: 3.5em 0 0; }
+            .light-header > div:first-child .popup-navigation.active > div:last-child > div:last-child > ul > li {
+              margin: 0 1.8em 0.5em 0; }
+              .light-header > div:first-child .popup-navigation.active > div:last-child > div:last-child > ul > li > a {
+                width: 2.2em;
+                height: 2.2em; }
+    .light-header > div:last-child {
+      display: none; }
+  #wrapper_bu {
+    position: relative;
+    height: 100%;
+    margin-top: -66px; }
+  .holder_bu_center {
+    width: 82%; }
+  .holder_bu_awayR1 {
+    width: 39%; }
+  .header-wrap {
+    height: 600px; }
+  .block-left {
+    margin-top: -66px;
+    height: 100%;
+    width: 218px;
+    padding: 70px 20px 0 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    .block-left .desc-block .title {
+      font-size: 18px; }
+  .text {
+    padding-left: 20px;
+    padding-right: 20px; }
+  .gallery .img-wrap {
+    width: 100%;
+    padding: 7px; }
+    .gallery .img-wrap::before {
+      top: 7px;
+      bottom: 10px;
+      left: 7px;
+      right: 7px; }
+  main #neskolko-kollektsiy-side-controls {
+    display: none; }
+  main #neskolko-kollektsiy-front-block > header {
+    padding: 0.8em 0;
+    position: static; }
+    main #neskolko-kollektsiy-front-block > header > div:first-child {
+      margin: 0 1em; }
+      main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active {
+        width: 18em;
+        height: 35.5em;
+        padding: 1.3em 1.2em;
+        left: -1.4em; }
+        main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active .original-nav-container > div:first-child > div:last-child {
+          font-size: 0.8em; }
+        main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active .original-nav-container > nav {
+          margin: 4.1em 0; }
+          main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active .original-nav-container > nav > ul > li > a {
+            height: 3em; }
+        main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > .slick-carousel-container > div:nth-child(2) {
+          margin: 2.8em 0 0 0; }
+        main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > .slick-carousel-container > .slick-carousel .nav-carousel-element-container .nav-carousel-element {
+          height: 3em; }
+        main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child {
+          display: block;
+          padding: 0 1.8em;
+          font-size: 0.8em;
+          letter-spacing: 0.03em; }
+          main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child > a:first-child > div:nth-child(1) {
+            width: 1.7em;
+            height: 1.7em;
+            margin: 0 1.7em 0 0; }
+          main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child > a:first-child > div:nth-child(2) {
+            margin: 0 1.5em 0 0; }
+          main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child > div:last-child {
+            margin: 3.5em 0 0; }
+            main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child > div:last-child > ul > li {
+              margin: 0 1.8em 0.5em 0; }
+              main #neskolko-kollektsiy-front-block > header > div:first-child .popup-navigation.active > div:last-child > div:last-child > ul > li > a {
+                width: 2.2em;
+                height: 2.2em; }
+    main #neskolko-kollektsiy-front-block > header > div:last-child {
+      display: none; }
+  main #neskolko-kollektsiy-front-block > div:last-child {
+    max-width: 79%; }
+    main #neskolko-kollektsiy-front-block > div:last-child > div:first-child {
+      font-size: 1.5em;
+      margin-bottom: 0.6em; }
+    main #neskolko-kollektsiy-front-block > div:last-child > div:last-child {
+      line-height: 2em; }
+  main #neskolko-kollektsiy-kollektsii > div > div {
+    height: 31.2em; }
+    main #neskolko-kollektsiy-kollektsii > div > div > div {
+      max-width: 91%; }
+      main #neskolko-kollektsiy-kollektsii > div > div > div > a {
+        display: none; }
+      main #neskolko-kollektsiy-kollektsii > div > div > div > .neskolko-kollektsiy-animated-block {
+        display: none; }
+      main #neskolko-kollektsiy-kollektsii > div > div > div > .neskolko-kollektsiy-animated-block-tablet {
+        display: none; }
+      main #neskolko-kollektsiy-kollektsii > div > div > div > div:nth-child(6) {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: -23.1em;
+        width: 100%;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+  footer > div:first-child > div:first-child {
+    padding: 0 2.2em;
+    width: auto;
+    -webkit-flex-shrink: initial;
+        -ms-flex-negative: initial;
+            flex-shrink: initial; }
+    footer > div:first-child > div:first-child > .footer-socials > ul {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      footer > div:first-child > div:first-child > .footer-socials > ul > li {
+        margin: 0 1.5em 0.5em 0; }
+      footer > div:first-child > div:first-child > .footer-socials > ul > li:last-child {
+        margin: 0; }
+  footer > div:first-child > div:last-child {
+    display: none; }
+  footer > div:last-child > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+            align-content: stretch;
+    text-align: center;
+    font-size: 0.5em;
+    line-height: 3em;
+    padding: 1.5em 0 2em; }
+    footer > div:last-child > div > div:last-child {
+      text-align: center; } }
