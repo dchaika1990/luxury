@@ -447,6 +447,7 @@ body
       display: none
 
   & > a
+    min-width: 215px
     @extend .reset-a
     border: 1px solid #010101
     color: #010101
@@ -485,6 +486,40 @@ body
     transition: background 0.5s ease-out
     cursor: pointer
     position: relative
+
+    .desc-drop
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      width: 100%
+      height: 100%
+      opacity: 0
+      transition: all 0.5s ease-out
+      padding: 40px
+      display: flex
+      text-align: center
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      box-sizing: border-box
+      color: #fff
+      z-index: 20
+
+      .title
+        font-weight: 500
+        font-size: 25px
+        line-height: 36px
+        text-transform: uppercase
+        margin-bottom: 35px
+      .price
+        font-weight: 500
+        font-size: 25px
+        margin-bottom: 35px
+        .currency
+          font-size: 18px
+          text-transform: uppercase
+
     &::before
       position: absolute
       content: ''
@@ -496,6 +531,9 @@ body
       background: rgba(0, 0, 0, 0)
 
     &:hover
+      .desc-drop
+        opacity: 1
+        transition: all 0.5s ease-out
       &::before
         background: rgba(0, 0, 0, 0.7)
         transition: background 0.5s ease-out
@@ -561,7 +599,13 @@ body
   width: 70%
   height: 94%
   background-color: transparent
-  transition: width 1s, height 1s, top 1s, left 1s
+  transition: width .5s, height .5s, top .5s, left .5s
+  &.big
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 999
 
 
 .holder_bu_awayR1
@@ -572,7 +616,7 @@ body
   width: 23%
   bottom: 11%
   background-color: transparent
-  transition: width 1s, height 1s, top 1s, left 1s
+  transition: width .5s, height .5s, top .5s, left .5s
 
 
 .holder_bu_awayR2
@@ -583,5 +627,28 @@ body
   width: 16%
   height: 58%
   background-color: transparent
-  transition: width 1s, height 1s, top 1s, left 1s
+  transition: width .5s, height .5s, top .5s, left .5s
 
+.close-slide
+  display: none
+  position: absolute
+  left: 70px
+  top: 50px
+  width: 40px
+  height: 40px
+  cursor: pointer
+  background: url("../images/--plus--/icon_close.png") no-repeat center / contain
+  &.show
+    display: block
+    z-index: 1000
+
+.arrow-mob
+  display: none
+  position: absolute
+  right: 20px
+  top: 50%
+  transform: translateY(-50%)
+  cursor: pointer
+  width: 37px
+  height: 25px
+  background: url("../images/--plus--/arrow-right-wh.png") no-repeat center / contain

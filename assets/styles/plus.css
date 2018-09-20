@@ -2132,6 +2132,7 @@ body {
     .text .text-block p.hide {
       display: none; }
   .text > a {
+    min-width: 215px;
     border: 1px solid #010101;
     color: #010101;
     font-size: 12px;
@@ -2185,6 +2186,55 @@ body {
     transition: background 0.5s ease-out;
     cursor: pointer;
     position: relative; }
+    .gallery .img-wrap .desc-drop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      -webkit-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      padding: 40px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      text-align: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      color: #fff;
+      z-index: 20; }
+      .gallery .img-wrap .desc-drop .title {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 36px;
+        text-transform: uppercase;
+        margin-bottom: 35px; }
+      .gallery .img-wrap .desc-drop .price {
+        font-weight: 500;
+        font-size: 25px;
+        margin-bottom: 35px; }
+        .gallery .img-wrap .desc-drop .price .currency {
+          font-size: 18px;
+          text-transform: uppercase; }
     .gallery .img-wrap::before {
       position: absolute;
       content: '';
@@ -2194,6 +2244,11 @@ body {
       right: 25px;
       z-index: 10;
       background: rgba(0, 0, 0, 0); }
+    .gallery .img-wrap:hover .desc-drop {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     .gallery .img-wrap:hover::before {
       background: rgba(0, 0, 0, 0.7);
       -webkit-transition: background 0.5s ease-out;
@@ -2299,9 +2354,15 @@ body {
   width: 70%;
   height: 94%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
+  .holder_bu_center.big {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; }
 
 .holder_bu_awayR1 {
   z-index: 1;
@@ -2311,9 +2372,9 @@ body {
   width: 23%;
   bottom: 11%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
 
 .holder_bu_awayR2 {
   z-index: 0;
@@ -2323,6 +2384,32 @@ body {
   width: 16%;
   height: 58%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
+
+.close-slide {
+  display: none;
+  position: absolute;
+  left: 70px;
+  top: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url("../images/--plus--/icon_close.png") no-repeat center/contain; }
+  .close-slide.show {
+    display: block;
+    z-index: 1000; }
+
+.arrow-mob {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  width: 37px;
+  height: 25px;
+  background: url("../images/--plus--/arrow-right-wh.png") no-repeat center/contain; }

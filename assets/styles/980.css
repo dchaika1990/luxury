@@ -73,4 +73,12 @@
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .header-wrap {
-    height: 498px; } }
+    height: 498px; }
+  .gallery .img-wrap .desc-drop .title {
+    font-size: 14px; }
+  .gallery .img-wrap .desc-drop .price {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 20px; }
+    .gallery .img-wrap .desc-drop .price .currency {
+      font-size: 12px; } }

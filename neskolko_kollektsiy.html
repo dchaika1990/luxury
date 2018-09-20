@@ -16,7 +16,12 @@
     <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <title>Несколько Коллекций</title>
-    <style>.menu-toggle {
+    <style>body {
+  overflow: hidden;
+  height: 0;
+  opacity: 0; }
+
+.menu-toggle {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
@@ -1788,6 +1793,7 @@ footer {
   min-height: 450px; }
 
 .light-header {
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -1801,8 +1807,7 @@ footer {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  z-index: 3; }
+          justify-content: space-between; }
   .light-header > div {
     margin: 0 5em; }
   .light-header > div:first-child {
@@ -3635,6 +3640,7 @@ body {
     .text .text-block p.hide {
       display: none; }
   .text > a {
+    min-width: 215px;
     border: 1px solid #010101;
     color: #010101;
     font-size: 12px;
@@ -3688,6 +3694,55 @@ body {
     transition: background 0.5s ease-out;
     cursor: pointer;
     position: relative; }
+    .gallery .img-wrap .desc-drop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      -webkit-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      padding: 40px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      text-align: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      color: #fff;
+      z-index: 20; }
+      .gallery .img-wrap .desc-drop .title {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 36px;
+        text-transform: uppercase;
+        margin-bottom: 35px; }
+      .gallery .img-wrap .desc-drop .price {
+        font-weight: 500;
+        font-size: 25px;
+        margin-bottom: 35px; }
+        .gallery .img-wrap .desc-drop .price .currency {
+          font-size: 18px;
+          text-transform: uppercase; }
     .gallery .img-wrap::before {
       position: absolute;
       content: '';
@@ -3697,6 +3752,11 @@ body {
       right: 25px;
       z-index: 10;
       background: rgba(0, 0, 0, 0); }
+    .gallery .img-wrap:hover .desc-drop {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     .gallery .img-wrap:hover::before {
       background: rgba(0, 0, 0, 0.7);
       -webkit-transition: background 0.5s ease-out;
@@ -3802,9 +3862,15 @@ body {
   width: 70%;
   height: 94%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
+  .holder_bu_center.big {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; }
 
 .holder_bu_awayR1 {
   z-index: 1;
@@ -3814,9 +3880,9 @@ body {
   width: 23%;
   bottom: 11%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
 
 .holder_bu_awayR2 {
   z-index: 0;
@@ -3826,9 +3892,35 @@ body {
   width: 16%;
   height: 58%;
   background-color: transparent;
-  -webkit-transition: width 1s, height 1s, top 1s, left 1s;
-  -o-transition: width 1s, height 1s, top 1s, left 1s;
-  transition: width 1s, height 1s, top 1s, left 1s; }
+  -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+  -o-transition: width .5s, height .5s, top .5s, left .5s;
+  transition: width .5s, height .5s, top .5s, left .5s; }
+
+.close-slide {
+  display: none;
+  position: absolute;
+  left: 70px;
+  top: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url("../images/--plus--/icon_close.png") no-repeat center/contain; }
+  .close-slide.show {
+    display: block;
+    z-index: 1000; }
+
+.arrow-mob {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  width: 37px;
+  height: 25px;
+  background: url("../images/--plus--/arrow-right-wh.png") no-repeat center/contain; }
 
 @media (max-width: 1600px) {
   .top-line {
@@ -3967,6 +4059,9 @@ body {
         color: #fff; }
   .navbar-menu {
     padding-left: 15px; }
+  .close-slide {
+    left: 40px;
+    top: 40px; }
   .moddings {
     padding: 100px 75px 75px 75px; }
     .moddings .moddings-slider .modding-block .desc-wrapper .desc-block {
@@ -4063,8 +4158,7 @@ body {
         .block-left .desc-block .price .currency {
           font-size: 16px; }
       .block-left .desc-block > a {
-        margin-bottom: 30px;
-        min-width: 165px; }
+        margin-bottom: 30px; }
       .block-left .desc-block .desc {
         font-size: 12px; }
   .text {
@@ -4076,10 +4170,14 @@ body {
       font-size: 12px;
       line-height: 30px;
       margin-bottom: 0; }
-    .text > a {
-      min-width: 165px; }
-  .gallery > a {
-    min-width: 165px; }
+  .gallery .img-wrap .desc-drop .title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0; }
+  .gallery .img-wrap .desc-drop .price {
+    font-size: 20px; }
+    .gallery .img-wrap .desc-drop .price .currency {
+      font-size: 16px; }
   .gallery div:last-child > a {
     margin-top: 0; }
   .neskolko-kollektsiy-name-block, main #neskolko-kollektsiy-front-block > div:last-child > div:first-child, main #neskolko-kollektsiy-kollektsii > div > div > div > div:first-child {
@@ -4210,7 +4308,15 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .header-wrap {
-    height: 498px; } }
+    height: 498px; }
+  .gallery .img-wrap .desc-drop .title {
+    font-size: 14px; }
+  .gallery .img-wrap .desc-drop .price {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 20px; }
+    .gallery .img-wrap .desc-drop .price .currency {
+      font-size: 12px; } }
 
 @media all and (max-width: 650px) {
   .main-header {
@@ -4266,6 +4372,12 @@ body {
                 height: 2.2em; }
     .light-header > div:last-child {
       display: none; }
+  .close-slide {
+    left: 15px;
+    top: 15px; }
+  .arrow-mob {
+    display: block;
+    z-index: 5; }
   #wrapper_bu {
     position: relative;
     height: 100%;
@@ -4291,6 +4403,10 @@ body {
   .gallery .img-wrap {
     width: 100%;
     padding: 7px; }
+    .gallery .img-wrap .desc-drop .title {
+      font-size: 20px; }
+    .gallery .img-wrap .desc-drop .price {
+      font-size: 20px; }
     .gallery .img-wrap::before {
       top: 7px;
       bottom: 10px;
@@ -4508,7 +4624,7 @@ body {
     </style>
     <script src="assets/scripts/script.js" defer></script>
   </head>
-  <body style="overflow: hidden; height: 0; opacity: 0;">
+  <body>
     <main>
       <div id="neskolko-kollektsiy-side-controls">
         <ul id="neskolko-kollektsiy-side-controls-list">

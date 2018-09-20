@@ -52,6 +52,12 @@
                 height: 2.2em; }
     .light-header > div:last-child {
       display: none; }
+  .close-slide {
+    left: 15px;
+    top: 15px; }
+  .arrow-mob {
+    display: block;
+    z-index: 5; }
   #wrapper_bu {
     position: relative;
     height: 100%;
@@ -77,6 +83,10 @@
   .gallery .img-wrap {
     width: 100%;
     padding: 7px; }
+    .gallery .img-wrap .desc-drop .title {
+      font-size: 20px; }
+    .gallery .img-wrap .desc-drop .price {
+      font-size: 20px; }
     .gallery .img-wrap::before {
       top: 7px;
       bottom: 10px;

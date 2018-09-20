@@ -79,150 +79,161 @@ html(lang="ru")
         script(src="assets/scripts/script.js" defer)
         script new WOW().init()
 
-body(style="overflow: hidden; height: 0; opacity: 0;")
-    header.header-wrap
-        .light-header
-            div
-                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
-                    +menuToggle()
-
-                .popup-navigation(class="popup-header")
-                    .original-nav-container
-                        div
-                            div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
-                                +menuToggleOpen()
-                            div
-                                a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
-                                a(href="javascript: void(0)" onclick="alert(':(');") En
-                        nav
-                            ul
-                                li
-                                    a.nav-animation(href="/tesst.html") Сервис
-                                    +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
-                                li
-                                    a.nav-animation(href="javascript:void(0)") Моддинг
-                                    +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
-                                li
-                                    a.nav-animation(href="javascript:void(0)") О Компании
-                                    +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
-                                li
-                                    a.nav-animation(href="https://www.youtube.com/" target="_blank" rel="noopener")  Страница
-                    .slick-carousel-container
-                        div
-                            div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
-                                +menuToggleOpen()
-                            .slick-carousel-back
-                        div
-                            .top-arrow
-                        .slick-carousel
-                        div
-                            .bottom-arrow
-                    div
-                        a(href="javascript: void(0)" onclick="alert(':(');")
-                            div
-                            div 3 шт
-                            div 10000 руб
-                        div
-                            +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
-            div
-                .popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
-                    .header-socials
-                        +socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
-                .popup-header(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}")
-                    div 2
-                    div
-                    .cart-popup-header
-                        table
-                            tbody
-                                - for (var x = 0; x < 3; x++)
-                                tr
-                                    td
-                                        a(href="javascript:void(0)" onclick="alert(':(');")
-                                            img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
-                                    td
-                                        a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
-                                    td 1 шт
-                                    td 5000 руб
-                        div
-                            div
-                                div Итого:
-                                div
-                                    div 2 шт
-                                    div 10000 руб
-                            div
-                                a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
-
-        .block-left
-            .desc-block
-                .title iphone 7 Светящийся логотип todes
-                .price 5000 <span class='currency'>руб</span>
-                a(href="javascript: void(0)") заказать
-                .desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-        #wrapper_bu
-            #bu1
-                img(src='assets/images/--plus--/wood_finishing.jpg' alt='slide-img')
-            #bu2
-                img(src='assets/images/--plus--/russian_preview2.jpg' alt='slide-img')
-            #bu3
-                img(src='assets/images/--plus--/accessories.jpg' alt='slide-img')
-    section.text
-        .logo-block
-            img(class="black" src="assets/images/--plus--/logo_black.png" alt="Логотип")
-        .text-block
-            p Любой человек, покупая моддинговый iPhone или какой-либо другой девайс, заинтересован в том, чтобы его приобретение сохранило свой идеальный вид как можно дольше. Любой материал, вне зависимости от прочности, со временем может поцарапаться или стереться. Нам посчастливилось жить в то время, когда электронные технологии могут сделать нашу жизнь более интересной, разнообразной и где-то простой. Именно информация сегодня стоит огромных денег. Именно информация сегодня стоит огромных денег
-        a(href="javascript: void(0)") читать далее
-    section.gallery
-        a(href='javascript:void(0)').img-wrap
-            img(src='assets/images/--plus--/photo1.jpg' alt='photo')
-        a(href='javascript:void(0)').img-wrap
-            img(src='assets/images/--plus--/photo2.jpg' alt='photo')
-        a(href='javascript:void(0)').img-wrap
-            img(src='assets/images/--plus--/photo3.jpg' alt='photo')
-        div.all-img
-            span 3/150
-        div
-            a(href="javascript: void(0)") показать все
-    footer
-        div
-            div
-                .footer-socials
-                    +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
-                .footer-contacts
-                    .phones
-                        a(href="tel:+7(499)130-91-11") +7 (499) 130-91-11
-                        br
-                        a(href="tel:+7(800)700-82-37") +7 (800) 700-82-37
-                    .address
-                        a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") Россия 121433, г. Москва,
-                        br
-                        a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") 3-й Силикатный проезд, д.4 к.1
-                    .email
-                        a(href="mailto:info@luxurymod.ru") info@luxurymod.ru
-                    .work-hours ПН — СБ: c 10:00 до 21:00
-                        br
-                        | ВС — выходной
-            .div
-                .footer-nav-block
-                    span Коллекции
-                    +navList(['Все коллекции', 'Россия'], [])
-                .footer-nav-block
-                    span Персонализация
-                    +navList(['Аксессуары', 'Материалы'], [])
-                .footer-nav-block
-                    span Брендирование
-                    +navList(['Виды брендирования', 'Заказчики'], [])
-                .footer-nav-block
-                    span Сервис
-                    +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
-                .footer-nav-block
-                    span Моддинг
-                    +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
-                .footer-nav-block
-                    span О Компании
-                    +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
-        div
-            div
-                div 2018, © LUXURY MODE. Все Права Защищены.
+    body
+        header.header-wrap
+            span.arrow-mob
+            span.close-slide
+            .light-header
                 div
-                    a(href="javascript: void(0)" onclick="alert(':(');") Политика конфиденциальности
-                    a(href="mailto:info@luxurymod.ru") info@luxurymode.ru
+                    div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
+                        +menuToggle()
+
+                    .popup-navigation(class="popup-header")
+                        .original-nav-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                div
+                                    a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
+                                    a(href="javascript: void(0)" onclick="alert(':(');") En
+                            nav
+                                ul
+                                    li
+                                        a.nav-animation(href="/tesst.html") Сервис
+                                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") Моддинг
+                                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") О Компании
+                                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+                                    li
+                                        a.nav-animation(href="https://www.youtube.com/" target="_blank" rel="noopener")  Страница
+                        .slick-carousel-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                .slick-carousel-back
+                            div
+                                .top-arrow
+                            .slick-carousel
+                            div
+                                .bottom-arrow
+                        div
+                            a(href="javascript: void(0)" onclick="alert(':(');")
+                                div
+                                div 3 шт
+                                div 10000 руб
+                            div
+                                +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                div
+                    .popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
+                        .header-socials
+                            +socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .popup-header(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}")
+                        div 2
+                        div
+                        .cart-popup-header
+                            table
+                                tbody
+                                    - for (var x = 0; x < 3; x++)
+                                    tr
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');")
+                                                img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
+                                        td 1 шт
+                                        td 5000 руб
+                            div
+                                div
+                                    div Итого:
+                                    div
+                                        div 2 шт
+                                        div 10000 руб
+                                div
+                                    a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
+
+            .block-left
+                .desc-block
+                    .title iphone 7 Светящийся логотип todes
+                    .price 5000 <span class='currency'>руб</span>
+                    a(href="javascript: void(0)") заказать
+                    .desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+            #wrapper_bu
+                #bu1
+                    img(src='assets/images/--plus--/wood_finishing.jpg' alt='slide-img')
+                #bu2
+                    img(src='assets/images/--plus--/russian_preview2.jpg' alt='slide-img')
+                #bu3
+                    img(src='assets/images/--plus--/accessories.jpg' alt='slide-img')
+        section.text
+            .logo-block
+                img(class="black" src="assets/images/--plus--/logo_black.png" alt="Логотип")
+            .text-block
+                p Любой человек, покупая моддинговый iPhone или какой-либо другой девайс, заинтересован в том, чтобы его приобретение сохранило свой идеальный вид как можно дольше. Любой материал, вне зависимости от прочности, со временем может поцарапаться или стереться. Нам посчастливилось жить в то время, когда электронные технологии могут сделать нашу жизнь более интересной, разнообразной и где-то простой. Именно информация сегодня стоит огромных денег. Именно информация сегодня стоит огромных денег
+            a(href="javascript: void(0)") читать далее
+        section.gallery.wow.fadeIn(data-wow-duration="2s")
+            a(href='javascript:void(0)').img-wrap
+                .desc-drop
+                    .title iphone 7 Светящийся логотип todes
+                    .price 5000 <span class='currency'>грн</span>
+                img(src='assets/images/--plus--/photo1.jpg' alt='photo')
+            a(href='javascript:void(0)').img-wrap
+                .desc-drop
+                    .title iphone 7 Светящийся логотип todes
+                    .price 5000 <span class='currency'>грн</span>
+                img(src='assets/images/--plus--/photo2.jpg' alt='photo')
+            a(href='javascript:void(0)').img-wrap
+                .desc-drop
+                    .title iphone 7 Светящийся логотип todes
+                    .price 5000 <span class='currency'>грн</span>
+                img(src='assets/images/--plus--/photo3.jpg' alt='photo')
+            div.all-img
+                span 3/150
+            div
+                a(href="javascript: void(0)") показать все
+        footer
+            div
+                div
+                    .footer-socials
+                        +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .footer-contacts
+                        .phones
+                            a(href="tel:+7(499)130-91-11") +7 (499) 130-91-11
+                            br
+                            a(href="tel:+7(800)700-82-37") +7 (800) 700-82-37
+                        .address
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") Россия 121433, г. Москва,
+                            br
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") 3-й Силикатный проезд, д.4 к.1
+                        .email
+                            a(href="mailto:info@luxurymod.ru") info@luxurymod.ru
+                        .work-hours ПН — СБ: c 10:00 до 21:00
+                            br
+                            | ВС — выходной
+                .div
+                    .footer-nav-block
+                        span Коллекции
+                        +navList(['Все коллекции', 'Россия'], [])
+                    .footer-nav-block
+                        span Персонализация
+                        +navList(['Аксессуары', 'Материалы'], [])
+                    .footer-nav-block
+                        span Брендирование
+                        +navList(['Виды брендирования', 'Заказчики'], [])
+                    .footer-nav-block
+                        span Сервис
+                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                    .footer-nav-block
+                        span Моддинг
+                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                    .footer-nav-block
+                        span О Компании
+                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+            div
+                div
+                    div 2018, © LUXURY MODE. Все Права Защищены.
+                    div
+                        a(href="javascript: void(0)" onclick="alert(':(');") Политика конфиденциальности
+                        a(href="mailto:info@luxurymod.ru") info@luxurymode.ru

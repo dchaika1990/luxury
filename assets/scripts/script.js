@@ -549,9 +549,6 @@ $(document).ready(function(){
     }
 });
 
-
-
-
 $(document).ready(function(){
 
     // Clipping text
@@ -634,4 +631,46 @@ $(document).ready(function(){
     Conclave.init();
 
 });
+
+$(document).ready(function(){
+    // Open big center slide
+
+    $('#wrapper_bu').on('click','.holder_bu', function () {
+        if ( parseFloat($(this).css('left')) < 50 ) {
+            $(this).css({
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '100%',
+                'z-index': 999
+            });
+            $('.close-slide').addClass('show');
+        }
+    });
+
+    // $('#wrapper_bu').on('mouseup','.holder_bu_awayR1', function (e) {
+    //     if ( $(window).width() < 650 ) {
+    //     	console.log($(this))
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //         return false
+    //     }
+    // });
+
+	$('.arrow-mob').on('click', function () {
+		$('.holder_bu_awayR1').click();
+    })
+
+    $('.close-slide').on('click', function () {
+        $(this).removeClass('show');
+        $('.holder_bu_center').css({
+            top: '',
+            left: '',
+            width: '',
+            height: '',
+            'z-index': ''
+        });
+    });
+
+})
 

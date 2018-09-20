@@ -126,6 +126,9 @@
         color: #fff; }
   .navbar-menu {
     padding-left: 15px; }
+  .close-slide {
+    left: 40px;
+    top: 40px; }
   .moddings {
     padding: 100px 75px 75px 75px; }
     .moddings .moddings-slider .modding-block .desc-wrapper .desc-block {
@@ -222,8 +225,7 @@
         .block-left .desc-block .price .currency {
           font-size: 16px; }
       .block-left .desc-block > a {
-        margin-bottom: 30px;
-        min-width: 165px; }
+        margin-bottom: 30px; }
       .block-left .desc-block .desc {
         font-size: 12px; }
   .text {
@@ -235,10 +237,14 @@
       font-size: 12px;
       line-height: 30px;
       margin-bottom: 0; }
-    .text > a {
-      min-width: 165px; }
-  .gallery > a {
-    min-width: 165px; }
+  .gallery .img-wrap .desc-drop .title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0; }
+  .gallery .img-wrap .desc-drop .price {
+    font-size: 20px; }
+    .gallery .img-wrap .desc-drop .price .currency {
+      font-size: 16px; }
   .gallery div:last-child > a {
     margin-top: 0; }
   .neskolko-kollektsiy-name-block {
