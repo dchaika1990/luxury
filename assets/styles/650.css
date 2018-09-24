@@ -10,6 +10,10 @@
       padding: 1.3em 1.2em;
       left: -1.4em;
       top: 0; }
+  .moddings .moddings-slider .modding-block .desc-wrapper .desc-block {
+    padding: 0 10px; }
+    .moddings .moddings-slider .modding-block .desc-wrapper .desc-block .desc {
+      padding: 0; }
   .light-header {
     padding: 0.8em 0;
     position: static;

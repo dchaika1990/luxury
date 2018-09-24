@@ -473,6 +473,69 @@ body
       background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
       top: 50%
       transform: translateY(-50%) rotate(180deg)
+.devices
+  padding: 0 60px
+  display: flex
+  @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+  &__wrap
+    flex-grow: 1
+    font-size: 20px
+    text-transform: uppercase
+    table
+      width: 100%
+      padding-top: 10px
+      tr
+        line-height: 40px
+      tr.hidden
+        display: none
+  &__wrap_mobile
+    flex-grow: 1
+    display: none
+    ul
+      padding-left: 0
+      font-size: 20px
+      list-style: none
+      text-transform: uppercase
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      li
+        margin-right: 50px
+        &.hidden
+          display: none
+
+  &__button
+    align-items: flex-start
+    padding-left: 40px
+    flex-shrink: 0
+    display: flex
+    a
+      @extend .reset-a
+      border: 1px solid #010101
+      color: #010101
+      font-size: 12px
+      padding: 19px 46px
+      border-radius: 35px
+      box-sizing: border-box
+      height: 55px
+      &:hover
+        background-color: #010101
+        color: #fff
+      &::after
+        display: inline-block
+        top: 50%
+        transform: translateY(-60%)
+        content: ''
+        background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+        width: 27px
+        height: 9px
+
+      &:hover::after
+        content: ''
+        background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+        top: 50%
+        transform: translateY(-50%) rotate(180deg)
+
 .gallery
   padding: 0 35px 100px 35px
   display: flex
@@ -546,6 +609,7 @@ body
     color: #888888
     width: 100%
 
+
   div:last-child
     margin: 35px auto 0 auto
     text-align: center
@@ -582,6 +646,30 @@ body
     object-fit: cover
     width: 100%
     max-height: 100%
+
+.add-more
+  a
+    min-width: 218px
+
+.preload
+  display: none
+  width: 100%
+  text-align: center
+  text-transform: uppercase
+  span
+    cursor: pointer
+  .icon-preload
+    display: inline-block
+    position: relative
+    bottom: -8px
+    margin-left: 10px
+    width: 30px
+    height: 26px
+    background: url("../images/--plus--/preload.png") no-repeat center / contain
+    transition: all .45s ease-in-out
+  &:hover .icon-preload
+    transform: rotate(360deg)
+    transition: all .45s ease-in-out
 
 // Carousel
 
