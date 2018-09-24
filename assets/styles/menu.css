@@ -90,7 +90,7 @@
             font-weight: 300;
             font-size: 12px;
             margin-left: 15px;
-            text-indent: initial; }
+            text-indent: 0; }
         .top-menu ul li a:hover .hover-object {
           display: -webkit-box;
           display: -webkit-flex;

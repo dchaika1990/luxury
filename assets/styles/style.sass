@@ -70,10 +70,6 @@ $cross_black: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0
       margin-top: 3em
 
 
-body
-  overflow: hidden
-  height: 0
-  opacity: 0
 // place manu icon with animation
 .menu-toggle
   flex: 0 0 auto
@@ -231,13 +227,15 @@ $font-stack: Muller, Arial, sans-serif
 
 // main styles
 body
+  height: 0
+  opacity: 0
   font-family: $font-stack
   font-size: 16px
   font-weight: 300
   background: #fff
   padding: 0
   margin: 0
-  overflow-x: hidden
+  overflow-x: hidden!important
   overflow-y: auto
 
 // PAGE STYLES neskolko kollektsiy
