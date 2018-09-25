@@ -72,9 +72,7 @@ html(lang="ru")
             include assets/styles/slick-carousel-1.8.1.css
 
         //Animation
-        <!--[if !IE]>
         script(src="assets/scripts/wow.min.js")
-        <!-- <![endif]-->
         // Yandex map
         script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
         // Scripts
@@ -238,7 +236,7 @@ html(lang="ru")
                         td iphone 4/4s
             .devices__button
                 a(href="javascript: void(0)") все устройства
-        section.gallery.wow.fadeIn(data-wow-duration="2s")
+        section.gallery.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
             a(href='javascript:void(0)').img-wrap
                 .desc-drop
                     .title iphone 7 Светящийся логотип todes

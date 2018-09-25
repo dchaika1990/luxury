@@ -76,6 +76,27 @@
             justify-content: space-between; }
   .header-wrap {
     height: 498px; }
+  .devices {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .devices__wrap_mobile ul {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .devices__button {
+      padding: 0; }
   .gallery .img-wrap .desc-drop .title {
     font-size: 14px; }
   .gallery .img-wrap .desc-drop .price {

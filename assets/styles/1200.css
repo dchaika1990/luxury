@@ -239,16 +239,22 @@
       font-size: 12px;
       line-height: 30px;
       margin-bottom: 0; }
-  .gallery .img-wrap .desc-drop .title {
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 0; }
-  .gallery .img-wrap .desc-drop .price {
-    font-size: 20px; }
-    .gallery .img-wrap .desc-drop .price .currency {
-      font-size: 16px; }
-  .gallery div:last-child > a {
-    margin-top: 0; }
+  .devices {
+    padding-left: 25px;
+    padding-right: 25px; }
+  .gallery {
+    padding-left: 0;
+    padding-right: 0; }
+    .gallery .img-wrap .desc-drop .title {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 0; }
+    .gallery .img-wrap .desc-drop .price {
+      font-size: 20px; }
+      .gallery .img-wrap .desc-drop .price .currency {
+        font-size: 16px; }
+    .gallery div:last-child > a {
+      margin-top: 0; }
   .neskolko-kollektsiy-name-block {
     font-size: 1.4em;
     font-weight: 300;

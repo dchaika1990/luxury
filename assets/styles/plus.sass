@@ -444,6 +444,7 @@ body
   .logo-block
     padding-bottom: 50px
   .text-block
+    width: 100%
     font-size: 17px
     line-height: 36px
     margin-bottom: 35px
@@ -491,21 +492,28 @@ body
       padding-top: 10px
       tr
         line-height: 40px
+        td
+          cursor: pointer
+          padding-right: 10px
+          vertical-align: top
       tr.hidden
         display: none
   &__wrap_mobile
     flex-grow: 1
     display: none
+
     ul
+      width: 100%
       padding-left: 0
-      font-size: 20px
+      font-size: 12px
       list-style: none
       text-transform: uppercase
       display: flex
-      justify-content: space-between
       flex-wrap: wrap
       li
-        margin-right: 50px
+        cursor: pointer
+        margin-right: 20px
+        line-height: 35px
         &.hidden
           display: none
 
@@ -523,23 +531,66 @@ body
       border-radius: 35px
       box-sizing: border-box
       height: 55px
+      text-transform: uppercase
+      position: relative
       &:hover
         background-color: #010101
         color: #fff
-      &::after
-        display: inline-block
-        top: 50%
-        transform: translateY(-60%)
-        content: ''
-        background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
-        width: 27px
-        height: 9px
+        &::after
+          background-color: #ffffff
+        &::before
+          background-color: #ffffff
 
-      &:hover::after
+      &::after
+        position: absolute
         content: ''
-        background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
-        top: 50%
-        transform: translateY(-50%) rotate(180deg)
+        width: 1px
+        height: 6px
+        top: 48%
+        background-color: #000
+        right: 26px
+        transform: rotate(45deg)
+        transition: all .3s ease-in-out
+
+      &::before
+        position: absolute
+        content: ''
+        width: 1px
+        height: 6px
+        top: 48%
+        background-color: #000
+        right: 31px
+        transform: rotate(-45deg)
+        transition: all .3s ease-in-out
+      &.open
+        &::after
+          transform: rotate(-45deg)
+          transition: all .3s ease-in-out
+        &::before
+          transform: rotate(45deg)
+          transition: all .3s ease-in-out
+
+@media (max-width: 1600px)
+  .devices__wrap
+    font-size: 18px
+    table tr
+      line-height: 35px
+
+
+@media (max-width: 1440px)
+  .devices__wrap
+    font-size: 16px
+
+@media (max-width: 1280px)
+  .devices__wrap
+    font-size: 12px
+
+@media (max-width: 1100px)
+  .devices
+    &__wrap
+      display: none
+    &__wrap_mobile
+      display: flex
 
 .gallery
   padding: 0 35px 100px 35px
@@ -575,12 +626,14 @@ body
       z-index: 20
 
       .title
+        width: 100%
         font-weight: 500
         font-size: 25px
         line-height: 36px
         text-transform: uppercase
         margin-bottom: 35px
       .price
+        width: 100%
         font-weight: 500
         font-size: 25px
         margin-bottom: 35px

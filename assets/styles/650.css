@@ -84,6 +84,14 @@
   .text {
     padding-left: 20px;
     padding-right: 20px; }
+  .devices {
+    padding-bottom: 40px;
+    padding-left: 13px;
+    padding-right: 13px; }
+    .devices__wrap_mobile ul {
+      font-size: 10px; }
+      .devices__wrap_mobile ul li {
+        margin-right: 5px; }
   .gallery .img-wrap {
     width: 100%;
     padding: 7px; }
