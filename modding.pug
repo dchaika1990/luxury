@@ -67,18 +67,20 @@ html(lang="ru")
         link(rel="stylesheet" href="assets/styles/style.css")
 
         //- style
-            include assets/styles/style.css
+        //    include assets/styles/style.css
         //- style
             include assets/styles/slick-carousel-1.8.1.css
 
-        // Animation
+        //Animation
+        <!--[if !IE]>
         script(src="assets/scripts/wow.min.js")
+        <!-- <![endif]-->
         // Yandex map
         script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
         // Scripts
         script(src="assets/scripts/script.js" defer)
-        script new WOW().init()
-
+        //script
+        //    include assets/scripts/script.js
     body
         header.header-wrap
             span.arrow-mob
@@ -191,7 +193,7 @@ html(lang="ru")
                 img(src='assets/images/--plus--/photo3.jpg' alt='photo')
             div.all-img
                 span 3/150
-            div
+            div.add-more
                 a(href="javascript: void(0)") показать все
         footer
             div
