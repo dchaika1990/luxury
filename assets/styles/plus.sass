@@ -4,6 +4,10 @@
 
 $font-stack: Muller, Arial, sans-serif
 
+.mt-o-1200
+  @media (max-width: 1200px)
+    margin-top: 0!important
+
 body
   position: relative
   font-family: $font-stack
@@ -43,9 +47,7 @@ body
   position: relative
   padding: 160px 150px
   z-index: 1
-  overflow: hidden
   .moddings-slider
-    overflow: hidden
     .modding-block
       display: flex
       justify-content: center
@@ -210,6 +212,7 @@ body
     .slide
       @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
       text-align: center
+      overflow: hidden
 
       & > a
         border: 1px solid #010101
