@@ -435,7 +435,7 @@ $(document).ready(function () {
 // Map
 
 $(document).ready(function(){
-	if ( $('.map ').html() ) {
+
         var mapConf = {
             0: {
                 coor: [55.768511777109374,37.49859049999992],
@@ -547,7 +547,7 @@ $(document).ready(function(){
             map.geoObjects.add(myPlacemark);
 
         }
-	}
+	
 });
 
 $(document).ready(function(){
