@@ -435,119 +435,117 @@ $(document).ready(function () {
 // Map
 
 $(document).ready(function(){
-	if ( $('.map ').html() ) {
-        var mapConf = {
-            0: {
-                coor: [55.768511777109374,37.49859049999992],
-                marker: '<h3>Головной офис</h3>Тел.: +7 (499) 130-91-11<br/>8 (800) 700-82-37<br/>Адрес: Россия, г. Москва,<br/>3-й Силикатный проезд, 4к1<br />',
-                openOnLoad: true
-            }
-        };
-
-        ymaps.ready(function(){
-            $('.js-ymap').each(function(){
-                ymapInit($(this).attr('id'), mapConf, $(this).attr('data-conf-id'));
-
-            });
-        });
-
-        function ymapInit(id,mapConf,idConf){
-            var myMap=new ymaps.Map(id,{
-                center:[55.768511777109374,37.49859049999992],
-                zoom:14
-
-            });
-            myMap.controls.remove('geolocationControl');
-            myMap.controls.remove('searchControl');
-            myMap.controls.remove('trafficControl');
-            myMap.controls.remove('typeSelector');
-            myMap.controls.remove('fullscreenControl');
-            myMap.controls.remove('rulerControl');
-            myMap.behaviors.disable(['scrollZoom']);
-            mapAddPlacemark(myMap,mapConf,idConf,mapConf[idConf].openOnLoad);
-
+    var mapConf = {
+        0: {
+            coor: [55.768511777109374,37.49859049999992],
+            marker: '<h3>Головной офис</h3>Тел.: +7 (499) 130-91-11<br/>8 (800) 700-82-37<br/>Адрес: Россия, г. Москва,<br/>3-й Силикатный проезд, 4к1<br />',
+            openOnLoad: true
         }
-        function mapAddPlacemark(map,mapConf,idConf,openOnLoad){
-            var MyBalloonLayout=ymaps.templateLayoutFactory.createClass(
-                '<div class="location location-popup">'+
-                '<div class="location-content">'+
-                '<div class="location-delete close">'+
-                '<span class="icon icon-btn_cross"></span>'+
-                '</div>'+
-                '$[[options.contentLayout observeSize minWidth=100 maxWidth=270 maxHeight=500]]'+
-                '</div>',{
-                    build:function(){
-                        this.constructor.superclass.build.call(this);
-                        this._$element=$('.location-popup',this.getParentElement());
-                        this.applyElementOffset();
-                        this._$element.find('.close').on('click',$.proxy(this.onCloseClick,this));
+    };
 
-                    },
-                    clear:function(){
-                        this._$element.find('.close').off('click');
-                        this.constructor.superclass.clear.call(this);
+    ymaps.ready(function(){
+        $('.js-ymap').each(function(){
+            ymapInit($(this).attr('id'), mapConf, $(this).attr('data-conf-id'));
 
-                    },
-                    onSublayoutSizeChange:function(){
-                        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this,arguments);
-                        if(!this._isElement(this._$element)){
-                            return;
+        });
+    });
 
-                        }
-                        this.applyElementOffset();
-                        this.events.fire('shapechange');
+    function ymapInit(id,mapConf,idConf){
+        var myMap=new ymaps.Map(id,{
+            center:[55.768511777109374,37.49859049999992],
+            zoom:14
 
-                    },
-                    applyElementOffset:function(){
-                        this._$element.css({
-                            left:-150,
-                            top:-(this._$element[0].offsetHeight/2)
+        });
+        myMap.controls.remove('geolocationControl');
+        myMap.controls.remove('searchControl');
+        myMap.controls.remove('trafficControl');
+        myMap.controls.remove('typeSelector');
+        myMap.controls.remove('fullscreenControl');
+        myMap.controls.remove('rulerControl');
+        myMap.behaviors.disable(['scrollZoom']);
+        mapAddPlacemark(myMap,mapConf,idConf,mapConf[idConf].openOnLoad);
 
-                        });
+    }
+    function mapAddPlacemark(map,mapConf,idConf,openOnLoad){
+        var MyBalloonLayout=ymaps.templateLayoutFactory.createClass(
+            '<div class="location location-popup">'+
+            '<div class="location-content">'+
+            '<div class="location-delete close">'+
+            '<span class="icon icon-btn_cross"></span>'+
+            '</div>'+
+            '$[[options.contentLayout observeSize minWidth=100 maxWidth=270 maxHeight=500]]'+
+            '</div>',{
+                build:function(){
+                    this.constructor.superclass.build.call(this);
+                    this._$element=$('.location-popup',this.getParentElement());
+                    this.applyElementOffset();
+                    this._$element.find('.close').on('click',$.proxy(this.onCloseClick,this));
 
-                    },
-                    onCloseClick:function(e){
-                        e.preventDefault();
-                        this.events.fire('userclose');
+                },
+                clear:function(){
+                    this._$element.find('.close').off('click');
+                    this.constructor.superclass.clear.call(this);
 
-                    },
-                    getShape:function(){
-                        if(!this._isElement(this._$element)){
-                            return MyBalloonLayout.superclass.getShape.call(this);
-
-                        }
-                        var position=this._$element.position();
-                        return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                            [position.left,position.top],[
-                                position.left+this._$element[0].offsetWidth,
-                                position.top+this._$element[0].offsetHeight
-                            ]
-                        ]));
-
-                    },
-                    _isElement:function(element){
-                        return element&&element[0]&&element.find('.location-popup')[0];
+                },
+                onSublayoutSizeChange:function(){
+                    MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this,arguments);
+                    if(!this._isElement(this._$element)){
+                        return;
 
                     }
+                    this.applyElementOffset();
+                    this.events.fire('shapechange');
 
-                });
-            var MyBalloonContentLayout=ymaps.templateLayoutFactory.createClass(mapConf[idConf].marker);
-            var myPlacemark=window.myPlacemark=new ymaps.Placemark(mapConf[idConf].coor,{},{
-                balloonShadow:false,
-                balloonLayout:MyBalloonLayout,
-                balloonContentLayout:MyBalloonContentLayout,
-                balloonPanelMaxMapArea:0,
-                iconLayout:'default#image',
-                iconImageHref:'assets/images/temp/icon_location_hover.png',
-                iconImageSize:[50,86],
-                iconImageOffset:[-25,-43],
-                hideIconOnBalloonOpen:false
+                },
+                applyElementOffset:function(){
+                    this._$element.css({
+                        left:-150,
+                        top:-(this._$element[0].offsetHeight/2)
+
+                    });
+
+                },
+                onCloseClick:function(e){
+                    e.preventDefault();
+                    this.events.fire('userclose');
+
+                },
+                getShape:function(){
+                    if(!this._isElement(this._$element)){
+                        return MyBalloonLayout.superclass.getShape.call(this);
+
+                    }
+                    var position=this._$element.position();
+                    return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+                        [position.left,position.top],[
+                            position.left+this._$element[0].offsetWidth,
+                            position.top+this._$element[0].offsetHeight
+                        ]
+                    ]));
+
+                },
+                _isElement:function(element){
+                    return element&&element[0]&&element.find('.location-popup')[0];
+
+                }
 
             });
-            map.geoObjects.add(myPlacemark);
+        var MyBalloonContentLayout=ymaps.templateLayoutFactory.createClass(mapConf[idConf].marker);
+        var myPlacemark=window.myPlacemark=new ymaps.Placemark(mapConf[idConf].coor,{},{
+            balloonShadow:false,
+            balloonLayout:MyBalloonLayout,
+            balloonContentLayout:MyBalloonContentLayout,
+            balloonPanelMaxMapArea:0,
+            iconLayout:'default#image',
+            iconImageHref:'assets/images/temp/icon_location_hover.png',
+            iconImageSize:[50,86],
+            iconImageOffset:[-25,-43],
+            hideIconOnBalloonOpen:false
 
-        }
-	}
+        });
+        map.geoObjects.add(myPlacemark);
+
+    }
 });
 
 $(document).ready(function(){
