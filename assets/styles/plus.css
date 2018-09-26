@@ -2313,7 +2313,8 @@ body {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    display: none; }
+    display: none;
+    width: 100%; }
     .devices__wrap_mobile ul {
       width: 100%;
       padding-left: 0;
