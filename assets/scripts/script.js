@@ -79,8 +79,16 @@ $(window).on('load', function(){
 
 	// popups closer scripts
 	$(document).on('click touchstart',function(event){
-		if (!$(event.target).closest(".popup-header").length) $('.popup-header, .menu-toggle').removeClass('active');
+		if (!$(event.target).closest(".popup-header").length) {
+            $('.popup-header, .menu-toggle').removeClass('active');
+        }
 	});
+    $('body:not(.popup-navigation)').on('click touchstart', function () {
+        if (  !($('.slick-carousel-container').is(':hidden'))  ) $('.slick-carousel-container .slick-carousel-back').click();
+    });
+    $('.popup-navigation.popup-header').on('click touchstart', function (e) {
+        e.stopPropagation();
+    })
 });
 
 
@@ -435,119 +443,117 @@ $(document).ready(function () {
 // Map
 
 $(document).ready(function(){
-
-        var mapConf = {
-            0: {
-                coor: [55.768511777109374,37.49859049999992],
-                marker: '<h3>Головной офис</h3>Тел.: +7 (499) 130-91-11<br/>8 (800) 700-82-37<br/>Адрес: Россия, г. Москва,<br/>3-й Силикатный проезд, 4к1<br />',
-                openOnLoad: true
-            }
-        };
-
-        ymaps.ready(function(){
-            $('.js-ymap').each(function(){
-                ymapInit($(this).attr('id'), mapConf, $(this).attr('data-conf-id'));
-
-            });
-        });
-
-        function ymapInit(id,mapConf,idConf){
-            var myMap=new ymaps.Map(id,{
-                center:[55.768511777109374,37.49859049999992],
-                zoom:14
-
-            });
-            myMap.controls.remove('geolocationControl');
-            myMap.controls.remove('searchControl');
-            myMap.controls.remove('trafficControl');
-            myMap.controls.remove('typeSelector');
-            myMap.controls.remove('fullscreenControl');
-            myMap.controls.remove('rulerControl');
-            myMap.behaviors.disable(['scrollZoom']);
-            mapAddPlacemark(myMap,mapConf,idConf,mapConf[idConf].openOnLoad);
-
+    var mapConf = {
+        0: {
+            coor: [55.768511777109374,37.49859049999992],
+            marker: '<h3>Головной офис</h3>Тел.: +7 (499) 130-91-11<br/>8 (800) 700-82-37<br/>Адрес: Россия, г. Москва,<br/>3-й Силикатный проезд, 4к1<br />',
+            openOnLoad: true
         }
-        function mapAddPlacemark(map,mapConf,idConf,openOnLoad){
-            var MyBalloonLayout=ymaps.templateLayoutFactory.createClass(
-                '<div class="location location-popup">'+
-                '<div class="location-content">'+
-                '<div class="location-delete close">'+
-                '<span class="icon icon-btn_cross"></span>'+
-                '</div>'+
-                '$[[options.contentLayout observeSize minWidth=100 maxWidth=270 maxHeight=500]]'+
-                '</div>',{
-                    build:function(){
-                        this.constructor.superclass.build.call(this);
-                        this._$element=$('.location-popup',this.getParentElement());
-                        this.applyElementOffset();
-                        this._$element.find('.close').on('click',$.proxy(this.onCloseClick,this));
+    };
 
-                    },
-                    clear:function(){
-                        this._$element.find('.close').off('click');
-                        this.constructor.superclass.clear.call(this);
+    ymaps.ready(function(){
+        $('.js-ymap').each(function(){
+            ymapInit($(this).attr('id'), mapConf, $(this).attr('data-conf-id'));
 
-                    },
-                    onSublayoutSizeChange:function(){
-                        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this,arguments);
-                        if(!this._isElement(this._$element)){
-                            return;
+        });
+    });
 
-                        }
-                        this.applyElementOffset();
-                        this.events.fire('shapechange');
+    function ymapInit(id,mapConf,idConf){
+        var myMap=new ymaps.Map(id,{
+            center:[55.768511777109374,37.49859049999992],
+            zoom:14
 
-                    },
-                    applyElementOffset:function(){
-                        this._$element.css({
-                            left:-150,
-                            top:-(this._$element[0].offsetHeight/2)
+        });
+        myMap.controls.remove('geolocationControl');
+        myMap.controls.remove('searchControl');
+        myMap.controls.remove('trafficControl');
+        myMap.controls.remove('typeSelector');
+        myMap.controls.remove('fullscreenControl');
+        myMap.controls.remove('rulerControl');
+        myMap.behaviors.disable(['scrollZoom']);
+        mapAddPlacemark(myMap,mapConf,idConf,mapConf[idConf].openOnLoad);
 
-                        });
+    }
+    function mapAddPlacemark(map,mapConf,idConf,openOnLoad){
+        var MyBalloonLayout=ymaps.templateLayoutFactory.createClass(
+            '<div class="location location-popup">'+
+            '<div class="location-content">'+
+            '<div class="location-delete close">'+
+            '<span class="icon icon-btn_cross"></span>'+
+            '</div>'+
+            '$[[options.contentLayout observeSize minWidth=100 maxWidth=270 maxHeight=500]]'+
+            '</div>',{
+                build:function(){
+                    this.constructor.superclass.build.call(this);
+                    this._$element=$('.location-popup',this.getParentElement());
+                    this.applyElementOffset();
+                    this._$element.find('.close').on('click',$.proxy(this.onCloseClick,this));
 
-                    },
-                    onCloseClick:function(e){
-                        e.preventDefault();
-                        this.events.fire('userclose');
+                },
+                clear:function(){
+                    this._$element.find('.close').off('click');
+                    this.constructor.superclass.clear.call(this);
 
-                    },
-                    getShape:function(){
-                        if(!this._isElement(this._$element)){
-                            return MyBalloonLayout.superclass.getShape.call(this);
-
-                        }
-                        var position=this._$element.position();
-                        return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                            [position.left,position.top],[
-                                position.left+this._$element[0].offsetWidth,
-                                position.top+this._$element[0].offsetHeight
-                            ]
-                        ]));
-
-                    },
-                    _isElement:function(element){
-                        return element&&element[0]&&element.find('.location-popup')[0];
+                },
+                onSublayoutSizeChange:function(){
+                    MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this,arguments);
+                    if(!this._isElement(this._$element)){
+                        return;
 
                     }
+                    this.applyElementOffset();
+                    this.events.fire('shapechange');
 
-                });
-            var MyBalloonContentLayout=ymaps.templateLayoutFactory.createClass(mapConf[idConf].marker);
-            var myPlacemark=window.myPlacemark=new ymaps.Placemark(mapConf[idConf].coor,{},{
-                balloonShadow:false,
-                balloonLayout:MyBalloonLayout,
-                balloonContentLayout:MyBalloonContentLayout,
-                balloonPanelMaxMapArea:0,
-                iconLayout:'default#image',
-                iconImageHref:'assets/images/temp/icon_location_hover.png',
-                iconImageSize:[50,86],
-                iconImageOffset:[-25,-43],
-                hideIconOnBalloonOpen:false
+                },
+                applyElementOffset:function(){
+                    this._$element.css({
+                        left:-150,
+                        top:-(this._$element[0].offsetHeight/2)
+
+                    });
+
+                },
+                onCloseClick:function(e){
+                    e.preventDefault();
+                    this.events.fire('userclose');
+
+                },
+                getShape:function(){
+                    if(!this._isElement(this._$element)){
+                        return MyBalloonLayout.superclass.getShape.call(this);
+
+                    }
+                    var position=this._$element.position();
+                    return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+                        [position.left,position.top],[
+                            position.left+this._$element[0].offsetWidth,
+                            position.top+this._$element[0].offsetHeight
+                        ]
+                    ]));
+
+                },
+                _isElement:function(element){
+                    return element&&element[0]&&element.find('.location-popup')[0];
+
+                }
 
             });
-            map.geoObjects.add(myPlacemark);
+        var MyBalloonContentLayout=ymaps.templateLayoutFactory.createClass(mapConf[idConf].marker);
+        var myPlacemark=window.myPlacemark=new ymaps.Placemark(mapConf[idConf].coor,{},{
+            balloonShadow:false,
+            balloonLayout:MyBalloonLayout,
+            balloonContentLayout:MyBalloonContentLayout,
+            balloonPanelMaxMapArea:0,
+            iconLayout:'default#image',
+            iconImageHref:'assets/images/temp/icon_location_hover.png',
+            iconImageSize:[50,86],
+            iconImageOffset:[-25,-43],
+            hideIconOnBalloonOpen:false
 
-        }
-	
+        });
+        map.geoObjects.add(myPlacemark);
+
+    }
 });
 
 $(document).ready(function(){
@@ -654,13 +660,21 @@ $(document).ready(function(){
         var buArr =[],arlen;
         return {
             init:function(){
-                this.addCN();this.clickReg();
+                this.addCN();
+                this.clickReg();
+                // this.auto();
             },
             addCN:function(){
-                var buarr=["holder_bu_center","holder_bu_awayR1","holder_bu_awayR2"];
-                for(var i=1;i<=buarr.length;++i){
-                    $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
-                }
+                var buarr=["holder_bu_center","holder_bu_awayR1","holder_bu_awayR2","holder_bu_none"];
+                var arr = [].slice.call(document.getElementById('wrapper_bu').children);
+                arr.forEach(function(elem, index){
+                    elem.classList.add('holder_bu');
+                    if ( index <= 2 ) {
+                        elem.classList.add(buarr[index]);
+                    } else {
+                        elem.classList.add('holder_bu_none');
+                    }
+                });
             },
             clickReg:function(){
                 $(".holder_bu").each(function(){
@@ -687,10 +701,13 @@ $(document).ready(function(){
                 })
             },
             auto:function(){
-                for(i=1;i<=1;++i){
-                    $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
-                    console.log("called");
-                }
+                setInterval(function () {
+                    $('.holder_bu_awayR1').click()
+                }, 4000)
+                // for(i=1;i<=1;++i){
+                //     $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
+                //     console.log("called");
+                // }
             }
         };
     })();
@@ -718,6 +735,14 @@ $(document).ready(function(){
 
 	$('.arrow-mob').on('click', function () {
 		$('.holder_bu_awayR1').click();
+    });
+
+	$('body').on('click', function () {
+	    if ( $('.close-slide').hasClass('show') ) $('.close-slide').click();
+    });
+
+	$('.holder_bu ').on('click', function(e){
+	    e.stopPropagation();
     });
 
     $('.close-slide').on('click', function () {
