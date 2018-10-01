@@ -1705,9 +1705,25 @@ footer {
         line-height: 30px;
         text-decoration: none; }
       .main-menu-wrapper .main-menu li:hover .submenu {
-        display: block; }
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: all .5s linear;
+        -o-transition: all .5s linear;
+        transition: all .5s linear;
+        -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+                transform-origin: left top; }
       .main-menu-wrapper .main-menu li .submenu {
-        display: none;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+        -webkit-transition: all .5s linear;
+        -o-transition: all .5s linear;
+        transition: all .5s linear;
+        -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+                transform-origin: left top;
         position: absolute;
         width: 295px;
         top: 100%;
@@ -1731,9 +1747,25 @@ footer {
           .main-menu-wrapper .main-menu li .submenu li:hover {
             background-color: #3c3c3c; }
             .main-menu-wrapper .main-menu li .submenu li:hover .submenu {
-              display: block; }
+              -webkit-transform: scale(1);
+                  -ms-transform: scale(1);
+                      transform: scale(1);
+              -webkit-transition: all .5s linear;
+              -o-transition: all .5s linear;
+              transition: all .5s linear;
+              -webkit-transform-origin: left top;
+                  -ms-transform-origin: left top;
+                      transform-origin: left top; }
           .main-menu-wrapper .main-menu li .submenu li .submenu {
-            display: none;
+            -webkit-transform: scale(0);
+                -ms-transform: scale(0);
+                    transform: scale(0);
+            -webkit-transition: all .5s linear;
+            -o-transition: all .5s linear;
+            transition: all .5s linear;
+            -webkit-transform-origin: left top;
+                -ms-transform-origin: left top;
+                    transform-origin: left top;
             position: absolute;
             top: 0;
             left: 100%;
@@ -2521,7 +2553,7 @@ footer {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 100px;
+  padding: 15px 100px;
   z-index: 100;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -2658,7 +2690,7 @@ footer {
   left: 0;
   color: #fff;
   width: 100%;
-  padding: 40px 20px;
+  padding: 40px 20px 10px;
   display: none;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
