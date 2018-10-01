@@ -74,7 +74,12 @@ $(window).on('load', function(){
 
 	// menu icon animation
 	$('.menu-toggle').on('click',function(){
-		$('.menu-toggle').toggleClass('active');
+        if (  !($('.slick-carousel-container').is(':hidden'))  ) {
+            $('.slick-carousel-container .slick-carousel-back').click();
+        } else {
+            $('.menu-toggle').toggleClass('active');
+        }
+
 	});
 
 	// popups closer scripts
