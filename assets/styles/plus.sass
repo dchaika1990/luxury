@@ -8,9 +8,23 @@ $font-stack: Muller, Arial, sans-serif
   @media (max-width: 1200px)
     margin-top: 0!important
 
+.header-default
+  height: auto!important
+  min-height: inherit
+  .hamburger span::before, .hamburger span::after
+    background-color: #000
+  @media (max-width: 650px)
+    height: auto!important
+    background-color: #fff
+.devider-90
+  margin-top: 90px
+  @media (max-width: 650px)
+    margin-top: 0
+
 body
   position: relative
   font-family: $font-stack
+  overflow: hidden
 
   & .left-side-nav
     display: block
@@ -810,3 +824,179 @@ body
   width: 37px
   height: 25px
   background: url("../images/--plus--/arrow-right-wh.png") no-repeat center / contain
+
+
+// Kollection
+
+.section-right, .section-left
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-content: center
+  @media (min-width: 320px)
+    margin-bottom: 80px
+  @media (min-width: 768px)
+    max-width: 720px
+    margin-bottom: 20px
+  @media (min-width: 990px)
+    max-width: 960px
+  @media (min-width: 1200px)
+    max-width: 1170px
+
+  .text-block, .img-block
+    width: 50%
+    text-align: center
+    @media (max-width: 768px)
+      width: 100%
+  .text-block
+    padding: 0px 60px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    @media (max-width: 1200px)
+      padding: 0 15px
+    .title
+      font-size: 30px
+      font-weight: 500
+      letter-spacing: 0.9px
+      text-transform: uppercase
+      margin-bottom: 35px
+      @media (max-width: 1200px)
+        font-size: 24px
+        margin-bottom: 20px
+      @media (max-width: 990px)
+        font-size: 18px
+      .quot
+        position: relative
+        top: -3px
+    .content
+      font-size: 15px
+      line-height: 30px
+      margin-bottom: 35px
+      @media (max-width: 1200px)
+        font-size: 14px
+        margin-bottom: 20px
+      @media (max-width: 990px)
+        font-size: 12px
+    .price
+      display: flex
+      align-items: center
+
+      .left
+        font-size: 30px
+        letter-spacing: 0.9px
+        font-weight: 500
+        margin-right: 40px
+        @media (max-width: 768px)
+          margin-right: 15px
+        @media (max-width: 1200px)
+          font-size: 24px
+        @media (max-width: 990px)
+          font-size: 18px
+      .right
+        @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)
+        & > a
+          margin-top: 0
+          min-width: 215px
+          text-transform: uppercase
+          @extend .reset-a
+          border: 1px solid #010101
+          color: #010101
+          font-size: 12px
+          padding: 19px 46px
+          border-radius: 35px
+          box-sizing: border-box
+          height: 55px
+          &:hover
+            background-color: #010101
+            color: #fff
+          &::after
+            display: inline-block
+            top: 50%
+            transform: translateY(-60%)
+            content: ''
+            background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+            width: 27px
+            height: 9px
+
+          &:hover::after
+            content: ''
+            background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+            top: 50%
+            transform: translateY(-50%) rotate(180deg)
+          @media (max-width: 768px)
+            min-width: 165px
+
+  .img-block
+    position: relative
+    .back
+      position: absolute
+      top: 100%
+      z-index: -1
+      height: 170%
+      @media (min-width: 1200px)
+        height: 153%
+    .phone
+      position: relative
+      z-index: 1
+      height: 350px
+      @media (min-width: 768px)
+        height: 350px
+      @media (min-width: 990px)
+        height: 400px
+      @media (min-width: 1200px)
+        height: 550px
+.section-left
+  .title, .price
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      height: 1px
+      background-color: #000
+      right: -300px
+      left: 105%
+      transform: translateY(-50%)
+  .img-block
+    .back
+      transform: translateX(50%) translateY(-50%)
+      right: 30%
+      @media (min-width: 480px)
+        right: 40%
+      @media (min-width: 768px)
+        right: 35%
+      @media (min-width: 990px)
+        right: 25%
+      @media (min-width: 1200px)
+        right: 31%
+  @media (max-width: 768px)
+    flex-direction: column
+.section-right
+  .title, .price
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      height: 1px
+      background-color: #000
+      left: -300px
+      right: 105%
+      transform: translateY(-50%)
+  .img-block
+    .back
+      transform: translateX(-50%) translateY(-50%)
+      left: 30%
+      @media (min-width: 480px)
+        left: 40%
+      @media (min-width: 768px)
+        left: 35%
+      @media (min-width: 990px)
+        left: 25%
+      @media (min-width: 1200px)
+        left: 31%
+  @media (max-width: 768px)
+    flex-direction: column-reverse

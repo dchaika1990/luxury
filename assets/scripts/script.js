@@ -72,10 +72,15 @@ $(window).on('load', function(){
 		$('.original-nav-container').show();
 	});
 
+	// load default menu
+
+    if ( $('.header-wrap').hasClass('header-default') ) $('.light-header').addClass('black');
+
 	// menu icon animation
 	$('.menu-toggle').on('click',function(){
         if (  !($('.slick-carousel-container').is(':hidden'))  ) {
             $('.slick-carousel-container .slick-carousel-back').click();
+            $('body').click();
         } else {
             $('.menu-toggle').toggleClass('active');
         }
@@ -717,8 +722,10 @@ $(document).ready(function(){
         };
     })();
 
-    window['conclave']=Conclave;
-    Conclave.init();
+    if ( $('#wrapper_bu').html() ) {
+        window['conclave']=Conclave;
+        Conclave.init();
+    }
 
 });
 
