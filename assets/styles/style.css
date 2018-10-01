@@ -148,7 +148,8 @@
     bottom: 0;
     border: 0.063em solid #fff;
     border-top: 0;
-    border-bottom: 0; }
+    border-bottom: 0;
+    visibility: hidden; }
   .nav-animation:after {
     content: '';
     position: absolute;
@@ -160,18 +161,21 @@
     height: 0;
     width: 100%;
     top: 0;
-    height: 0; }
+    height: 0;
+    visibility: hidden; }
   .nav-animation:hover:before {
     -webkit-transition-delay: 0s;
          -o-transition-delay: 0s;
             transition-delay: 0s;
-    height: 100%; }
+    height: 100%;
+    visibility: visible; }
   .nav-animation:hover:after {
     background: #fff;
     -webkit-transition-delay: .4s;
          -o-transition-delay: .4s;
             transition-delay: .4s;
-    height: 100%; } }
+    height: 100%;
+    visibility: visible; } }
 
 @media all and (max-width: 650px) {
   .nav-animation:hover {

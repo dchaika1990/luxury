@@ -179,6 +179,7 @@ $cross_black: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0
     border: 0.063em solid #fff
     border-top: 0
     border-bottom: 0
+    visibility: hidden
 
   .nav-animation:after
     content: ''
@@ -190,15 +191,18 @@ $cross_black: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0
     width: 100%
     top: 0
     height: 0
+    visibility: hidden
 
   .nav-animation:hover:before
     transition-delay: 0s
     height: 100%
+    visibility: visible
 
   .nav-animation:hover:after
     background: #fff
     transition-delay: .4s
     height: 100%
+    visibility: visible
 
 @media all and (max-width: 650px)
   .nav-animation
