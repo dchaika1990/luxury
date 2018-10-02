@@ -60,7 +60,7 @@ html(lang="ru")
         meta(name="msapplication-TileColor", content="#da532c")
         meta(name="msapplication-config", content="assets/favicons/browserconfig.xml")
         meta(name="theme-color", content="#ffffff")
-        title Моддинг
+        title Коллекция
         link(rel="stylesheet" href="assets/styles/animate.css")
         link(rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css")
         link(rel="stylesheet" href="assets/styles/map.css")
@@ -80,9 +80,7 @@ html(lang="ru")
         //script
         //    include assets/scripts/script.js
     body
-        header.header-wrap
-            span.arrow-mob
-            span.close-slide
+        header.header-wrap.header-default
             .light-header
                 div
                     div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
@@ -136,7 +134,7 @@ html(lang="ru")
                         .cart-popup-header
                             table
                                 tbody
-                                    - for (var x = 0; x < 3; x++)
+                                    -for ( x = 0; x < 3; x++)
                                     tr
                                         td
                                             a(href="javascript:void(0)" onclick="alert(':(');")
@@ -145,6 +143,7 @@ html(lang="ru")
                                             a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
                                         td 1 шт
                                         td 5000 руб
+
                             div
                                 div
                                     div Итого:
@@ -154,44 +153,75 @@ html(lang="ru")
                                 div
                                     a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
 
-            .block-left
-                .desc-block
-                    .title iphone 7 Светящийся логотип todes
-                    .price 5000 <span class='currency'>руб</span>
-                    a(href="javascript: void(0)") заказать
-                    .desc Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
-            #wrapper_bu
-                #bu1(style='background: url("assets/images/--plus--/wood_finishing.jpg") no-repeat center / cover')
-                #bu2(style='background: url("assets/images/--plus--/russian_preview2.jpg") no-repeat center / cover')
-                #bu3(style='background: url("assets/images/--plus--/accessories.jpg") no-repeat center / cover')
-                #bu4(style='background: url("assets/images/--plus--/accessories.jpg") no-repeat center / cover')
-                #bu5(style='background: url("assets/images/--plus--/accessories.jpg") no-repeat center / cover')
-        section.text
-            .logo-block
-                img(class="black" src="assets/images/--plus--/logo_black.png" alt="Логотип")
+
+
+
+        div.devider-90
+        section.section-right.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="0.5s")
             .text-block
-                p Любой человек, покупая моддинговый iPhone или какой-либо другой девайс, заинтересован в том, чтобы его приобретение сохранило свой идеальный вид как можно дольше. Любой материал, вне зависимости от прочности, со временем может поцарапаться или стереться. Нам посчастливилось жить в то время, когда электронные технологии могут сделать нашу жизнь более интересной, разнообразной и где-то простой. Именно информация сегодня стоит огромных денег. Именно информация сегодня стоит огромных денег
-            a(href="javascript: void(0)") читать далее
-        section.gallery.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
-            a(href='javascript:void(0)').img-wrap
-                .desc-drop
-                    .title iphone 7 Светящийся логотип todes
-                    .price 5000 <span class='currency'>грн</span>
-                img(src='assets/images/--plus--/photo1.jpg' alt='photo')
-            a(href='javascript:void(0)').img-wrap
-                .desc-drop
-                    .title iphone 7 Светящийся логотип todes
-                    .price 5000 <span class='currency'>грн</span>
-                img(src='assets/images/--plus--/photo2.jpg' alt='photo')
-            a(href='javascript:void(0)').img-wrap
-                .desc-drop
-                    .title iphone 7 Светящийся логотип todes
-                    .price 5000 <span class='currency'>грн</span>
-                img(src='assets/images/--plus--/photo3.jpg' alt='photo')
-            div.all-img
-                span 3/150
-            div.add-more
-                a(href="javascript: void(0)") показать все
+                .title
+                    span.quot «
+                    span русский медведь
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .price
+                    .left
+                        span 5000 р
+                    .right
+                        a(href="#") заказать
+            .img-block
+                img(src='assets/images/--plus--/right-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/right-block.png' class='back' alt="phone")
+        section.section-left.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="1s")
+            .img-block
+                img(src='assets/images/--plus--/left-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/left-block.png' class='back' alt="phone")
+            .text-block
+                .title
+                    span.quot «
+                    span русский медведь
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .price
+                    .left
+                        span 5000 р
+                    .right
+                        a(href="#") заказать
+        section.section-right.wow.fadeInRight(data-wow-duration="1s" data-wow-delay="1s")
+            .text-block
+                .title
+                    span.quot «
+                    span русский медведь
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .price
+                    .left
+                        span 5000 р
+                    .right
+                        a(href="#") заказать
+            .img-block
+                img(src='assets/images/--plus--/right-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/right-block.png' class='back' alt="phone")
+        section.section-left.wow.fadeInLeft(data-wow-duration="1s" data-wow-delay="1s")
+            .img-block
+                img(src='assets/images/--plus--/left-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/left-block.png' class='back' alt="phone")
+            .text-block
+                .title
+                    span.quot «
+                    span русский медведь
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .price
+                    .left
+                        span 5000 р
+                    .right
+                        a(href="#") заказать
+        div.devider-90
         footer
             div
                 div

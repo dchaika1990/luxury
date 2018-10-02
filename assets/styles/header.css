@@ -23,7 +23,7 @@
   left: 0;
   color: #fff;
   width: 100%;
-  padding: 3.7em 0;
+  padding: 3.7em 0 10px 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -762,7 +762,7 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 100px;
+  padding: 15px 100px;
   z-index: 100;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -899,7 +899,7 @@
   left: 0;
   color: #fff;
   width: 100%;
-  padding: 40px 20px;
+  padding: 40px 20px 10px;
   display: none;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
