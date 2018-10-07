@@ -1,0 +1,309 @@
+//- functions
+//- navigations list
+mixin navList(texts, hrefs)
+    ul
+        each text, key in texts
+            li
+                if hrefs[key]
+                    a(href=hrefs[key])= text
+                else
+                    a(href="javascript: void(0)" onclick="alert(':(');")= text
+
+//- socials list
+mixin socialsList(hrefs)
+    ul
+        each link in hrefs
+            li
+                span(onclick="window.open( '" + link + "', '_blank');")
+
+//- menu html
+mixin menuToggle()
+    .menu-toggle
+        .hamburger
+            - for (var x = 0; x < 3; x++)
+                span
+        .hamburger-open
+            - for (var x = 0; x < 3; x++)
+                span
+
+//- menu html
+mixin menuToggleOpen()
+    .menu-toggle
+        .hamburger-open
+            - for (var x = 0; x < 3; x++)
+                span
+
+//- socials list
+mixin socialsListHeader(hrefs)
+    ul
+        li(onClick='event.stopPropagation(); $(".popup-header, .menu-toggle").removeClass("active");')
+            a(href="javascript:void(0)" rel="noopener")
+        each link in hrefs
+            li
+                a(href=link target="_blank" rel="noopener")
+
+//- document start
+doctype html
+html(lang="ru")
+    head
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+        meta(name="description" content="Несколько Коллекций")
+        meta(name="theme-color" content="#ffffff")
+        link(rel="manifest" href="assets/favicons/manifest.json")
+        link(rel="apple-touch-icon", sizes="180x180", href="assets/favicons/apple-touch-icon.png")
+        link(rel="icon", type="image/png", sizes="32x32", href="assets/favicons/favicon-32x32.png")
+        link(rel="icon", type="image/png", sizes="16x16", href="assets/favicons/favicon-16x16.png")
+        link(rel="manifest", href="assets/favicons/site.webmanifest")
+        link(rel="mask-icon", href="assets/favicons/safari-pinned-tab.svg", color="#5bbad5")
+        link(rel="shortcut icon", href="assets/favicons/favicon.ico")
+        meta(name="msapplication-TileColor", content="#da532c")
+        meta(name="msapplication-config", content="assets/favicons/browserconfig.xml")
+        meta(name="theme-color", content="#ffffff")
+        title Коллекция товар
+        link(rel="stylesheet" href="assets/styles/animate.css")
+        link(rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css")
+        link(rel="stylesheet" href="assets/styles/map.css")
+        link(rel="stylesheet" href="assets/styles/style.css")
+
+        //- style
+        //    include assets/styles/style.css
+        //- style
+            include assets/styles/slick-carousel-1.8.1.css
+
+        //Animation
+        script(src="assets/scripts/wow.min.js")
+        // Yandex map
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        // Scripts
+        script(src="assets/scripts/script.js" defer)
+        //script
+        //    include assets/scripts/script.js
+    body
+        .top-menu.left-navbar.main-left-navbar
+            ul.navbar-menu
+                li.navbar-item
+                    span.sl_lt Block 1
+                    a(href="#b_1")
+                        .hover-object
+                            div
+                            div 1 - товар
+                li.navbar-item
+                    span.sl_lt Block 2
+                    a(href="#b_2")
+                        .hover-object
+                            div
+                            div 2 - характеристика
+                li.navbar-item
+                    span.sl_lt Block 3
+                    a(href="#b_3")
+                        .hover-object
+                            div
+                            div 3 - характеристика
+                li.navbar-item
+                    span.sl_lt Block 4
+                    a(href="#b_4")
+                        .hover-object
+                            div
+                            div 4 - характеристика
+                li.navbar-item
+                    span.sl_lt Block 5
+                    a(href="#b_5")
+                        .hover-object
+                            div
+                            div 5 - все характеристики
+
+        header.header-wrap.header-default
+            .light-header
+                div
+                    div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
+                        +menuToggle()
+
+                    .popup-navigation(class="popup-header")
+                        .original-nav-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                div
+                                    a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
+                                    a(href="javascript: void(0)" onclick="alert(':(');") En
+                            nav
+                                ul
+                                    li
+                                        a.nav-animation(href="/tesst.html") Сервис
+                                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") Моддинг
+                                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") О Компании
+                                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+                                    li
+                                        a.nav-animation(href="https://www.youtube.com/" target="_blank" rel="noopener")  Страница
+                        .slick-carousel-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                .slick-carousel-back
+                            div
+                                .top-arrow
+                            .slick-carousel
+                            div
+                                .bottom-arrow
+                        div
+                            a(href="javascript: void(0)" onclick="alert(':(');")
+                                div
+                                div 3 шт
+                                div 10000 руб
+                            div
+                                +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                div
+                    .popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
+                        .header-socials
+                            +socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .popup-header(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}")
+                        div 2
+                        div
+                        .cart-popup-header
+                            table
+                                tbody
+                                    -for ( x = 0; x < 3; x++)
+                                    tr
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');")
+                                                img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
+                                        td 1 шт
+                                        td 5000 руб
+
+                            div
+                                div
+                                    div Итого:
+                                    div
+                                        div 2 шт
+                                        div 10000 руб
+                                div
+                                    a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
+
+
+
+
+        div.devider-90
+        section.section-right.product-header(id='b_1')
+            .text-block.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="2s")
+                .title
+                    span.quot «
+                    span русский медведь
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                .price
+                    .left
+                        span 5000 РУБ
+                    .right
+                        a(href="#") заказать
+            .img-block.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
+                img(src='assets/images/--plus--/right-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/right-block.png' class='back' alt="phone")
+        section.section-left(id='b_2')
+            .img-block.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
+                img(src='assets/images/--plus--/left-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/left-block.png' class='back' alt="phone")
+            .text-block.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="2s")
+                .title
+                    span.quot «
+                    span задняя панель
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+        section.section-right(id='b_3')
+            .text-block.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="2s")
+                .title
+                    span.quot «
+                    span барельеф
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+            .img-block.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
+                img(src='assets/images/--plus--/right-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/right-block.png' class='back' alt="phone")
+        section.section-left(id='b_4')
+            .img-block.wow.fadeIn(data-wow-duration="2s" data-wow-delay="0.5s")
+                img(src='assets/images/--plus--/left-phone-white.png' class='phone' alt="phone")
+                img(src='assets/images/--plus--/left-block.png' class='back' alt="phone")
+            .text-block.wow.fadeInDown(data-wow-duration="1s" data-wow-delay="2s")
+                .title
+                    span.quot «
+                    span боковые кнопки
+                    span.quot »
+                .content
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+        div.devider-90
+        .characteristics(id='b_5')
+            .characteristics__button
+                a(href="javascript: void(0)") все характеристики
+            .characteristics__content
+                p Модель: A1633, А1688 – зависит от страны, в которой приобретено устройство.
+                p Мобильная и беспроводная связь:
+                p Модель A1633: LTE (1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30), TD-LTE (38, 39, 40, 41), TD-SCDMA 1900 (F), 2000 (A), UMTS/HSPA+/DC-HSDPA (850, 900, 1700/2100, 1900, 2100 МГц), CDMA EV-DO Rev. A (800, 1700/2100, 1900, 2100 МГц), GSM/EDGE (850, 900, 1800, 1900 МГц)
+                p Модель A1688: LTE (1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 27, 28, 29), TD-LTE (38, 39, 40, 41), TD-SCDMA 1900 (F), 2000 (A), CDMA EV-DO Rev. A (800, 1700/2100, 1900, 2100 МГц), UMTS/HSPA+/DC-HSDPA (850, 900, 1700/2100, 1900, 2100 МГц), GSM/EDGE (850, 900, 1800, 1900 МГц)
+                ul
+                    li Все модели поддерживают 802.11a/b/g/n/ac Wi-Fi с MIMO, Bluetooth 4.2, NFC.
+                    li Retina HD-дисплей с функцией 3D Touch и диагональю 4,7 дюйма и разрешением 1334 на 750 пикселей.
+                ul
+                    li Процессор A9 с 64-битной архитектурой и встроенным графическим процессором M9.
+                    li Новая 12-МП iSight камера, функция Live Photos, автофокус, вспышка True Tone, панорама (до 63МП), ƒ/2.2 диафрагма, защита камеры из сапфира, улучшенное подавление шумов, запись видео в формате 4K (3840 на 2160 пикселей), time-lapse видео со стабилизацией.
+                ul
+                    li FaceTime HD-камера (5МП), запись 720p HD-видео, вспышка Retina, ƒ/2.2 диафрагма.
+                    li Датчик отпечатков пальцев Touch ID, встроенный в кнопку Home.
+                    li Голосовой помощник Siri.
+                    li Сенсоры и датчики: датчик отпечатков пальцев Touch ID, барометр, трех-осный гироскоп, акселерометр, датчик движения, датчик света.
+                    li Операционная система iOS 9.
+                    li SIM-карта: Nano-SIM.
+                    li Навигация: Assisted GPS и GLONASS, цифровой компас, Wi‑Fi, микронавигация iBeacon.
+                p Время работы: встроенный литий-ионный аккумулятор, зарядка через USB от компьютера или адаптера питания (кабель Lighting). В режиме разговора: до 14 часов в сети 3G. Работа в интернете: до 10 часов в сети 3G, до 10 часов в сети LTE, до 11 часов в сети Wi‑Fi. Воспроизведение HD-видео: до 11 часов. Воспроизведение музыки: до 50 часов. В режиме ожидания: до 10 дней.
+        footer
+            div
+                div
+                    .footer-socials
+                        +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .footer-contacts
+                        .phones
+                            a(href="tel:+7(499)130-91-11") +7 (499) 130-91-11
+                            br
+                            a(href="tel:+7(800)700-82-37") +7 (800) 700-82-37
+                        .address
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") Россия 121433, г. Москва,
+                            br
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") 3-й Силикатный проезд, д.4 к.1
+                        .email
+                            a(href="mailto:info@luxurymod.ru") info@luxurymod.ru
+                        .work-hours ПН — СБ: c 10:00 до 21:00
+                            br
+                            | ВС — выходной
+                .div
+                    .footer-nav-block
+                        span Коллекции
+                        +navList(['Все коллекции', 'Россия'], [])
+                    .footer-nav-block
+                        span Персонализация
+                        +navList(['Аксессуары', 'Материалы'], [])
+                    .footer-nav-block
+                        span Брендирование
+                        +navList(['Виды брендирования', 'Заказчики'], [])
+                    .footer-nav-block
+                        span Сервис
+                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                    .footer-nav-block
+                        span Моддинг
+                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                    .footer-nav-block
+                        span О Компании
+                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+            div
+                div
+                    div 2018, © LUXURY MODE. Все Права Защищены.
+                    div
+                        a(href="javascript: void(0)" onclick="alert(':(');") Политика конфиденциальности
+                        a(href="mailto:info@luxurymod.ru") info@luxurymode.ru

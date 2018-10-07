@@ -741,7 +741,7 @@ $(document).ready(function(){
     // Open big center slide
 
     $('#wrapper_bu').on('mousedown','.holder_bu', function () {
-		if ( $(this).hasClass('holder_bu_center')) {
+		if ( $(this).hasClass('holder_bu_center') ) {
 			$(this).css({
 				top: '0',
 				left: '0',
@@ -752,15 +752,6 @@ $(document).ready(function(){
 			$('.close-slide').addClass('show');
 		}
 	});
-
-    $('.holder_bu').on('mousedown', function (e) {
-       if ( $('.close-slide').hasClass('show') )  {
-           console.log('sdsdsdsd');
-           setTimeout(function () {
-               $('body').click();
-           },200)
-       }
-    });
 
 	$('.arrow-mob').on('click', function () {
 		$('.holder_bu_awayR1').click();
