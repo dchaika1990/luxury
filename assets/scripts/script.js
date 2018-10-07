@@ -382,8 +382,9 @@ $(window).on('load', function () {
 
 
 $(window).scroll(function() {
-    var mainHeader = $('.main-header').outerHeight();
-    var headerHeight = $('.main-header').height();
+    var $header = ( $('.main-header').html() ) ? $('.main-header') : $('.product-header');
+    var mainHeader = $header.outerHeight();
+    var headerHeight = $header.height();
     var headerHeight2 = $('.header-wrap').height();
     if ($(window).scrollTop() > mainHeader / 3) {
         $('.main-left-navbar').addClass('color');
@@ -662,6 +663,13 @@ $(document).ready(function(){
 			}
             $(this).text('Скрыть');
         }
+    });
+
+    // Hide content
+
+    $('.characteristics__button a').on('click', function () {
+        $(this).toggleClass('open');
+        $(this).closest('.characteristics').find('.characteristics__content').toggle();
     });
 
 	// Carousel
