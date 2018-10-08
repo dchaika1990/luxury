@@ -95,6 +95,16 @@ $cross_black: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0
 .hamburger span:last-child
   margin: 0
 
+body.night
+  .hamburger span:before, .hamburger span:after
+    background-color: #fff!important
+  .light-header > div:last-child > div:first-child
+    background: url(../images/--plus--/soc_white.png) no-repeat center !important
+  .light-header > div:last-child > div:last-child
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnICBQVUJMSUMgJy0vL1czQy8vRFREIFNWRyAxLjEvL0VOJyAgJ2h0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCc+PHN2ZyB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYwIDYwIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTEuNjggMTNsLTAuODMzLTVoLTIuOTljLTAuNDQ2LTEuNzItMS45OTgtMy0zLjg1Ny0zLTIuMjA2IDAtNCAxLjc5NC00IDRzMS43OTQgNCA0IDRjMS44NTkgMCAzLjQxMS0xLjI4IDMuODU4LTNoMS4yOTRsMC41IDNoLTAuMDM4bDUuMTcxIDI2LjAxNmMtMi40NjUgMC4xODgtNC41MTggMi4wODYtNC43NiA0LjQ3NC0wLjE0MiAxLjQwNSAwLjMyIDIuODEyIDEuMjY4IDMuODU4IDAuOTQ5IDEuMDQ5IDIuMzAxIDEuNjUyIDMuNzA3IDEuNjUyaDJjMCAzLjMwOSAyLjY5MSA2IDYgNnM2LTIuNjkxIDYtNmgxMWMwIDMuMzA5IDIuNjkxIDYgNiA2czYtMi42OTEgNi02aDRjMC41NTMgMCAxLTAuNDQ3IDEtMXMtMC40NDctMS0xLTFoLTQuMzVjLTAuODI2LTIuMzI3LTMuMDQzLTQtNS42NS00cy00LjgyNCAxLjY3My01LjY1IDRoLTExLjdjLTAuODI2LTIuMzI3LTMuMDQzLTQtNS42NS00cy00LjgyNCAxLjY3My01LjY1IDRoLTIuMzVjLTAuODQyIDAtMS42NTItMC4zNjItMi4yMjQtMC45OTMtMC41NzctMC42MzktMC44NDgtMS40NjEtMC43NjEtMi4zMTYgMC4xNTItMS41MDkgMS41NDYtMi42OSAzLjE3My0yLjY5aDAuNzkxIDAuMDM5IDM4Ljk5NGMyLjc1MS0xZS0zIDQuOTg4LTIuMjM4IDQuOTg4LTQuOTg4di0yMy4wMTNoLTQ4LjMyem0tNy42OC0yYy0xLjEwMyAwLTItMC44OTctMi0yczAuODk3LTIgMi0yIDIgMC44OTcgMiAyLTAuODk3IDItMiAyem00MiAzNGMyLjIwNiAwIDQgMS43OTQgNCA0cy0xLjc5NCA0LTQgNC00LTEuNzk0LTQtNCAxLjc5NC00IDQtNHptLTIzIDBjMi4yMDYgMCA0IDEuNzk0IDQgNHMtMS43OTQgNC00IDQtNC0xLjc5NC00LTQgMS43OTQtNCA0LTR6bTM1LTguOTg3YzAgMS42NDctMS4zNCAyLjk4Ny0yLjk4NyAyLjk4N2gtMzguMTkybC00Ljc3LTI0aDQ1Ljk0OXYyMS4wMTN6IiBmaWxsPSIjZmZmIi8+PC9zdmc+")
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
 .hamburger span:before, .hamburger span:after
   content: ""
   position: absolute
@@ -241,6 +251,9 @@ body
   margin: 0
   overflow-x: hidden!important
   overflow-y: auto
+  &.night
+    background: #000000
+    color: #fff
 
 // PAGE STYLES neskolko kollektsiy
 // page blocks

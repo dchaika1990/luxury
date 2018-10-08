@@ -116,19 +116,27 @@
     ul
       li
         a
-          color: #000
+          color: #222221
           text-indent: inherit
           border: none
+          text-decoration: none
           &:hover
             background: none
           &.active
             background: none
+            &:not(:first-child)
+              margin-bottom: 20px
           .hover-object
             top: 106%
             div:first-child
-              background-color: #000!important
+              background-color: #222221!important
             div:last-child
-              color: #000!important
+              color: #222221!important
+    .navbar-menu
+      @media (max-width: 980px)
+        display: block
+      @media (max-width: 850px)
+        padding-left: 5px
 
 .main-menu-wrapper
   width: 70%

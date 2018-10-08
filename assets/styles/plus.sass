@@ -4,6 +4,13 @@
 
 $font-stack: Muller, Arial, sans-serif
 
+.hide
+  display: none
+
+.hidden-850
+  @media (max-width: 850px)
+    display: none!important
+
 .mt-o-1200
   @media (max-width: 1200px)
     margin-top: 0!important
@@ -828,6 +835,28 @@ body
 
 // Kollection
 
+body.night
+  .section-right, .section-left
+    .text-block
+      .title, .price
+        &::before
+          background: #ffffff
+      .price
+        .right
+          & > a
+            color: #ffffff
+            border-color: #ffffff
+            &::after
+              background: none
+              top: 45%
+              content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDM1IDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTM1IDVoLTM1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJtNiAwbC02IDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Im02IDlsLTYtNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+")
+            &:hover
+              background: #fff
+              color: #222
+              &::after
+                background: none
+                top: 58%
+                content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDM1IDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE2IDVoLTE2IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJtNiAwbC02IDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Im02IDlsLTYtNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0ibTM1IDVoLTE5IiBmaWxsPSJub25lIiBzdHJva2U9IiMxZTFlMWMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=")
 .section-right, .section-left
   margin: 0 auto
   display: flex
@@ -1008,6 +1037,68 @@ body
         right: 31%
   @media (max-width: 850px)
     flex-direction: column
+.swicher-block
+  padding: 13px 70px
+  width: 100%
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  &.mobile
+    display: none
+  @media (max-width: 992px)
+    padding: 10px 0
+  @media (max-width: 850px)
+    display: none
+    &.mobile
+      display: flex
+      justify-content: center
+      margin-bottom: 50px
+      .title
+        margin: 0
+        font-size: 12px
+      .swither
+        width: 50px
+        height: 18px
+        .switcher-hand
+          width: 25px
+          height: 25px
+
+  .title
+    font-size: 16px
+    line-height: 30px
+    letter-spacing: 0.25px
+    color: #000000
+    text-transform: uppercase
+    &::before
+      content: none!important
+  .swither
+    border-radius: 10px
+    margin-left: 20px
+    display: inline-block
+    height: 20px
+    width: 60px
+    position: relative
+    background-color: #888888
+    cursor: pointer
+    .switcher-hand
+      position: absolute
+      height: 33px
+      width: 33px
+      border-radius: 50%
+      background-color: black
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      right: auto
+  &.night
+    .title
+      color: #fff
+    .swither
+      background-color: #779dd4
+      .switcher-hand
+        left: auto
+        right: 0
+        background-color: #4b78bb
 .section-right
   .title, .price
     position: relative
@@ -1046,7 +1137,8 @@ body
     flex-direction: column-reverse
 
 .product-header
-  height: 100vh
+  height: calc( 100vh - 200px )
+  flex-wrap: wrap
   @media (max-width: 850px)
     height: auto
   &.section-right
@@ -1059,8 +1151,8 @@ body
         transform: translateY(-50%)
         @media (max-width: 1440px)
           left: 150px
-        @media (max-width: 375px)
-          left: 50px
+        @media (max-width: 480px)
+          left: 15%
 
       .back
         height: 400px
@@ -1079,6 +1171,22 @@ body
           left: 83px
         @media (max-width: 375px)
           left: 34px
+
+body.night
+  .characteristics
+    background: #000000
+    &__button
+      a
+        border-color: #ffffff
+        color: #ffffff
+        &::after, &::before
+          background-color: #ffffff
+        &:hover
+          background-color: #ffffff
+          color: #000000
+          &::after, &::before
+            background-color: #000000
+
 
 .characteristics
   position: relative

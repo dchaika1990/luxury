@@ -10,6 +10,10 @@
 *:focus {
   outline: none; }
 
+@media (max-width: 650px) {
+  body.night .light-header {
+    background-color: #000000; } }
+
 .header-wrap {
   position: relative;
   height: 100vh;

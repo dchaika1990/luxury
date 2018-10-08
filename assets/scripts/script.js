@@ -385,7 +385,7 @@ $(window).scroll(function() {
     var $header = ( $('.main-header').html() ) ? $('.main-header') : $('.product-header');
     var mainHeader = $header.outerHeight();
     var headerHeight = $header.height();
-    var headerHeight2 = $('.header-wrap').height();
+    var headerHeight2 = ( $('.header-wrap').html() ) ? $('.header-wrap').height() : 100;
     if ($(window).scrollTop() > mainHeader / 3) {
         $('.main-left-navbar').addClass('color');
     } else {
@@ -670,6 +670,15 @@ $(document).ready(function(){
     $('.characteristics__button a').on('click', function () {
         $(this).toggleClass('open');
         $(this).closest('.characteristics').find('.characteristics__content').toggle();
+    });
+
+    // Change day to night
+
+    $('.section-right .swither').on('click', function () {
+        $(this).closest('.swicher-block').toggleClass('night');
+        $('body').toggleClass('night');
+        $('.phone').toggleClass('hide');
+        $('.back').toggleClass('hide');
     });
 
 	// Carousel

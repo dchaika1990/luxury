@@ -203,7 +203,7 @@
       height: 47%;
       top: 50%; }
   .light-header {
-    padding: 2.7em 0; }
+    padding: 2.7em 0 10px 0; }
     .light-header > div:first-child {
       margin: 0 2em; }
     .light-header > div:last-child {
