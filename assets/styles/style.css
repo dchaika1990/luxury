@@ -4688,7 +4688,9 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
     width: 60px;
     position: relative;
     background-color: #888888;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    z-index: 5; }
     .swicher-block .swither .switcher-hand {
       position: absolute;
       height: 33px;
