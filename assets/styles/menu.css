@@ -111,6 +111,20 @@
         border-radius: 25px;
         -webkit-box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2);
         box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2); }
+  .top-menu.kollection-menu ul li a {
+    color: #000;
+    text-indent: inherit;
+    border: none; }
+    .top-menu.kollection-menu ul li a:hover {
+      background: none; }
+    .top-menu.kollection-menu ul li a.active {
+      background: none; }
+    .top-menu.kollection-menu ul li a .hover-object {
+      top: 106%; }
+      .top-menu.kollection-menu ul li a .hover-object div:first-child {
+        background-color: #000 !important; }
+      .top-menu.kollection-menu ul li a .hover-object div:last-child {
+        color: #000 !important; }
 
 .main-menu-wrapper {
   width: 70%;

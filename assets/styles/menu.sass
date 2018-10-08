@@ -1,256 +1,272 @@
 .top-menu
-	z-index: 5
-	position: fixed
-	height: 100%
-	top: 0
-	left: 0
-	text-align: center
-	&.color
-		ul
-			li
-				a
-					position: relative
-					border: 1px solid #000000
-					&.active
-						position: relative
-						background: #000000
-						&:not(:first-child)
-							margin-top: 50px
-							margin-bottom: 10px
-							&:before
-								display: block
-								position: absolute
-								content: ''
-								width: 9px
-								height: 35px
-								top: -50px
-								left: 50%
-								transform: translateX(-50%)
-								background: url('../images/--plus--/pag-arrow.png') no-repeat center center
-					&:hover
-						background: #000000
+  z-index: 5
+  position: fixed
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  &.color
+    ul
+      li
+        a
+          position: relative
+          border: 1px solid #000000
+          &.active
+            position: relative
+            background: #000000
+            &:not(:first-child)
+              margin-top: 50px
+              margin-bottom: 10px
+              &:before
+                display: block
+                position: absolute
+                content: ''
+                width: 9px
+                height: 35px
+                top: -50px
+                left: 50%
+                transform: translateX(-50%)
+                background: url('../images/--plus--/pag-arrow.png') no-repeat center center
+          &:hover
+            background: #000000
 
-					.hover-object
-						div
-							&:first-child
-								background-color: #000000
-							&:last-child
-								color: #000000
+          .hover-object
+            div
+              &:first-child
+                background-color: #000000
+              &:last-child
+                color: #000000
 
-	&:after
-		display: inline-block
-		vertical-align: middle
-		width: 0
-		height: 100%
-		content: ''
-	ul
-		display: inline-block
-		position: absolute
-		list-style: none
-		top: 60%
-		li
-			position: relative
-			min-height: 30px
-			a 
-				display: inline-block
-				position: relative
-				width: 10px
-				height: 10px
-				text-indent: -9999px
-				background: transparent
-				-webkit-border-radius: 50%
-				-moz-border-radius: 50%
-				border-radius: 50%
-				border: 1px solid #ffffff
-				&.active
-					background: #ffffff
+  &:after
+    display: inline-block
+    vertical-align: middle
+    width: 0
+    height: 100%
+    content: ''
+  ul
+    display: inline-block
+    position: absolute
+    list-style: none
+    top: 60%
+    li
+      position: relative
+      min-height: 30px
+      a
+        display: inline-block
+        position: relative
+        width: 10px
+        height: 10px
+        text-indent: -9999px
+        background: transparent
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        border-radius: 50%
+        border: 1px solid #ffffff
+        &.active
+          background: #ffffff
 
-				&:hover 
-					background: #ffffff
+        &:hover
+          background: #ffffff
 
-				.hover-object
-					position: absolute
-					left: 100%
-					top: 50%
-					transform: translateY(-50%)
-					display: none
-					align-items: center
-					z-index: 50
+        .hover-object
+          position: absolute
+          left: 100%
+          top: 50%
+          transform: translateY(-50%)
+          display: none
+          align-items: center
+          z-index: 50
 
-					div
-						&:first-child
-							background-color: #ffffff
-							height: 1px
-							width: 30px
-							margin-left: 15px
-							flex-shrink: 0
-						&:last-child
-							color: #ffffff
-							flex-shrink: 0
-							text-transform: uppercase
-							font-weight: 300
-							font-size: 12px
-							margin-left: 15px
-							text-indent: 0
+          div
+            &:first-child
+              background-color: #ffffff
+              height: 1px
+              width: 30px
+              margin-left: 15px
+              flex-shrink: 0
+            &:last-child
+              color: #ffffff
+              flex-shrink: 0
+              text-transform: uppercase
+              font-weight: 300
+              font-size: 12px
+              margin-left: 15px
+              text-indent: 0
 
-				&:hover .hover-object
-					display: flex
-			span
-				background: #de2e54
-				position: absolute
-				right: 32px
-				top: -7px
-				text-align: center
-				display: none
-				padding: 8px 15px 8px
-				color: #fff
-				white-space: nowrap
-				font-size: 18px
-				-webkit-border-radius: 25px
-				-moz-border-radius: 25px
-				border-radius: 25px
-				-webkit-box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
-				-moz-box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
-				box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
+        &:hover .hover-object
+          display: flex
+      span
+        background: #de2e54
+        position: absolute
+        right: 32px
+        top: -7px
+        text-align: center
+        display: none
+        padding: 8px 15px 8px
+        color: #fff
+        white-space: nowrap
+        font-size: 18px
+        -webkit-border-radius: 25px
+        -moz-border-radius: 25px
+        border-radius: 25px
+        -webkit-box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
+        -moz-box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
+        box-shadow: 0px 8px 10px 0px rgba(50, 50, 50, 0.2)
+  &.kollection-menu
+    ul
+      li
+        a
+          color: #000
+          text-indent: inherit
+          border: none
+          &:hover
+            background: none
+          &.active
+            background: none
+          .hover-object
+            top: 106%
+            div:first-child
+              background-color: #000!important
+            div:last-child
+              color: #000!important
 
 .main-menu-wrapper
-	width: 70%
-	margin-left: 20px
-	.main-menu
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: space-between
-		align-items: center
-		z-index: 100
-		margin: 0
-		padding-left: 0
+  width: 70%
+  margin-left: 20px
+  .main-menu
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    z-index: 100
+    margin: 0
+    padding-left: 0
 
-		.arrow
-			margin-left: 9px
-			position: relative
-			width: 5px
-			flex-shrink: 0
-			height: 10px
-			display: inline-block
-			order: 2
-			margin-bottom: 5px
+    .arrow
+      margin-left: 9px
+      position: relative
+      width: 5px
+      flex-shrink: 0
+      height: 10px
+      display: inline-block
+      order: 2
+      margin-bottom: 5px
 
-			&::before, &::after
-				position: absolute
-				content: ''
-				width: 1px
-				height: 6px
-				top: 50%
-				background-color: #fff
-			&::before
-				left: 0
-				transform: rotate(-45deg)
-				transition: all .3s ease-in-out
-			&::after
-				right: 0
-				transform: rotate(45deg)
-				transition: all .3s ease-in-out
+      &::before, &::after
+        position: absolute
+        content: ''
+        width: 1px
+        height: 6px
+        top: 50%
+        background-color: #fff
+      &::before
+        left: 0
+        transform: rotate(-45deg)
+        transition: all .3s ease-in-out
+      &::after
+        right: 0
+        transform: rotate(45deg)
+        transition: all .3s ease-in-out
 
+    & > li
+      position: relative
+      padding: 10px 0
+      display: flex
+      align-items: center
+      & > a
+        letter-spacing: 2px
+      & + li
+        margin-left: 20px
 
-		& > li
-			position: relative
-			padding: 10px 0
-			display: flex
-			align-items: center
-			& > a
-				letter-spacing: 2px
-			& + li
-				margin-left: 20px
+      &:hover .arrow
+        &::before
+          transform: rotate(45deg)
+          transition: all .3s ease-in-out
+        &::after
+          transform: rotate(-45deg)
+          transition: all .3s ease-in-out
 
-			&:hover .arrow
-				&::before
-					transform: rotate(45deg)
-					transition: all .3s ease-in-out
-				&::after
-					transform: rotate(-45deg)
-					transition: all .3s ease-in-out
+    li
+      flex: 0 0 auto
+      & > a
+        display: block
+        width: 100%
+        height: 30px
+        color: #fff
+        font-weight: 300
+        line-height: 30px
+        text-decoration: none
+      &:hover
+        .submenu
+          //display: block
+          transform: scale(1)
+          transition: all .5s linear
+          transform-origin: left top
 
-		li
-			flex: 0 0 auto
-			& > a
-				display: block
-				width: 100%
-				height: 30px
-				color: #fff
-				font-weight: 300
-				line-height: 30px
-				text-decoration: none
-			&:hover
-				.submenu
-					//display: block
-					transform: scale(1)
-					transition: all .5s linear
-					transform-origin: left top
-						
-			.submenu
-				//display: none
-				transform: scale(0)
-				transition: all .5s linear
-				transform-origin: left top
-				position: absolute
-				width: 295px
-				top: 100%
-				left: 0
-				background: #222221
-				color: #000
-				list-style: none
-				padding-left: 0
-				z-index: 100
-				li
-					margin: 0
-					padding: 17px 18px
-					a 
-						display: block
-						width: 100%
-						color: #fff
-						font-size: 12px
-						font-weight: 300
-						height: auto
-						line-height: inherit
+      .submenu
+        //display: none
+        transform: scale(0)
+        transition: all .5s linear
+        transform-origin: left top
+        position: absolute
+        width: 295px
+        top: 100%
+        left: 0
+        background: #222221
+        color: #000
+        list-style: none
+        padding-left: 0
+        z-index: 100
+        li
+          margin: 0
+          padding: 17px 18px
+          a
+            display: block
+            width: 100%
+            color: #fff
+            font-size: 12px
+            font-weight: 300
+            height: auto
+            line-height: inherit
 
-					&:hover
-						background-color: #3c3c3c
-						.submenu
-							//display: block
-							transform: scale(1)
-							transition: all .5s linear
-							transform-origin: left top
-					.submenu
-						//display: none
-						transform: scale(0)
-						transition: all .5s linear
-						transform-origin: left top
-						position: absolute
-						top: 0
-						left: 100%
-						min-width: 300px
-						width: auto
-						min-height: 100%
-						list-style: none
-						padding-left: 0
-						z-index: 100
-						li
-							padding: 17px 18px
-							a 
-								display: block
-								width: 100%
-								color: #fff
-								font-size: 12px
-								font-weight: 300
-								height: auto
-								line-height: inherit
+          &:hover
+            background-color: #3c3c3c
+            .submenu
+              //display: block
+              transform: scale(1)
+              transition: all .5s linear
+              transform-origin: left top
+          .submenu
+            //display: none
+            transform: scale(0)
+            transition: all .5s linear
+            transform-origin: left top
+            position: absolute
+            top: 0
+            left: 100%
+            min-width: 300px
+            width: auto
+            min-height: 100%
+            list-style: none
+            padding-left: 0
+            z-index: 100
+            li
+              padding: 17px 18px
+              a
+                display: block
+                width: 100%
+                color: #fff
+                font-size: 12px
+                font-weight: 300
+                height: auto
+                line-height: inherit
 
-			&:last-child
-				.submenu
-					li
-						.submenu
-							left: auto
-							right: 100%
+      &:last-child
+        .submenu
+          li
+            .submenu
+              left: auto
+              right: 100%
