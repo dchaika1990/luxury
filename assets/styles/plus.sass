@@ -28,6 +28,15 @@ $font-stack: Muller, Arial, sans-serif
   @media (max-width: 650px)
     margin-top: 0
 
+.devider-215
+  margin-top: 215px
+  @media (max-width: 1200px)
+    margin-top: 150px
+  @media (max-width: 992px)
+    margin-top: 120px
+  @media (max-width: 650px)
+    margin-top: 0
+
 body
   position: relative
   font-family: $font-stack
@@ -883,22 +892,27 @@ body.night
       width: 100%
   .text-block
     overflow: hidden
-    padding: 0 100px
+    //padding: 0 100px
     box-sizing: border-box
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
     @media (max-width: 1440px)
-      padding: 0px 60px
+      //padding: 0px 60px
     @media (max-width: 1200px)
-      padding: 0 15px
+      //padding: 0 15px
     .title
       font-size: 40px
       font-weight: 500
       letter-spacing: 0.9px
       text-transform: uppercase
       margin-bottom: 25px
+      width: 100%
+      padding: 0 130px
+      box-sizing: border-box
+      @media (max-width: 1650px)
+        padding: 0 100px
       @media (max-width: 1440px)
         font-size: 30px
       @media (max-width: 1200px)
@@ -906,23 +920,37 @@ body.night
         margin-bottom: 20px
       @media (max-width: 990px)
         font-size: 18px
+        padding: 0 75px
+      @media (max-width: 480px)
+        padding: 0 45px
       .quot
         position: relative
         top: -3px
     .content
+      width: 100%
       font-size: 17px
       line-height: 30px
       margin-bottom: 35px
+      padding: 0 100px
+      box-sizing: border-box
       @media (max-width: 1440px)
         font-size: 15px
+        padding: 0px 60px
       @media (max-width: 1200px)
         font-size: 14px
+        padding: 0 15px
         margin-bottom: 20px
       @media (max-width: 990px)
         font-size: 12px
     .price
       display: flex
       align-items: center
+      justify-content: center
+      width: 100%
+      padding: 0 130px
+      box-sizing: border-box
+      @media (max-width: 1650px)
+        padding: 0 100px
 
       .left
         font-size: 35px
@@ -1011,11 +1039,24 @@ body.night
       height: 1px
       background-color: #000
       right: -300px
-      left: 105%
+      left: 85%
       transform: translateY(-50%)
-  .price
-    @media (max-width: 1440px)
-      margin-right: auto
+      @media (max-width: 1650px)
+        left: 90%
+      @media (max-width: 1440px)
+        left: 85%
+      @media (max-width: 480px)
+        left: 91%
+  .text-block
+    .price
+      @media (max-width: 1440px)
+        margin-right: auto
+        justify-content: flex-start
+        padding-left: 15px
+        padding-right: 75px
+      @media (max-width: 480px)
+        padding-right: 45px
+
   .img-block
     @media (min-width: 1440px)
       text-align: right
@@ -1111,11 +1152,24 @@ body.night
       height: 1px
       background-color: #000
       left: -300px
-      right: 105%
+      right: 85%
       transform: translateY(-50%)
-  .price
-    @media (max-width: 1440px)
-      margin-left: auto
+      @media (max-width: 1650px)
+        right: 90%
+      @media (max-width: 1440px)
+        right: 85%
+      @media (max-width: 480px)
+        right: 91%
+  .text-block
+    .price
+      @media (max-width: 1440px)
+        justify-content: flex-end
+        padding-right: 15px
+        margin-left: auto
+        padding-left: 75px
+      @media (max-width: 480px)
+        padding-left: 45px
+
   .img-block
     @media (min-width: 1440px)
       text-align: left

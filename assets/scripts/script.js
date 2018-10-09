@@ -669,17 +669,28 @@ $(document).ready(function(){
 
     $('.characteristics__button a').on('click', function () {
         $(this).toggleClass('open');
-        $(this).closest('.characteristics').find('.characteristics__content').toggle();
+        $(this).closest('.characteristics').find('.characteristics__content').slideToggle();
     });
 
     // Change day to night
 
     $('.section-right .swither').on('click', function () {
-        $(this).closest('.swicher-block').toggleClass('night');
+        $('.swicher-block').toggleClass('night');
         $('body').toggleClass('night');
         $('.phone').toggleClass('hide');
         $('.back').toggleClass('hide');
+        $('.swicher-block .title').toggleClass('hide');
     });
+
+    // Scroll and open ection five
+
+    $('.kollection-menu .navbar-item:last-child').on('click', function(){
+       if ( !$('.characteristics__button a').hasClass('open') ){
+           setTimeout(function () {
+               $('.characteristics__button a').click();
+           }, 500)
+       }
+    })
 
 	// Carousel
 

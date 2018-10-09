@@ -1546,6 +1546,18 @@
     .devider-90 {
       margin-top: 0; } }
 
+.devider-215 {
+  margin-top: 215px; }
+  @media (max-width: 1200px) {
+    .devider-215 {
+      margin-top: 150px; } }
+  @media (max-width: 992px) {
+    .devider-215 {
+      margin-top: 120px; } }
+  @media (max-width: 650px) {
+    .devider-215 {
+      margin-top: 0; } }
+
 body {
   position: relative;
   font-family: Muller, Arial, sans-serif;
@@ -2867,7 +2879,6 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
         width: 100%; } }
   .section-right .text-block, .section-left .text-block {
     overflow: hidden;
-    padding: 0 100px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: -webkit-box;
@@ -2887,18 +2898,19 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    @media (max-width: 1440px) {
-      .section-right .text-block, .section-left .text-block {
-        padding: 0px 60px; } }
-    @media (max-width: 1200px) {
-      .section-right .text-block, .section-left .text-block {
-        padding: 0 15px; } }
     .section-right .text-block .title, .section-left .text-block .title {
       font-size: 40px;
       font-weight: 500;
       letter-spacing: 0.9px;
       text-transform: uppercase;
-      margin-bottom: 25px; }
+      margin-bottom: 25px;
+      width: 100%;
+      padding: 0 130px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
+      @media (max-width: 1650px) {
+        .section-right .text-block .title, .section-left .text-block .title {
+          padding: 0 100px; } }
       @media (max-width: 1440px) {
         .section-right .text-block .title, .section-left .text-block .title {
           font-size: 30px; } }
@@ -2908,20 +2920,30 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
           margin-bottom: 20px; } }
       @media (max-width: 990px) {
         .section-right .text-block .title, .section-left .text-block .title {
-          font-size: 18px; } }
+          font-size: 18px;
+          padding: 0 75px; } }
+      @media (max-width: 480px) {
+        .section-right .text-block .title, .section-left .text-block .title {
+          padding: 0 45px; } }
       .section-right .text-block .title .quot, .section-left .text-block .title .quot {
         position: relative;
         top: -3px; }
     .section-right .text-block .content, .section-left .text-block .content {
+      width: 100%;
       font-size: 17px;
       line-height: 30px;
-      margin-bottom: 35px; }
+      margin-bottom: 35px;
+      padding: 0 100px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
       @media (max-width: 1440px) {
         .section-right .text-block .content, .section-left .text-block .content {
-          font-size: 15px; } }
+          font-size: 15px;
+          padding: 0px 60px; } }
       @media (max-width: 1200px) {
         .section-right .text-block .content, .section-left .text-block .content {
           font-size: 14px;
+          padding: 0 15px;
           margin-bottom: 20px; } }
       @media (max-width: 990px) {
         .section-right .text-block .content, .section-left .text-block .content {
@@ -2934,7 +2956,18 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
       -webkit-box-align: center;
       -webkit-align-items: center;
           -ms-flex-align: center;
-              align-items: center; }
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      width: 100%;
+      padding: 0 130px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
+      @media (max-width: 1650px) {
+        .section-right .text-block .price, .section-left .text-block .price {
+          padding: 0 100px; } }
       .section-right .text-block .price .left, .section-left .text-block .price .left {
         font-size: 35px;
         letter-spacing: 0.9px;
@@ -3074,14 +3107,33 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
     height: 1px;
     background-color: #000;
     right: -300px;
-    left: 105%;
+    left: 85%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
+    @media (max-width: 1650px) {
+      .section-left .title::before, .section-left .price::before {
+        left: 90%; } }
+    @media (max-width: 1440px) {
+      .section-left .title::before, .section-left .price::before {
+        left: 85%; } }
+    @media (max-width: 480px) {
+      .section-left .title::before, .section-left .price::before {
+        left: 91%; } }
 
 @media (max-width: 1440px) {
-  .section-left .price {
-    margin-right: auto; } }
+  .section-left .text-block .price {
+    margin-right: auto;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 15px;
+    padding-right: 75px; } }
+
+@media (max-width: 480px) {
+  .section-left .text-block .price {
+    padding-right: 45px; } }
 
 @media (min-width: 1440px) {
   .section-left .img-block {
@@ -3213,14 +3265,33 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
     height: 1px;
     background-color: #000;
     left: -300px;
-    right: 105%;
+    right: 85%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
+    @media (max-width: 1650px) {
+      .section-right .title::before, .section-right .price::before {
+        right: 90%; } }
+    @media (max-width: 1440px) {
+      .section-right .title::before, .section-right .price::before {
+        right: 85%; } }
+    @media (max-width: 480px) {
+      .section-right .title::before, .section-right .price::before {
+        right: 91%; } }
 
 @media (max-width: 1440px) {
-  .section-right .price {
-    margin-left: auto; } }
+  .section-right .text-block .price {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 15px;
+    margin-left: auto;
+    padding-left: 75px; } }
+
+@media (max-width: 480px) {
+  .section-right .text-block .price {
+    padding-left: 45px; } }
 
 @media (min-width: 1440px) {
   .section-right .img-block {
