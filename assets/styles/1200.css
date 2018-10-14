@@ -255,6 +255,13 @@
         font-size: 16px; }
     .gallery div:last-child > a {
       margin-top: 0; }
+    .gallery.news .description {
+      margin-top: 20px; }
+      .gallery.news .description a {
+        margin-top: 20px;
+        padding: 14px 27px;
+        font-size: 10px;
+        height: 42px; }
   .neskolko-kollektsiy-name-block {
     font-size: 1.4em;
     font-weight: 300;

@@ -72,6 +72,8 @@
     width: 39%; }
   .header-wrap {
     height: 600px; }
+    .header-wrap .block-center .desc-block {
+      width: 100%; }
   .block-left {
     margin-top: -66px;
     height: 100%;
@@ -104,6 +106,12 @@
       bottom: 10px;
       left: 7px;
       right: 7px; }
+  .gallery.news {
+    padding-bottom: 0; }
+    .gallery.news .img-wrap {
+      padding: 30px; }
+    .gallery.news .grey-wrap a {
+      width: 100%; }
   main #neskolko-kollektsiy-side-controls {
     display: none; }
   main #neskolko-kollektsiy-front-block > header {

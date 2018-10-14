@@ -76,6 +76,15 @@
             justify-content: space-between; }
   .header-wrap {
     height: 498px; }
+    .header-wrap .block-center {
+      padding: 0 40px;
+      position: relative;
+      top: -65px; }
+      .header-wrap .block-center .title {
+        font-size: 30px;
+        margin-bottom: 20px; }
+      .header-wrap .block-center .desc {
+        font-size: 14px; }
   .devices {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -104,4 +113,8 @@
     margin-bottom: 0;
     margin-top: 20px; }
     .gallery .img-wrap .desc-drop .price .currency {
-      font-size: 12px; } }
+      font-size: 12px; }
+  .gallery.news .description {
+    padding: 0 20px; }
+    .gallery.news .description a {
+      margin-top: 10px; } }

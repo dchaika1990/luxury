@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Несколько Коллекций">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="assets/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>Новости</title>
+    <link rel="stylesheet" href="assets/styles/animate.css">
+    <link rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css">
+    <link rel="stylesheet" href="assets/styles/map.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <!--    include assets/styles/style.css-->
+    <!--Animation-->
+    <script src="assets/scripts/wow.min.js"></script>
+    <!-- Yandex map-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!-- Scripts-->
+    <script src="assets/scripts/script.js" defer></script>
+    <!--script-->
+    <!--    include assets/scripts/script.js-->
+  </head>
+  <body>
+    <header class="header-wrap news">
+      <div class="light-header">
+        <div>
+          <div onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');">
+            <div class="menu-toggle">
+              <div class="hamburger"><span></span><span></span><span></span>
+              </div>
+              <div class="hamburger-open"><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="popup-navigation popup-header">
+            <div class="original-nav-container">
+              <div>
+                <div onclick="event.stopPropagation(); $('.popup-header').removeClass('active');">
+                  <div class="menu-toggle">
+                    <div class="hamburger-open"><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div><a class="active" href="javascript: void(0)" onclick="alert(':(');">Рус</a><a href="javascript: void(0)" onclick="alert(':(');">En</a></div>
+              </div>
+              <nav>
+                <ul>
+                  <li><a class="nav-animation" href="/tesst.html">Сервис</a>
+                    <ul>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Ремонт</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Проверка устройства</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Доставка и оплата</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Условия гарантии</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Уход за изделием</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Заказ каталога</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Проверка устройства</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Доставка и оплата</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Условия гарантии</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Уход за изделием</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Заказ каталога</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-animation" href="javascript:void(0)">Моддинг</a>
+                    <ul>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Светящийся Логотип</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Обтяжка Кожей</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Карбоном</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Деревом</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Замена Корпуса</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Аэрография и Печать</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Алькантарой</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Лазерная Гравировка</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Инкрустация Стразами</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-animation" href="javascript:void(0)">О Компании</a>
+                    <ul>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">О Нас</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Контакты</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Новости</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Пресса о нас</a>
+                      </li>
+                      <li><a href="javascript: void(0)" onclick="alert(':(');">Сотрудничество</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="nav-animation" href="https://www.youtube.com/" target="_blank" rel="noopener"> Страница</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="slick-carousel-container">
+              <div>
+                <div onclick="event.stopPropagation(); $('.popup-header').removeClass('active');">
+                  <div class="menu-toggle">
+                    <div class="hamburger-open"><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slick-carousel-back"></div>
+              </div>
+              <div>
+                <div class="top-arrow"></div>
+              </div>
+              <div class="slick-carousel"></div>
+              <div>
+                <div class="bottom-arrow"></div>
+              </div>
+            </div>
+            <div><a href="javascript: void(0)" onclick="alert(':(');">
+                <div></div>
+                <div>3 шт</div>
+                <div>10000 руб</div></a>
+              <div>
+                <ul>
+                  <li><span onclick="window.open( 'https://www.facebook.com/', '_blank');"></span></li>
+                  <li><span onclick="window.open( 'https://www.instagram.com/', '_blank');"></span></li>
+                  <li><span onclick="window.open( 'https://twitter.com/', '_blank');"></span></li>
+                  <li><span onclick="window.open( 'https://vk.com/', '_blank');"></span></li>
+                  <li><span onclick="window.open( 'https://www.youtube.com/', '_blank');"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="popup-header" onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');">
+            <div class="header-socials">
+              <ul>
+                <li onClick="event.stopPropagation(); $(&quot;.popup-header, .menu-toggle&quot;).removeClass(&quot;active&quot;);"><a href="javascript:void(0)" rel="noopener"></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"></a></li>
+                <li><a href="https://twitter.com/" target="_blank" rel="noopener"></a></li>
+                <li><a href="https://vk.com/" target="_blank" rel="noopener"></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="popup-header" onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}">
+            <div>2</div>
+            <div></div>
+            <div class="cart-popup-header">
+              <table>
+                <tbody>
+                  <tr>
+                    <td><a href="javascript:void(0)" onclick="alert(':(');"><img src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80"></a></td>
+                    <td><a href="javascript:void(0)" onclick="alert(':(');">Товар #3</a></td>
+                    <td>1 шт</td>
+                    <td>5000 руб</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <div>
+                  <div>Итого:</div>
+                  <div>
+                    <div>2 шт</div>
+                    <div>10000 руб</div>
+                  </div>
+                </div>
+                <div><a href="javascript:void(0)" onclick="alert(':(');">Оформить заказ</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block-center">
+        <div class="desc-block">
+          <div class="title">Новости</div>
+          <div class="desc"> Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</div>
+        </div>
+      </div>
+    </header>
+    <section class="gallery news">
+      <div class="img-wrap">
+        <div class="grey-wrap"><a href="javascript:void(0)">
+            <div class="desc-drop">
+              <div class="title">Lorem Ipsum</div>
+              <div class="date">01/01/18</div>
+            </div>
+            <div class="wrap-animation wow zoomIn" data-wow-duration="0.5s" data-wow-delay="0.5s"><img src="assets/images/--plus--/photo1.jpg" alt="photo"></div></a></div>
+        <div class="description">
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p><a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="img-wrap">
+        <div class="grey-wrap"><a href="javascript:void(0)">
+            <div class="desc-drop">
+              <div class="title">Lorem Ipsum</div>
+              <div class="date">01/01/18</div>
+            </div>
+            <div class="wrap-animation wow zoomIn" data-wow-duration="0.5s" data-wow-delay="0.5s"><img src="assets/images/--plus--/photo2.jpg" alt="photo"></div></a></div>
+        <div class="description">
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p><a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="img-wrap">
+        <div class="grey-wrap"><a href="javascript:void(0)">
+            <div class="desc-drop">
+              <div class="title">Lorem Ipsum</div>
+              <div class="date">01/01/18</div>
+            </div>
+            <div class="wrap-animation wow zoomIn" data-wow-duration="0.5s" data-wow-delay="0.5s"><img src="assets/images/--plus--/photo3.jpg" alt="photo"></div></a></div>
+        <div class="description">
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</p><a href="#">Подробнее</a>
+        </div>
+      </div>
+    </section>
+    <div class="pagination">
+      <ul>
+        <li class="active"><span>1</span></li>
+        <li><a href="javascript: void(0)">2</a></li>
+        <li><a href="javascript: void(0)">3</a></li>
+        <li><a href="javascript: void(0)">4</a></li>
+        <li><a href="javascript: void(0)">5</a></li>
+        <li><a href="javascript: void(0)">...</a></li>
+        <li><a href="javascript: void(0)">10</a></li>
+      </ul>
+    </div>
+    <footer>
+      <div>
+        <div>
+          <div class="footer-socials">
+            <ul>
+              <li><span onclick="window.open( 'https://www.facebook.com/', '_blank');"></span></li>
+              <li><span onclick="window.open( 'https://www.instagram.com/', '_blank');"></span></li>
+              <li><span onclick="window.open( 'https://twitter.com/', '_blank');"></span></li>
+              <li><span onclick="window.open( 'https://vk.com/', '_blank');"></span></li>
+              <li><span onclick="window.open( 'https://www.youtube.com/', '_blank');"></span></li>
+            </ul>
+          </div>
+          <div class="footer-contacts">
+            <div class="phones"><a href="tel:+7(499)130-91-11">+7 (499) 130-91-11</a><br><a href="tel:+7(800)700-82-37">+7 (800) 700-82-37</a></div>
+            <div class="address"><a href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener">Россия 121433, г. Москва,</a><br><a href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener">3-й Силикатный проезд, д.4 к.1</a></div>
+            <div class="email"><a href="mailto:info@luxurymod.ru">info@luxurymod.ru</a></div>
+            <div class="work-hours">ПН — СБ: c 10:00 до 21:00<br>ВС — выходной</div>
+          </div>
+        </div>
+        <div class="div">
+          <div class="footer-nav-block"><span>Коллекции</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Все коллекции</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Россия</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-nav-block"><span>Персонализация</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Аксессуары</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Материалы</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-nav-block"><span>Брендирование</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Виды брендирования</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Заказчики</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-nav-block"><span>Сервис</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Ремонт</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Проверка устройства</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Доставка и оплата</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Условия гарантии</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Уход за изделием</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Заказ каталога</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-nav-block"><span>Моддинг</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Светящийся Логотип</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Обтяжка Кожей</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Карбоном</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Деревом</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Замена Корпуса</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Аэрография и Печать</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Отделка Алькантарой</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Лазерная Гравировка</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Инкрустация Стразами</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-nav-block"><span>О Компании</span>
+            <ul>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">О Нас</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Контакты</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Новости</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Пресса о нас</a>
+              </li>
+              <li><a href="javascript: void(0)" onclick="alert(':(');">Сотрудничество</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>2018, © LUXURY MODE. Все Права Защищены.</div>
+          <div><a href="javascript: void(0)" onclick="alert(':(');">Политика конфиденциальности</a><a href="mailto:info@luxurymod.ru">info@luxurymode.ru</a></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
