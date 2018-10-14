@@ -4871,6 +4871,7 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
         margin-bottom: 50px; }
         .swicher-block.mobile .title {
           margin: 0;
+          width: auto;
           font-size: 12px; }
         .swicher-block.mobile .swither {
           width: 50px;
