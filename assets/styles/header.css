@@ -178,9 +178,9 @@
                       align-items: center;
               text-transform: uppercase;
               width: 65%;
-              -webkit-transition: all 0.5s;
-              -o-transition: all 0.5s;
-              transition: all 0.5s; }
+              -webkit-transition: all 0.3s;
+              -o-transition: all 0.3s;
+              transition: all 0.3s; }
             .light-header > div:first-child .popup-navigation.active .original-nav-container > nav > ul > li > ul {
               display: none; }
       .light-header > div:first-child .popup-navigation.active > .slick-carousel-container {
@@ -1053,9 +1053,9 @@
                     align-items: center;
             text-transform: uppercase;
             width: 65%;
-            -webkit-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s; }
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s; }
           .top-line-mobile > div .popup-navigation.active .original-nav-container > nav > ul > li > ul {
             display: none; }
     .top-line-mobile > div .popup-navigation.active > .slick-carousel-container {

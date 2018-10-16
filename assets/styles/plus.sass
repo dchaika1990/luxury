@@ -4,6 +4,9 @@
 
 $font-stack: Muller, Arial, sans-serif
 
+.d-block
+  display: block!important
+
 .hide
   display: none
 
@@ -1161,26 +1164,34 @@ body.night
   display: flex
   justify-content: flex-end
   align-items: center
-  &.mobile
-    display: none
-  @media (max-width: 992px)
-    padding: 10px 0
-  @media (max-width: 850px)
-    display: none
-    &.mobile
-      display: flex
-      justify-content: center
-      margin-bottom: 50px
-      .title
-        margin: 0
-        width: auto
-        font-size: 12px
-      .swither
-        width: 50px
-        height: 18px
-        .switcher-hand
-          width: 25px
-          height: 25px
+  position: fixed
+  right: 0
+  bottom: 35px
+  z-index: 20
+  //&.mobile
+  //  display: none
+  //  position: fixed
+  //  right: 0
+  //  bottom: 35px
+  //  z-index: 20
+  //@media (max-width: 850px)
+  //  display: none
+  //  &.mobile
+  //    display: flex
+  //    justify-content: flex-end
+  //    margin-bottom: 50px
+  //    padding: 0 10px
+  //    .title
+  //      width: auto
+  //      margin: 0
+  //      font-size: 12px
+  //      padding: 0
+  //    .swither
+  //      width: 50px
+  //      height: 18px
+  //      .switcher-hand
+  //        width: 25px
+  //        height: 25px
 
   .title
     font-size: 16px
@@ -1190,6 +1201,7 @@ body.night
     text-transform: uppercase
     &::before
       content: none!important
+
   .swither
     border-radius: 10px
     margin-left: 20px
@@ -1199,7 +1211,6 @@ body.night
     position: relative
     background-color: #888888
     cursor: pointer
-    position: relative
     z-index: 5
     .switcher-hand
       position: absolute
@@ -1220,6 +1231,19 @@ body.night
         left: auto
         right: 0
         background-color: #4b78bb
+  @media (max-width: 992px)
+    padding: 10px
+    bottom: 10px
+    .title
+      font-size: 12px
+      width: auto
+      padding: 0
+    .swither
+      width: 50px
+      height: 18px
+      .switcher-hand
+        width: 25px
+        height: 25px
 .section-right
   .title, .price
     position: relative
