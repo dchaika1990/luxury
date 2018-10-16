@@ -3348,7 +3348,7 @@ body.night .section-right .text-block .price .right > a, body.night .section-lef
   position: fixed;
   right: 0;
   bottom: 35px;
-  z-index: 20; }
+  z-index: 4; }
   .swicher-block .title {
     font-size: 16px;
     line-height: 30px;
