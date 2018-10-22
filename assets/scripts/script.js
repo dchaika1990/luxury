@@ -570,6 +570,26 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
+    // input number
+    $('.plus, .minus').on('click', function (e) {
+        var numberField = $(this).parent().find('[type="number"]');
+        var currentVal = numberField.val();
+        var sign = $(this).val();
+        if (sign === '-') {
+            if (currentVal > 1) {
+                numberField.val(parseFloat(currentVal) - 1);
+            }
+        } else {
+            numberField.val(parseFloat(currentVal) + 1);
+        }
+    });
+
+    // basket delete
+
+    $('.basket__delete').on('click', function () {
+        $(this).closest('.basket__item').remove();
+    });
+
     // Clipping text
 
     function clippingText( html, count, tag ) {
@@ -759,6 +779,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+
     // Open big center slide
 
     $('#wrapper_bu').on('mousedown','.holder_bu', function () {

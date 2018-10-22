@@ -1475,3 +1475,143 @@ body.night
   @media (max-width: 650px)
     justify-content: center
     padding-left: 0
+
+/* Page Basket */
+
+.basket
+  padding-left: 170px
+  padding-right: 170px
+  padding-bottom: 65px
+  & > .title
+   text-align: center
+   text-transform: uppercase
+   font-size: 36px
+   margin-top: 60px
+   margin-bottom: 40px
+   font-weight: 500
+  &__item
+    padding: 18px 30px 18px 15px
+    border: 1px solid #222221
+    display: flex
+    flex-wrap: wrap
+    font-size: 15px
+    align-items: center
+    justify-content: space-between
+
+    & + &
+      border-top: none
+  &__item_left
+    display: flex
+    align-items: center
+  &__img
+    max-width: 100px
+    img
+      max-width: 100%
+  &__title
+    padding-left: 15px
+    padding-right: 15px
+    text-transform: uppercase
+  &__item_center
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .quantity
+      display: inline-block
+      position: relative
+      margin-left: 15px
+      input[type="number"]
+        height: 40px
+        border: 1px solid #222221
+        font-size: 15px
+        padding-left: 40px
+        padding-right: 40px
+        max-width: 120px
+        box-sizing: border-box
+        border-radius: 20px
+        text-align: center
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button
+          -webkit-appearance: none
+          margin: 0
+      //add to cart button
+      & + button
+        top: 0
+        position: relative
+
+      [type="button"]
+        cursor: pointer
+        position: absolute
+        right: 6px
+        top: 12px
+        line-height: 1
+        color: transparent
+        border: none
+        width: 22px
+        height: 10px
+        background-color: transparent
+        z-index: 1
+        &:hover + i
+          cursor: pointer
+
+        & + i
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: 11px
+          font-size: 16px
+          width: 22px
+          text-align: center
+          line-height: 10px
+          color: #222221
+          display: inline-block
+
+
+      [type="button"].minus
+        right: auto
+        left: 11px
+        & + i
+          right: auto
+          left: 11px
+  &__price
+    margin-left: 50px
+  &__item_right
+    margin-left: auto
+  &__delete
+    width: 40px
+    height: 40px
+    cursor: pointer
+    background: url("../images/--plus--/icon_close-black.png") no-repeat center / contain
+  &__total
+    margin-top: 5px
+    border: 1px solid #222221
+    font-size: 15px
+    padding: 25px 30px
+
+@media (max-width: 1200px)
+  .basket
+    padding-left: 60px
+    padding-right: 60px
+@media (max-width: 768px)
+  .basket
+    padding-left: 15px
+    padding-right: 15px
+    padding-bottom: 50px
+    & > .title
+      font-size: 30px
+      margin-top: 0
+      margin-bottom: 80px
+    &__item
+      padding-right: 15px
+    &__item_left
+      width: 100%
+    &__item_center
+      margin-top: 20px
+      flex-direction: row-reverse
+    &__price
+      margin-left: 0
+      margin-right: 8px
+    &__count
+      span
+        display: none
+    &__item_right
+      margin-top: 20px
