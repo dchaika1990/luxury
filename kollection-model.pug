@@ -161,8 +161,9 @@ html(lang="ru")
                     .popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
                         .header-socials
                             +socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
-                    .popup-header(onclick="event.stopPropagation(); if($(this).hasClass('active')){ $('.popup-header').removeClass('active'); }else{$('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');}")
+                    .popup-header
                         div 2
+                        a(href='#')
                         div
                         .cart-popup-header
                             table

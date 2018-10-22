@@ -106,11 +106,11 @@
       bottom: 10px;
       left: 7px;
       right: 7px; }
-  .gallery.news {
+  .gallery.news.with-pagination {
     padding-bottom: 0; }
-    .gallery.news .img-wrap {
+    .gallery.news.with-pagination .img-wrap {
       padding: 30px; }
-    .gallery.news .grey-wrap a {
+    .gallery.news.with-pagination .grey-wrap a {
       width: 100%; }
   main #neskolko-kollektsiy-side-controls {
     display: none; }

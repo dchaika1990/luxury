@@ -722,6 +722,24 @@ body
   &.news
     cursor: default
     overflow: hidden
+    & > .title
+      width: 100%
+      text-align: center
+      text-transform: uppercase
+      font-size: 36px
+      font-weight: 500
+      margin-top: 150px
+      margin-bottom: 50px
+      padding-left: 15px
+      padding-right: 15px
+      @media (max-width: 1024px)
+        font-size: 30px
+        margin-top: 120px
+        margin-bottom: 30px
+      @media (max-width: 768px)
+        font-size: 25px
+        margin-top: 50px
+        margin-bottom: 0
     .wrap-animation
       display: flex
       margin-top: 0!important
@@ -778,7 +796,7 @@ body
           top: 50%
           transform: translateY(-50%) rotate(180deg)
 
-  div:last-child
+  div:last-child:not(.grey-wrap)
     margin: 35px auto 0 auto
     text-align: center
     @include place-arrow(0, 0.9em 2em 0.9em 0.9em, 0.9em, 0.7em, 1em)

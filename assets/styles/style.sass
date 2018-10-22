@@ -755,7 +755,7 @@ main
             right: 0.2em
 
           & > .cart-popup-header
-            display: block
+            display: none
             color: #fff
             width: 33.1em
             position: absolute
@@ -918,7 +918,8 @@ main
   display: flex
   z-index: 10
   & > div
-    justify-content: flex-end
+    //justify-content: flex-end
+    display: none
   // share menu
   & > div:first-child
     @include place-background($share)
@@ -1031,7 +1032,7 @@ main
       right: auto
 
     & > .cart-popup-header
-      display: block
+      display: none
       color: #fff
       width: 500px
       position: absolute

@@ -356,9 +356,16 @@ body.night
   // share and cart styles
   & > div:last-child
     display: flex
+    position: relative
 
     & > div
       justify-content: flex-end
+
+      & > a
+        position: absolute
+        height: 100%
+        width: 100%
+        z-index: 5
 
     // share menu
     & > div:first-child
@@ -721,6 +728,8 @@ body.night
     width: 100%
     background: #ffffff
     z-index: 10
+    padding-top: 10px
+    padding-bottom: 10px
     .logo-block
       transition: height .3s ease-in-out
       height: 50px
@@ -761,6 +770,8 @@ body.night
           position: absolute
 
   &.sticky-black
+    padding-top: 10px
+    padding-bottom: 10px
     position: fixed
     width: 100%
     background: #1C1C1B
