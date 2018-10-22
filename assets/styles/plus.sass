@@ -1574,8 +1574,6 @@ body.night
           left: 11px
   &__price
     margin-left: 50px
-  &__item_right
-    margin-left: auto
   &__delete
     width: 40px
     height: 40px
@@ -1591,6 +1589,10 @@ body.night
   .basket
     padding-left: 60px
     padding-right: 60px
+@media (max-width: 992px)
+  .basket
+    &__item_right
+     margin-left: auto
 @media (max-width: 768px)
   .basket
     padding-left: 15px
