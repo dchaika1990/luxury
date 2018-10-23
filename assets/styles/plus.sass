@@ -1186,30 +1186,6 @@ body.night
   right: 0
   bottom: 35px
   z-index: 4
-  //&.mobile
-  //  display: none
-  //  position: fixed
-  //  right: 0
-  //  bottom: 35px
-  //  z-index: 20
-  //@media (max-width: 850px)
-  //  display: none
-  //  &.mobile
-  //    display: flex
-  //    justify-content: flex-end
-  //    margin-bottom: 50px
-  //    padding: 0 10px
-  //    .title
-  //      width: auto
-  //      margin: 0
-  //      font-size: 12px
-  //      padding: 0
-  //    .swither
-  //      width: 50px
-  //      height: 18px
-  //      .switcher-hand
-  //        width: 25px
-  //        height: 25px
 
   .title
     font-size: 16px
@@ -1511,6 +1487,8 @@ body.night
     padding-left: 15px
     padding-right: 15px
     text-transform: uppercase
+    a
+      color: black
   &__item_center
     display: flex
     align-items: center
@@ -1617,3 +1595,195 @@ body.night
         display: none
     &__item_right
       margin-top: 20px
+.basket-form
+  margin-top: 30px
+
+/* FORMS */
+
+.form
+  &__section
+    border: 1px solid #222221
+    padding: 30px
+    & + &
+      margin-top: 30px
+  &__title
+    font-size: 24px
+    text-transform: uppercase
+    margin-bottom: 40px
+.form-group
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  flex-direction: column
+  & + &
+    margin-top: 25px
+  label
+    font-size: 15px
+    cursor: pointer
+    &.required
+      position: relative
+      &::after
+        content: '*'
+        position: absolute
+        color: #d24a43
+        top: 0
+        right: -8px
+    & + input, & + textarea
+      margin-top: 5px
+.checkbox-group
+  display: flex
+  input[type='checkbox']
+    display: none
+    & + label
+      position: relative
+      margin-left: 40px
+      &::before
+        content: ''
+        width: 25px
+        height: 25px
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: -40px
+        border: 1px solid #222221
+        display: inline-block
+        box-sizing: border-box
+      &::after
+        content: ''
+        position: absolute
+        height: 25px
+        width: 25px
+        display: inline-block
+        background: url("../images/--plus--/bird.png") no-repeat center / contain
+        top: 50%
+        transform: translateY(-50%)
+        left: -40px
+        opacity: 0
+    &:checked + label::after
+      opacity: 1
+    &:checked + label::before
+      display: none
+.radio-group
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  .radio
+    width: 45%
+    text-align: center
+    border: 1px solid #222221
+    text-transform: uppercase
+    label
+      display: flex
+      flex-grow: 1
+      align-items: center
+      justify-content: center
+      padding: 18px 15px
+      box-sizing: border-box
+      cursor: pointer
+      position: relative
+      img
+        margin-right: 15px
+    input[type='radio']
+      display: none
+      & + label::before
+        content: ''
+        width: 25px
+        height: 25px
+        display: inline-block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 15px
+        border: 1px solid #4b78bb
+        border-radius: 50%
+      &:checked + label::after
+        content: ''
+        width: 15px
+        height: 15px
+        display: inline-block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 21px
+        background-color: #4b78bb
+        border-radius: 50%
+
+.form-control
+  border: 1px solid #222221
+  padding: 5px 20px
+  width: 100%
+  font-size: 15px
+  box-sizing: border-box
+.form-submit
+  margin-top: 50px
+  text-align: center
+
+  & > button
+    border: 1px solid #010101
+    letter-spacing: 0.21em
+    font-weight: 300
+    color: #010101
+    font-size: 12px
+    padding: 19px 46px
+    border-radius: 35px
+    box-sizing: border-box
+    height: 55px
+    background-color: #fff
+    position: relative
+    text-transform: uppercase
+    &:hover
+      background-color: #010101
+      color: #fff
+    &::after
+      position: absolute
+      display: inline-block
+      top: 50%
+      transform: translateY(-60%)
+      content: ''
+      background: url("../images/--plus--/arrow-bl.png") no-repeat center / contain
+      width: 27px
+      height: 9px
+      right: -13px
+      transition: all .3s ease-in-out
+
+    &:hover::after
+      content: ''
+      background-image: url("../images/--plus--/arrow-bl-to-wh2.png")
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+
+input.form-control
+  height: 55px
+
+textarea
+  resize: vertical
+
+form
+  .error
+    font-size: 12px
+    text-transform: uppercase
+    margin-top: 5px
+    color: #d24a43
+
+@media (max-width: 768px)
+  .form
+    &__section
+      padding: 20px 15px
+    &__title
+      font-size: 18px
+      margin-bottom: 30px
+  .basket
+    .radio-group
+      .radio
+        width: 100%
+        & + .radio
+          margin-top: 10px
+
+@media (max-width: 468px)
+  .basket
+    .radio-group
+      .radio
+        label
+          padding-left: 60px
+          justify-content: flex-start

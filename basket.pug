@@ -134,7 +134,7 @@ html(lang="ru")
                     .basket__img
                         img(src='assets/images/--plus--/news_3.jpg' alt='img')
                     .basket__title
-                        span название товара
+                        a(href='#') название товара
                 .basket__item_center
                     .basket__count
                         span Количество:
@@ -154,7 +154,7 @@ html(lang="ru")
                     .basket__img
                         img(src='assets/images/--plus--/news_3.jpg' alt='img')
                     .basket__title
-                        span название товара
+                        a(href='#') название товара
                 .basket__item_center
                     .basket__count
                         span Количество:
@@ -171,6 +171,44 @@ html(lang="ru")
                     .basket__delete
             .basket__total
                 span Итого: 10000 руб
+
+            form.basket-form(novalidate)
+                .form__section
+                    .form__title
+                        span Ваши данные:
+                    .form-group
+                        label.required Имя
+                        input(type='text' name='user_name' class="form-control" required)
+                    .form-group
+                        label.required Телефон
+                        input(type='tel' name='user_phone' class="form-control" required)
+                    .form-group
+                        label.required E-mail
+                        input(type='email' name='user_email' class="form-control" required)
+                    .form-group
+                        label.required Коментарии к заказу
+                        textarea( cols='30' rows='7' name='user_comments' class="form-control" required)
+                    .form-group
+                        .checkbox-group
+                            input(type='checkbox' id='agreement' value='agreement' required)
+                            label(for='agreement') Я согласен на обработку своих персональных данных.
+                .form__section
+                    .form__title
+                        span Способ оплаты:
+                    .form-group
+                        .radio-group
+                            .radio
+                                input(type='radio' id='cash' value='cash' name='currency' required)
+                                label(for='cash')
+                                    img(src='assets/images/--plus--/cash.png' alt='icon')
+                                    span наличными
+                            .radio
+                                input(type='radio' id='card' value='card' name='currency' required)
+                                label(for='card')
+                                    img(src='assets/images/--plus--/card.png' alt='icon')
+                                    span картой
+                .form-submit
+                    button(type='submit') оформить заказ
 
         footer
             div

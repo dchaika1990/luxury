@@ -254,6 +254,8 @@ body
   &.night
     background: #000000
     color: #fff
+a
+  text-decoration: none
 
 // PAGE STYLES neskolko kollektsiy
 // page blocks
@@ -918,8 +920,9 @@ main
   display: flex
   z-index: 10
   & > div
-    //justify-content: flex-end
-    display: none
+    justify-content: flex-end
+
+    //display: none
   // share menu
   & > div:first-child
     @include place-background($share)
@@ -1011,6 +1014,7 @@ main
       top: -0.1em
       font-size: 0.5em
       padding: 0.2em 0.5em
+
 
     & > div:nth-child(2)
       display: none
