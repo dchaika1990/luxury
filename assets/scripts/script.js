@@ -419,7 +419,7 @@ $(window).scroll(function() {
 
 // For page about
 function videoHeader() {
-    if ( $('.light-header').html()) {
+    if ( $('.about__video').html()) {
         var videoSection = $('.about__video');
         var header = $('.light-header');
         if ( $(window).width() > 650 ) {
