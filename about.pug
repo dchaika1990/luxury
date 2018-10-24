@@ -1,0 +1,236 @@
+//- functions
+//- navigations list
+mixin navList(texts, hrefs)
+    ul
+        each text, key in texts
+            li
+                if hrefs[key]
+                    a(href=hrefs[key])= text
+                else
+                    a(href="javascript: void(0)" onclick="alert(':(');")= text
+
+//- socials list
+mixin socialsList(hrefs)
+    ul
+        each link in hrefs
+            li
+                span(onclick="window.open( '" + link + "', '_blank');")
+
+//- menu html
+mixin menuToggle()
+    .menu-toggle
+        .hamburger
+            - for (var x = 0; x < 3; x++)
+                span
+        .hamburger-open
+            - for (var x = 0; x < 3; x++)
+                span
+
+//- menu html
+mixin menuToggleOpen()
+    .menu-toggle
+        .hamburger-open
+            - for (var x = 0; x < 3; x++)
+                span
+
+//- socials list
+mixin socialsListHeader(hrefs)
+    ul
+        li(onClick='event.stopPropagation(); $(".popup-header, .menu-toggle").removeClass("active");')
+            a(href="javascript:void(0)" rel="noopener")
+        each link in hrefs
+            li
+                a(href=link target="_blank" rel="noopener")
+
+//- document start
+doctype html
+html(lang="ru")
+    head
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+        meta(name="description" content="Несколько Коллекций")
+        meta(name="theme-color" content="#ffffff")
+        link(rel="manifest" href="assets/favicons/manifest.json")
+        link(rel="apple-touch-icon", sizes="180x180", href="assets/favicons/apple-touch-icon.png")
+        link(rel="icon", type="image/png", sizes="32x32", href="assets/favicons/favicon-32x32.png")
+        link(rel="icon", type="image/png", sizes="16x16", href="assets/favicons/favicon-16x16.png")
+        link(rel="manifest", href="assets/favicons/site.webmanifest")
+        link(rel="mask-icon", href="assets/favicons/safari-pinned-tab.svg", color="#5bbad5")
+        link(rel="shortcut icon", href="assets/favicons/favicon.ico")
+        meta(name="msapplication-TileColor", content="#da532c")
+        meta(name="msapplication-config", content="assets/favicons/browserconfig.xml")
+        meta(name="theme-color", content="#ffffff")
+        title О нас
+        link(rel="stylesheet" href="assets/styles/animate.css")
+        link(rel="stylesheet" href="assets/styles/slick-carousel-1.8.1.css")
+        link(rel="stylesheet" href="assets/styles/map.css")
+        link(rel="stylesheet" href="assets/styles/font-awesome.css")
+        link(rel="stylesheet" href="assets/styles/style.css")
+
+        //- style
+        //    include assets/styles/style.css
+        //- style
+            include assets/styles/slick-carousel-1.8.1.css
+
+        //Animation
+        script(src="assets/scripts/wow.min.js")
+        // Yandex map
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        // Scripts
+        script(src="assets/scripts/script.js" defer)
+        //script
+        //    include assets/scripts/script.js
+    body
+        header.header-wrap.header-video
+            .light-header
+                div
+                    div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active'); $(this).parent().find('.popup-navigation').addClass('active');")
+                        +menuToggle()
+
+                    .popup-navigation(class="popup-header")
+                        .original-nav-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                div
+                                    a.active(href="javascript: void(0)" onclick="alert(':(');") Рус
+                                    a(href="javascript: void(0)" onclick="alert(':(');") En
+                            nav
+                                ul
+                                    li
+                                        a.nav-animation(href="/tesst.html") Сервис
+                                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") Моддинг
+                                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                                    li
+                                        a.nav-animation(href="javascript:void(0)") О Компании
+                                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+                                    li
+                                        a.nav-animation(href="https://www.youtube.com/" target="_blank" rel="noopener")  Страница
+                        .slick-carousel-container
+                            div
+                                div(onclick="event.stopPropagation(); $('.popup-header').removeClass('active');")
+                                    +menuToggleOpen()
+                                .slick-carousel-back
+                            div
+                                .top-arrow
+                            .slick-carousel
+                            div
+                                .bottom-arrow
+                        div
+                            a(href="javascript: void(0)" onclick="alert(':(');")
+                                div
+                                div 3 шт
+                                div 10000 руб
+                            div
+                                +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                div
+                    .popup-header(onclick="event.stopPropagation(); $('.popup-header, .menu-toggle').removeClass('active'); $(this).addClass('active');")
+                        .header-socials
+                            +socialsListHeader(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .popup-header
+                        div 2
+                        a(href='#')
+                        div
+                        .cart-popup-header
+                            table
+                                tbody
+                                    -for ( x = 0; x < 3; x++)
+                                    tr
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');")
+                                                img(src="assets/images/temp/cart_item.jpg" alt="Cart Item Alt" width="80" height="80")
+                                        td
+                                            a(href="javascript:void(0)" onclick="alert(':(');") Товар ##{x}
+                                        td 1 шт
+                                        td 5000 руб
+
+                            div
+                                div
+                                    div Итого:
+                                    div
+                                        div 2 шт
+                                        div 10000 руб
+                                div
+                                    a(href="javascript:void(0)" onclick="alert(':(');") Оформить заказ
+
+
+
+
+        .about
+            section.about__video
+                .about__video_wrap-content
+                    .about__video_title
+                        span О НАС
+                    .about__video_text
+                        p Ателье Luxury Mod занимается преобразованием внешнего вида современных мобильных устройств, придавая им неповторимый облик. В сфере моддинга мобильных устройств мы работаем с 2007 года, превращая безликие стандартные электронные устройства в яркие, неповторимые и абсолютно уникальные девайсы, верные помощники человека.
+                    .about__video_icon
+                        img(src='assets/images/--plus--/video-icon.png' alt='icon')
+                    .about__video_slogan
+                        span Смотреть видео
+                .about__video_wrap-iframe
+                    <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/WsptdUFthWI?showinfo=0" frameborder="0" allowfullscreen></iframe>
+            section.about__text-content
+                .about__text-content_number
+                    span.line
+                    span 1
+                .about__text-content_title
+                    span Заголовок
+                .about__text-content_text
+                    p Мы начали свою работу тогда, когда смартфоны и ноутбуки ещё не получили столь широкого распространения, как в наши дни. За это время мы приобрели огромный практический опыт, и сегодня с уверенностью можем сказать, что нам под силу выполнение заказа любой степени сложности. Наши мастера работают только с высококачественными материалами, используя самое современное оборудование от надёжных производителей.
+                    p Слаженная команда профессионалов ателье Luxury Mod состоит только из высококлассных специалистов, отлично владеющих всеми секретами создания различных видов моддинга. Обширные теоретические знания, наработанный годами опыт и высокий профессионализм помогают им максимально качественно выполнять работу в сжатые сроки. Наши мастера работают только с высококачественными материалами, используя самое современное оборудование от надёжных производителей.Слаженная команда профессионалов ателье Luxury Mod состоит только из высококлассных специалистов, отлично владеющих всеми секретами создания различных видов моддинга. Обширные теоретические знания, наработанный годами опыт и высокий профессионализм помогают им максимально качественно выполнять работу в сжатые сроки.
+            section.about__text-content
+                .about__text-content_number
+                    span.line
+                    span 2
+                .about__text-content_title
+                    span Заголовок
+                .about__text-content_text
+                    p Мы начали свою работу тогда, когда смартфоны и ноутбуки ещё не получили столь широкого распространения, как в наши дни. За это время мы приобрели огромный практический опыт, и сегодня с уверенностью можем сказать, что нам под силу выполнение заказа любой степени сложности. Наши мастера работают только с высококачественными материалами, используя самое современное оборудование от надёжных производителей.
+                    p Слаженная команда профессионалов ателье Luxury Mod состоит только из высококлассных специалистов, отлично владеющих всеми секретами создания различных видов моддинга. Обширные теоретические знания, наработанный годами опыт и высокий профессионализм помогают им максимально качественно выполнять работу в сжатые сроки. Наши мастера работают только с высококачественными материалами, используя самое современное оборудование от надёжных производителей.Слаженная команда профессионалов ателье Luxury Mod состоит только из высококлассных специалистов, отлично владеющих всеми секретами создания различных видов моддинга. Обширные теоретические знания, наработанный годами опыт и высокий профессионализм помогают им максимально качественно выполнять работу в сжатые сроки.
+
+        footer
+            div
+                div
+                    .footer-socials
+                        +socialsList(['https://www.facebook.com/', 'https://www.instagram.com/', 'https://twitter.com/', 'https://vk.com/', 'https://www.youtube.com/'])
+                    .footer-contacts
+                        .phones
+                            a(href="tel:+7(499)130-91-11") +7 (499) 130-91-11
+                            br
+                            a(href="tel:+7(800)700-82-37") +7 (800) 700-82-37
+                        .address
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") Россия 121433, г. Москва,
+                            br
+                            a(href="https://www.google.com.ua/maps/place/Россия%20121433,%20г.%20Москва,%203-й%20Силикатный%20проезд,%20д.4%20к.1" target="_blank" rel="noopener") 3-й Силикатный проезд, д.4 к.1
+                        .email
+                            a(href="mailto:info@luxurymod.ru") info@luxurymod.ru
+                        .work-hours ПН — СБ: c 10:00 до 21:00
+                            br
+                            | ВС — выходной
+                .div
+                    .footer-nav-block
+                        span Коллекции
+                        +navList(['Все коллекции', 'Россия'], [])
+                    .footer-nav-block
+                        span Персонализация
+                        +navList(['Аксессуары', 'Материалы'], [])
+                    .footer-nav-block
+                        span Брендирование
+                        +navList(['Виды брендирования', 'Заказчики'], [])
+                    .footer-nav-block
+                        span Сервис
+                        +navList(['Ремонт', 'Проверка устройства', 'Доставка и оплата', 'Условия гарантии', 'Уход за изделием', 'Заказ каталога'], [])
+                    .footer-nav-block
+                        span Моддинг
+                        +navList(['Светящийся Логотип', 'Обтяжка Кожей', 'Отделка Карбоном', 'Отделка Деревом', 'Замена Корпуса', 'Аэрография и Печать', 'Отделка Алькантарой', 'Лазерная Гравировка', 'Инкрустация Стразами'], [])
+                    .footer-nav-block
+                        span О Компании
+                        +navList(['О Нас', 'Контакты', 'Новости', 'Пресса о нас', 'Сотрудничество'], [])
+            div
+                div
+                    div 2018, © LUXURY MODE. Все Права Защищены.
+                    div
+                        a(href="javascript: void(0)" onclick="alert(':(');") Политика конфиденциальности
+                        a(href="mailto:info@luxurymod.ru") info@luxurymode.ru

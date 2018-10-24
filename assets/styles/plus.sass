@@ -4,6 +4,9 @@
 
 $font-stack: Muller, Arial, sans-serif
 
+.underline
+  text-decoration: underline
+
 .d-block
   display: block!important
 
@@ -26,6 +29,9 @@ $font-stack: Muller, Arial, sans-serif
   @media (max-width: 650px)
     height: auto!important
     background-color: #fff
+.header-video
+  height: auto!important
+  min-height: inherit
 .devider-90
   margin-top: 90px
   @media (max-width: 650px)
@@ -1455,44 +1461,48 @@ body.night
 /* Page Basket */
 
 .basket
-  padding-left: 170px
-  padding-right: 170px
-  padding-bottom: 65px
+  max-width: 1500px
+  padding-left: 200px
+  padding-right: 200px
+  padding-bottom: 100px
+  margin: 0 auto
   & > .title
    text-align: center
    text-transform: uppercase
-   font-size: 36px
+   font-size: 48px
    margin-top: 60px
    margin-bottom: 40px
    font-weight: 500
   &__item
-    padding: 18px 30px 18px 15px
+    padding: 25px 90px 25px 25px
     border: 1px solid #222221
     display: flex
     flex-wrap: wrap
-    font-size: 15px
+    font-size: 24px
     align-items: center
     justify-content: space-between
 
     & + &
       border-top: none
   &__item_left
+    width: 40%
     display: flex
     align-items: center
   &__img
-    max-width: 100px
+    max-width: 160px
     img
       max-width: 100%
   &__title
-    padding-left: 15px
+    padding-left: 45px
     padding-right: 15px
     text-transform: uppercase
     a
       color: black
   &__item_center
+    width: 55%
     display: flex
     align-items: center
-    justify-content: space-between
+    justify-content: space-around
     .quantity
       display: inline-block
       position: relative
@@ -1550,23 +1560,60 @@ body.night
         & + i
           right: auto
           left: 11px
+  &__count
+    display: flex
+    align-items: center
+  &__item_right
+    display: flex
+    justify-content: center
   &__price
-    margin-left: 50px
+    margin-left: 10px
   &__delete
     width: 40px
     height: 40px
     cursor: pointer
     background: url("../images/--plus--/icon_close-black.png") no-repeat center / contain
   &__total
-    margin-top: 5px
+    margin-top: 15px
     border: 1px solid #222221
-    font-size: 15px
+    font-size: 24px
     padding: 25px 30px
 
+@media (max-width: 1600px)
+  .basket
+    &__title
+      padding-left: 30px
+      padding-right: 10px
+    &__item
+      font-size: 20px
+      padding-right: 40px
+    &__img
+      max-width: 130px
+@media (max-width: 1440px)
+  .basket
+    padding-left: 170px
+    padding-right: 170px
+    padding-bottom: 65px
+    & > .title
+      font-size: 36px
+    &__item
+      font-size: 15px
+      padding: 18px 30px 18px 15px
+    &__title
+      padding-left: 15px
+    &__img
+      max-width: 100px
+    &__total
+      margin-top: 5px
+      border: 1px solid #222221
+      font-size: 18px
+      padding: 25px 30px
 @media (max-width: 1200px)
   .basket
     padding-left: 60px
     padding-right: 60px
+    &__item_left
+      width: auto
 @media (max-width: 992px)
   .basket
     &__item_right
@@ -1585,8 +1632,10 @@ body.night
     &__item_left
       width: 100%
     &__item_center
+      width: auto
       margin-top: 20px
       flex-direction: row-reverse
+      margin-right: 10px
     &__price
       margin-left: 0
       margin-right: 8px
@@ -1603,11 +1652,12 @@ body.night
 .form
   &__section
     border: 1px solid #222221
-    padding: 30px
+    padding: 50px
     & + &
       margin-top: 30px
   &__title
-    font-size: 24px
+    font-size: 30px
+    font-weight: 500
     text-transform: uppercase
     margin-bottom: 40px
 .form-group
@@ -1618,7 +1668,7 @@ body.night
   & + &
     margin-top: 25px
   label
-    font-size: 15px
+    font-size: 18px
     cursor: pointer
     &.required
       position: relative
@@ -1629,7 +1679,7 @@ body.night
         top: 0
         right: -8px
     & + input, & + textarea
-      margin-top: 5px
+      margin-top: 15px
 .checkbox-group
   display: flex
   input[type='checkbox']
@@ -1674,11 +1724,11 @@ body.night
     border: 1px solid #222221
     text-transform: uppercase
     label
+      font-size: 24px
+      padding: 49px 50px 49px 130px
       display: flex
       flex-grow: 1
       align-items: center
-      justify-content: center
-      padding: 18px 15px
       box-sizing: border-box
       cursor: pointer
       position: relative
@@ -1688,24 +1738,24 @@ body.night
       display: none
       & + label::before
         content: ''
-        width: 25px
-        height: 25px
+        width: 38px
+        height: 38px
         display: inline-block
         position: absolute
         top: 50%
         transform: translateY(-50%)
-        left: 15px
+        left: 44px
         border: 1px solid #4b78bb
         border-radius: 50%
       &:checked + label::after
         content: ''
-        width: 15px
-        height: 15px
+        width: 22px
+        height: 22px
         display: inline-block
         position: absolute
         top: 50%
         transform: translateY(-50%)
-        left: 21px
+        left: 53px
         background-color: #4b78bb
         border-radius: 50%
 
@@ -1716,7 +1766,7 @@ body.night
   font-size: 15px
   box-sizing: border-box
 .form-submit
-  margin-top: 50px
+  margin-top: 100px
   text-align: center
 
   & > button
@@ -1754,7 +1804,7 @@ body.night
       transform: translateY(-50%) rotate(180deg)
 
 input.form-control
-  height: 55px
+  height: 60px
 
 textarea
   resize: vertical
@@ -1766,6 +1816,50 @@ form
     margin-top: 5px
     color: #d24a43
 
+@media (max-width: 1440px)
+  .form
+    &__section
+      padding: 30px
+    &__title
+      font-size: 24px
+  .form-group
+    label
+      font-size: 15px
+      & + input, & + textarea
+        margin-top: 10px
+  input.form-control
+    height: 55px
+  .radio-group
+    .radio
+      label
+        font-size: 18px
+        padding: 40px 50px 40px 100px
+      input[type='radio'] + label::before
+        width: 30px
+        height: 30px
+        left: 35px
+      input[type='radio']:checked + label::after
+        width: 17px
+        height: 17px
+        left: 43px
+
+  .form-submit
+    margin-top: 50px
+
+@media (max-width: 992px)
+  .radio-group
+    .radio
+      label
+        font-size: 15px
+        padding: 30px 40px 30px 80px
+      input[type='radio'] + label::before
+        width: 25px
+        height: 25px
+        left: 28px
+      input[type='radio']:checked + label::after
+        width: 14px
+        height: 14px
+        left: 35px
 @media (max-width: 768px)
   .form
     &__section
@@ -1787,3 +1881,140 @@ form
         label
           padding-left: 60px
           justify-content: flex-start
+        input[type='radio'] + label::before
+          left: 17px
+        input[type='radio']:checked + label::after
+          left: 24px
+
+
+/* ABOUT PAGE */
+
+.about
+  max-width: 1920px
+  padding-bottom: 90px
+  &__video
+    margin-top: 140px
+    min-height: 600px
+    position: relative
+    background: url("../images/--plus--/front2.jpg") no-repeat center / cover
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    color: #ffffff
+    transition: all .5s ease-in-out
+    &.active-video
+      z-index: 1110
+      min-height: 100vh
+      //position: fixed
+      //top: 0
+      //left: 0
+      //right: 0
+      //bottom: 0
+    &_wrap-content
+      text-align: center
+      max-width: 900px
+    &_title
+      font-size: 48px
+      font-weight: 500
+      margin-top: 40px
+      margin-bottom: 40px
+    &_text
+      font-size: 14px
+      line-height: 35px
+    &_icon
+      margin-top: 35px
+      margin-bottom: 35px
+      cursor: pointer
+    &_slogan
+      font-size: 12px
+      letter-spacing: 3px
+      text-transform: uppercase
+      margin-bottom: 40px
+    &_wrap-iframe
+      display: none
+      iframe
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 0
+        top: 0
+  &__text-content
+    padding-left: 70px
+    padding-right: 70px
+    text-align: center
+    &_number
+      position: relative
+      .line
+        height: 150px
+        width: 1px
+        display: inline-block
+        background-color: #000000
+      span:last-child
+        font-size: 16px
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        border: 1px solid #000000
+        position: absolute
+        bottom: -37px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        align-items: center
+        justify-content: center
+    &_title
+      font-size: 48px
+      font-weight: 500
+      margin-top: 80px
+      margin-bottom: 40px
+    &_text
+      font-size: 18px
+      line-height: 36px
+      p + p
+        margin-top: 50px
+    & + .about__text-content
+      margin-top: 40px
+
+@media (max-width: 1200px)
+  .about
+    &__video
+      min-height: 450px
+      &_wrap-content
+        max-width: 800px
+        padding-left: 30px
+        padding-right: 30px
+      &_title
+        font-size: 36px
+        margin-bottom: 30px
+      &_icon
+        margin-top: 30px
+        margin-bottom: 30px
+    &__text-content
+      &_number
+        .line
+          height: 107px
+      &_title
+        font-size: 36px
+
+@media (max-width: 768px)
+  .about
+    padding-bottom: 50px
+    &__video
+      min-height: 450px
+      &_wrap-content
+        padding-left: 15px
+        padding-right: 15px
+    &__text-content
+      padding-left: 15px
+      padding-right: 15px
+      &_number
+        .line
+          height: 80px
+      &_text
+        font-size: 15px
+
+@media (max-width: 550px)
+  .about
+    &__video
+      margin-top: 0

@@ -379,8 +379,6 @@ $(window).on('load', function () {
     $("html, body").animate({ scrollTop: 0 }, 0);
 });
 
-
-
 $(window).scroll(function() {
     var $header = ( $('.main-header').html() ) ? $('.main-header') : $('.product-header');
     var mainHeader = $header.outerHeight();
@@ -415,7 +413,37 @@ $(window).scroll(function() {
 		$('.hamburger').removeClass("black");
         $('.light-header').removeClass('black');
 	}
+
+    videoHeader()
 });
+
+// For page about
+function videoHeader() {
+    if ( $('.light-header').html()) {
+        var videoSection = $('.about__video');
+        var header = $('.light-header');
+        if ( $(window).width() > 650 ) {
+            if ( $(window).scrollTop() + header.outerHeight() <= videoSection.offset().top || $(window).scrollTop() + header.height() >= videoSection.offset().top + videoSection.outerHeight() ){
+                $('.top-line').addClass("sticky");
+                $('.logo-block').addClass('black');
+                $('.hamburger').addClass('black');
+                $('.light-header').addClass('black');
+            } else {
+                $('.top-line').removeClass("sticky");
+                $('.logo-block').removeClass("black");
+                $('.hamburger').removeClass("black");
+                $('.light-header').removeClass('black');
+            }
+        } else {
+            $('.top-line').removeClass("sticky");
+            $('.logo-block').removeClass("black");
+            $('.hamburger').removeClass("black");
+            $('.light-header').removeClass('black');
+        }
+
+    }
+}
+
 
 // Animation on click on .top-menu
 
@@ -451,6 +479,40 @@ $(document).ready(function () {
         });
     });
 });
+
+// Youtuve
+
+$('.about__video_icon img').on('click', function () {
+    var src = $('.about__video_wrap-iframe iframe').attr('src');
+
+    $(this).closest('.about__video').addClass('active-video');
+    // $('body').addClass('over-hidden');
+
+    setTimeout(function () {
+        $('.about__video_wrap-iframe iframe').attr('src', src + '&autoplay=1');
+        $('.about__video_wrap-iframe').fadeIn();
+    }, 200)
+});
+
+$(window).on('keydown', function(e){
+    if ( e.keyCode === 27 ){
+        $('.about__video_wrap-iframe').fadeOut();
+        $('.about__video').removeClass('active-video');
+    }
+});
+
+$('.about__video').on('click', function (e) {
+    e.stopPropagation();
+})
+
+$('body').on('click', function (e) {
+    $('.about__video_wrap-iframe').fadeOut();
+    $('.about__video').removeClass('active-video');
+})
+
+// Activate video header
+
+videoHeader();
 
 // Map
 
