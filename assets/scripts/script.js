@@ -485,19 +485,25 @@ $(document).ready(function () {
 $('.about__video_icon img').on('click', function () {
     var src = $('.about__video_wrap-iframe iframe').attr('src');
 
+    $('html').animate({ scrollTop: $('.about__video').offset().top });
+
+    $(this).closest('.about__video_wrap-content').addClass('hide');
+
     $(this).closest('.about__video').addClass('active-video');
-    // $('body').addClass('over-hidden');
+    $('body').addClass('over-hidden');
 
     setTimeout(function () {
         $('.about__video_wrap-iframe iframe').attr('src', src + '&autoplay=1');
         $('.about__video_wrap-iframe').fadeIn();
-    }, 200)
+    }, 400)
 });
 
 $(window).on('keydown', function(e){
     if ( e.keyCode === 27 ){
         $('.about__video_wrap-iframe').fadeOut();
         $('.about__video').removeClass('active-video');
+        $('body').removeClass('over-hidden');
+        $(' .about__video_wrap-content').removeClass('hide');
     }
 });
 
@@ -505,10 +511,14 @@ $('.about__video').on('click', function (e) {
     e.stopPropagation();
 })
 
-$('body').on('click', function (e) {
+$('.close-btn').on('click', function (e) {
     $('.about__video_wrap-iframe').fadeOut();
     $('.about__video').removeClass('active-video');
-})
+    $('body').removeClass('over-hidden');
+    setTimeout(function () {
+        $('.about__video_wrap-content').removeClass('hide');
+    }, 400)
+});
 
 // Activate video header
 
